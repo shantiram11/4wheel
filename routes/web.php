@@ -27,3 +27,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
     });
 });
+
+
+/** guest routes */
+//session.cart middleware group starts
+
+// Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('4wheel.index');
+
+//session.cart middleware group ends
