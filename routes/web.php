@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
@@ -32,6 +32,6 @@ Route::group(['middleware' => ['auth']], function () {
 /** guest routes */
 //session.cart middleware group starts
 
-// Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('4wheel.index');
+Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
 
 //session.cart middleware group ends

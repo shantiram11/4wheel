@@ -8,13 +8,12 @@
         <div class="layout-login__form bg-white" data-perfect-scrollbar>
             <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
                 <a href="index.html" class="navbar-brand" style="min-width: 0">
-                    <img class="navbar-brand-icon" src="assets/images/stack-logo-blue.svg" width="25" alt="FlowDash">
+                    {{-- <img class="navbar-brand-icon" src="assets/images/stack-logo-blue.svg" width="25" alt="FlowDash"> --}}
                     <span>4Wheel</span>
                 </a>
             </div>
 
             <h4 class="m-0">Sign up!</h4>
-            <p class="mb-5">Create an account with FlowDash</p>
 
             <form method="POST" action="{{ route('register') }}" novalidate>
                 @csrf
@@ -31,7 +30,7 @@
                         @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-user"></span>
+                                {{-- <span class="far fa-user"></span> --}}
                             </div>
                         </div>
                     </div>
@@ -50,7 +49,7 @@
                         @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-envelope"></span>
+                                {{-- <span class="far fa-envelope"></span> --}}
                             </div>
                         </div>
                     </div>
@@ -69,7 +68,7 @@
                         @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-key"></span>
+                                {{-- <span class="far fa-key"></span> --}}
                             </div>
                         </div>
                     </div>
@@ -88,7 +87,7 @@
                         @enderror
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <span class="far fa-key"></span>
+                                {{-- <span class="far fa-key"></span> --}}
                             </div>
                         </div>
                     </div>
