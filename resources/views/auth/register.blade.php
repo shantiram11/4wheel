@@ -7,10 +7,8 @@
         <div class="layout-login__overlay"></div>
         <div class="layout-login__form bg-white" data-perfect-scrollbar>
             <div class="d-flex justify-content-center mt-2 mb-5 navbar-light">
-                <a href="index.html" class="navbar-brand" style="min-width: 0">
-                    {{-- <img class="navbar-brand-icon" src="assets/images/stack-logo-blue.svg" width="25" alt="FlowDash"> --}}
-                    <span>4Wheel</span>
-                </a>
+                {{-- <img class="navbar-brand-icon" src="assets/images/stack-logo-blue.svg" width="25" alt="FlowDash"> --}}
+                <a href="{{ route('front.index') }}" class="navbar-brand" style="min-width: 0"> <span>4Wheel</span></a>
             </div>
 
             <h4 class="m-0">Sign up!</h4>

@@ -1,9 +1,6 @@
 @extends('layouts.front')
 @section('content')
 
-
-
-
     <div class="ui layout" id="top">
 
         <div class="light-section-sq">
@@ -89,10 +86,10 @@
                         </div>
 
                         <div class="video-wrapper">
-                            <img src="{{ asset('assets/front/images/website.jpg') }}" alt="">
-                            {{-- <iframe
+                            {{-- <img src="{{ asset('assets/front/images/website.jpg') }}" alt=""> --}}
+                            <iframe
                                 src="https://www.youtube.com/embed/BDCU5OFXZ2c?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&start=15&mute=1"
-                                allowfullscreen></iframe> --}}
+                                allowfullscreen></iframe>
                         </div>
                     </div>
 

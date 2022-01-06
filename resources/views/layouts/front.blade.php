@@ -87,16 +87,37 @@ Default Header with a White Background & Dark text.
                                 </li>
 
 
-                                <li><a href="#" class="item modal-ui-trigger" data-trigger-for="modal01">
+
+
+                                <li><a href="{{ route('register') }}" class="item modal-ui-triggers"
+                                        data-trigger-for="modal0134">
                                         <span>Sign Up</span>
                                     </a>
                                 </li>
 
-                                <li><a href="#" class="item modal-ui-trigger" data-trigger-for="modal02">
-                                        <span>Log In</span>
-                                    </a>
-                                </li>
-
+                                @if (auth()->user())
+                                    <li><a href="{{ route('login') }}" class="item modal-ui-triggers"
+                                            data-trigger-for="modal0234">
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="mr-0">
+                                        <a href="{{ route('logout') }}" class="nav-link p-0 "
+                                            onclick="event.preventDefault(); document.getElementById('logout-form2').submit();">
+                                            <span>Logout</span>
+                                        </a>
+                                        <form id="logout-form2" action="{{ route('logout') }}" method="POST"
+                                            style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                @else
+                                    <li><a href="{{ route('dashboard.index') }}" class="item modal-ui-triggers"
+                                            data-trigger-for="modal0234">
+                                            <span>Log In</span>
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
 
