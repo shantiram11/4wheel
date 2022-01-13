@@ -97,7 +97,7 @@
 
             </div>
 
-            <div class="ui grid container">
+            {{-- <div class="ui grid container">
                 <div class="row">
                     <div class="ui column">
                         <div class="typo-section-sq top-default bottom-default">
@@ -164,7 +164,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
         <div class="typo-section-sq bottom-default">

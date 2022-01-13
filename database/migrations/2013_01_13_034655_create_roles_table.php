@@ -18,6 +18,7 @@ class CreateRolesTable extends Migration
             $table->string('name', 30)->unique();
             $table->string('label', 30);
             $table->text('description')->nullable();
+            $table->enum('preserved', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }

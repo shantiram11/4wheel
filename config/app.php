@@ -136,6 +136,9 @@ return [
 
     'providers' => [
 
+        //spatie package for roles and permmission
+        Spatie\Permission\PermissionServiceProvider::class,
+
         /*
          * Laravel Framework Service Providers...
          */
