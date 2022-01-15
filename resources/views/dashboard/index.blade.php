@@ -31,10 +31,10 @@
 
                                     </ol>
                                 </nav>
-                                <h1 class="m-0">Admin Panel</h1>
+                                {{-- <h1 class="m-0">Admin Panel</h1> --}}
                             </div>
 
-                            <a href="" class="btn btn-success ml-1">Action</a>
+                            {{-- <a href="" class="btn btn-success ml-1">Action</a> --}}
                         </div>
                     </div>
 

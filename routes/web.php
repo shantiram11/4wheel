@@ -19,15 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
+
+
 /**protected routes**/
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth',]], function () {
 
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
+        Route::resource('vehicle', \App\Http\Controllers\Dashboard\VehicleController::class);
+        Route::resource('user', \App\Http\Controllers\Dashboard\UserController::class);
     });
 });
+
+
 
 
 /** guest routes */
