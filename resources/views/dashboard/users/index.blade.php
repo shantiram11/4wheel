@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <table class="table mb-0 thead-border-top-0 table-striped user-Datatable">
+            <table id="userDatatable" class="table mb-0 thead-border-top-0 table-striped userDatatable">
                 <thead>
                     <tr>
                         <th style="width: 18px;">
@@ -40,7 +40,6 @@
                         <th class="">#ID</th>
                         <th class="">Name</th>
                         <th class="">Email</th>
-                        <th class="">Password</th>
                         <th class="">Role ID</th>
                         <th class="">Actions</th>
                         {{-- <th style="width: 100px; text-align: right;">
