@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 
 /**protected routes**/
-Route::group(['middleware' => ['auth',]], function () {
+Route::group(['middleware' => ['auth','verified']], function () {
 
     /** BackEnd Starts*/
     Route::group(['prefix' => 'dashboard'], function () {

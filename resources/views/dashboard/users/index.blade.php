@@ -1,83 +1,76 @@
-@extends('dashboard.index')
+@extends('layouts.dashboard')
 @section('content')
-<div class="container page__container">
-    <div class="card">
 
-        <div class="table-responsive">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Users</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
 
-            <div class="m-3">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="search-form search-form--light">
-                            <input type="text"
-                                   class="form-control search table-search"
-                                   placeholder="Search">
-                            <button class="btn"
-                                    type="button"
-                                    role="button"><i class="material-icons">search</i></button>
-                        </div>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card">
+                    <div class="card-header">
+                    <h3 class="card-title">Users Databale</h3>
                     </div>
-                    <div class="col-md-4">
-                        <a href="{{route('user.create')}}" class="btn btn-primary ml-1">Add</a>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                    <table id="usersDatatable" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Created At</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Created At</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
                     </div>
+                    <!-- /.card-body -->
                 </div>
+                <!-- /.card -->
+
             </div>
-
-            <table id="userDatatable" class="table mb-0 thead-border-top-0 table-striped userDatatable">
-                <thead>
-                    <tr>
-                        <th style="width: 18px;">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox"
-                                       class="custom-control-input js-toggle-check-all"
-                                       data-target="#products"
-                                       id="customCheckAll">
-                                <label class="custom-control-label"
-                                       for="customCheckAll"><span class="text-hide">Toggle all</span></label>
-                            </div>
-                        </th>
-
-                        <th class="">#ID</th>
-                        <th class="">Name</th>
-                        <th class="">Email</th>
-                        <th class="">Role ID</th>
-                        <th class="">Actions</th>
-                        {{-- <th style="width: 100px; text-align: right;">
-                            <div class="dropdown pull-right">
-                                <a href="#"
-                                   data-toggle="dropdown"
-                                   class="dropdown-toggle">Bulk</a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="javascript:void(0)"
-                                       class="dropdown-item"><i class="material-icons icon-18pt mr-1">work</i> Set Price</a>
-                                    <a href="javascript:void(0)"
-                                       class="dropdown-item"><i class="material-icons icon-18pt mr-1">archive</i> Archive</a>
-                                </div>
-                            </div>
-                        </th> --}}
-                    </tr>
-                </thead>
-                <tbody class="list"
-                       id="products">
-
-                </tbody>
-            </table>
         </div>
-
-        <div class="card-body text-right">
-            15 <span class="text-muted">of 25</span> <a href="#"
-               class="text-muted-light"><i class="material-icons ml-1">arrow_forward</i></a>
-        </div>
-
     </div>
-    </div>
-    @endsection
-    @section('page_level_script')
-    @include('dashboard.users._shared')
+</div>
+<style>
+    .ks-table-entry-header,
+    .ks-table-entry-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .ks-table-entry-header{
+        padding-top: 15px;
+    }
+</style>
+@endsection
+@section('page_level_script')
     <script>
-            $(document).ready(function($) {
-                let table = $('#userDatatable').DataTable({
-                    "serverSide": true,
+        $(function(){
+            $("#usersDatatable").DataTable({
+
+                "serverSide": true,
                     "ajax": {
                         "url": BASE_URL + '/dashboard/user',
                         "dataType": "json",
@@ -90,18 +83,11 @@
                         error: function(xhr, ajaxOptions, thrownError) {
                         }
                     },
-                    "columns": [{
-                        "data": "name",
-                    },
-                        {
-                            "data": "email"
-                        },
-                        {
-                            "data": "role"
-                        },
-                        {
-                            "data": "created_at"
-                        },
+                    "columns": [
+                        { "data": "name",},
+                        { "data": "email" },
+                        { "data": "role"},
+                        { "data": "created_at"},
                         {
                             "data": "action",
                             "searchable": false,
@@ -110,7 +96,7 @@
                     ],
                     "rowId": 'id',
                     "order": [
-                        [0, "asc"]
+                        [1, "asc"]
                     ],
                     // "lengthMenu": [[100, 200, 500, -1], [ 100, 200, 500, 'All']],
                     "lengthMenu": [
@@ -119,20 +105,21 @@
                     ],
                     "pageLength": 25,
                     "deferRender": true,
-                    fixedHeader: true,
+                    'fixedHeader': true,
                     // "pagingType": "simple",
                     "searchable": false,
                     "language": {
                         "emptyTable": " "
                     },
-                    "bDestroy": true
+                    'dom':"<B><'ks-table-entry-header'lf><rt><'ks-table-entry-footer'ip>",
+                    // "bDestroy": true,
 
-                });
-                $('.table-search').on('keyup', function() {
-            // if(this.value.length > 2){
-                table.search(this.value).draw();
-            // }
+            "responsive": true,
+            // "lengthChange": true,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            })
+            .buttons().container().appendTo('#usersDatatable_wrapper .col-md-6:eq(0)');
         });
-            });
-        </script>
+    </script>
 @endsection

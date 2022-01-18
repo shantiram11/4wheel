@@ -18,13 +18,12 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        //dd($request);
         if ($request->ajax()) {
             $columns = array(
-                0 => 'name',
-                1 => 'email',
-                2 => 'role',
-                3 => 'created_at',
+                0 => 'id',
+                1 => 'name',
+                2 => 'email',
+                3 => 'role',
                 4 => 'action',
             );
             //            $meta = $this->defaultTableInput($request->only(['length', 'start', 'order']));

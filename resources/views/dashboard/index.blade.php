@@ -68,6 +68,7 @@
 
 
     @include('_partials._dashboard._footer')
+    @yield('page_level_script')
 </body>
 
 </html>

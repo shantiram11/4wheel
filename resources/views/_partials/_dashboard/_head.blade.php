@@ -7,6 +7,8 @@
     <!-- Prevent the demo from appearing in search engines -->
     <meta name="robots" content="noindex">
 
+    {{-- datatables css--}}
+    <link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     <!-- Perfect Scrollbar -->
     <link type="text/css" href="{{ asset('assets/vendor/perfect-scrollbar.css') }}" rel="stylesheet">
 

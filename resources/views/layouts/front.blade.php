@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/icon/style.css') }}">
     <link rel="icon" href="{{ asset('assets/front/images/ico/favicon.ico') }}">
 
+    <script src="{{asset('assets/js/plugins/custom/magnific-popup.css')}}"></script>
+
     <script src="{{ asset('assets/front/library/modernizr-custom.js') }}"></script>
 
     <title>Homepage</title>
@@ -207,6 +209,9 @@ Default Header with a White Background & Dark text.
 
     </div>
     <!--end #page-wrapper-->
+    <script src="{{asset('assets/js/plugins/custom/magnific-popup.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="{{ asset('assets/front/library/jquery-2.2.0.min.js') }}"></script>
     <script src="{{ asset('assets/front/library/flexmenu.js') }}"></script>
     <script src="{{ asset('assets/front/library/nouislider.min.js') }}"></script>
