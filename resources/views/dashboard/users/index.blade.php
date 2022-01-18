@@ -7,7 +7,11 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0">Users</h1>
-            </div><!-- /.col -->
+            </div>
+            <div class="col-sm-3">
+            <a href="{{route('user.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add User</button></a>
+              </div>
+            <!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
       </div>
@@ -54,18 +58,9 @@
         </div>
     </div>
 </div>
-<style>
-    .ks-table-entry-header,
-    .ks-table-entry-footer{
-        display: flex;
-        justify-content: space-between;
-    }
-    .ks-table-entry-header{
-        padding-top: 15px;
-    }
-</style>
 @endsection
 @section('page_level_script')
+@include('dashboard.users._shared')
     <script>
         $(function(){
             $("#usersDatatable").DataTable({

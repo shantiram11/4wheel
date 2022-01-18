@@ -1,39 +1,44 @@
+ <!-- Main Footer -->
+ <footer class="main-footer">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
 <script type="text/javascript">
     const BASE_URL = "{{url('/')}}";
     const CSRF_TOKEN = "{{csrf_token()}}"
 </script>
 
 <!-- jQuery -->
-<script src="{{ asset('assets/vendor/jquery.min.js') }}"></script>
-<script src="{{asset('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
-{{-- <script src="{{asset('assets/vendor/datatables/FixedHeader/js/fixedHeader.bootstrap5.min.js')}}"></script> --}}
+<script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<!-- DataTables  & Plugins -->
+<script src="{{asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('assets/vendor/popper.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 
-<!-- Perfect Scrollbar -->
-<script src="{{ asset('assets/vendor/perfect-scrollbar.min.js') }}"></script>
-
-<!-- DOM Factory -->
-<script src="{{ asset('assets/vendor/dom-factory.js') }}"></script>
-
-<!-- MDK -->
-<script src="{{ asset('assets/vendor/material-design-kit.js') }}"></script>
-
-<!-- App -->
-<script src="{{ asset('assets/js/toggle-check-all.js') }}"></script>
-<script src="{{ asset('assets/js/check-selected-row.js') }}"></script>
-<script src="{{ asset('assets/js/dropdown.js') }}"></script>
-<script src="{{ asset('assets/js/sidebar-mini.js') }}"></script>
-<script src="{{ asset('assets/js/app.js') }}"></script>
-<script src="{{ asset('assets/js/app.js') }}"></script>
-{{-- custom --}}
-<script src="{{asset('assets/js/dashboard-custom.js')}}"></script>
-<script src="{{asset('assets/js/common.js')}}"></script>
-
-<!-- App Settings (safe to remove) -->
-<script src="{{ asset('assets/js/app-settings.js') }}"></script>
+@yield('page_level_script')
+</body>
+</html>
