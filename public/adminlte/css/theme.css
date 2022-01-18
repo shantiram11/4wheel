@@ -1,0 +1,8 @@
+.ks-table-entry-header,
+    .ks-table-entry-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .ks-table-entry-header{
+        padding-top: 15px;
+    }
