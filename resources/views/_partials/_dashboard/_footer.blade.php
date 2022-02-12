@@ -19,6 +19,10 @@
 
 <!-- jQuery -->
 <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+
+<!-- Dropzone image upload Query -->
+<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
@@ -38,7 +42,8 @@
 
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
-
+@include('utils._toastify')
+@include('utils._alertify')
 @yield('page_level_script')
 </body>
 </html>

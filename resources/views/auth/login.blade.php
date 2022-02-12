@@ -1,4 +1,4 @@
-
+@include('utils._error')
 @extends('layouts.auth')
 @section('content')
 <body class="hold-transition login-page">

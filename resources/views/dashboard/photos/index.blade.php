@@ -6,10 +6,10 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Users</h1>
+              <h1 class="m-0">photos</h1>
             </div>
             <div class="col-sm-3">
-            <a href="{{route('users.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add User</button></a>
+            <a href="{{route('photos.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add photos</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
@@ -24,30 +24,32 @@
 
                 <div class="card">
                     <div class="card-header">
-                    <h3 class="card-title">Users Databale</h3>
+                    <h3 class="card-title">photos Databale</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                    <table id="usersDatatable" class="table table-bordered table-striped">
+                    <table id="photosDatatable" class="table table-bordered table-striped">
                         <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Created At</th>
+                            <th>Company Name</th>
+                            <th>Vehicle Number</th>
+                            <th>Description</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>owner</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody></tbody>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Created At</th>
-                                <th>Action</th>
+                            <th>Company Name</th>
+                            <th>Vehicle Number</th>
+                            <th>Description</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Owner</th>
+                            <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -62,14 +64,14 @@
 </div>
 @endsection
 @section('page_level_script')
-@include('dashboard.users._shared')
+@include('dashboard.photos._shared')
     <script>
         $(function(){
-            $("#usersDatatable").DataTable({
+            $("#photosDatatable").DataTable({
 
                 "serverSide": true,
                     "ajax": {
-                        "url": BASE_URL + '/dashboard/users',
+                        "url": BASE_URL + '/dashboard/photos',
                         "dataType": "json",
                         "type": "GET",
                         "data": {
@@ -81,11 +83,12 @@
                         }
                     },
                     "columns": [
-                        { "data": "id"},
-                        { "data": "name"},
-                        { "data": "email" },
-                        { "data": "role"},
-                        { "data": "created_at"},
+                        { "data": "company_name",},
+                        { "data": "vehicle_number" },
+                        { "data": "description"},
+                        { "data": "location"},
+                        { "data": "status"},
+                        { "data": "owner"},
                         {
                             "data": "action",
                             "searchable": false,
@@ -117,7 +120,7 @@
             "autoWidth": false,
             "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             })
-            .buttons().container().appendTo('#usersDatatable_wrapper .col-md-6:eq(0)');
+            .buttons().container().appendTo('#photosDatatable_wrapper .col-md-6:eq(0)');
         });
     </script>
 @endsection

@@ -6,10 +6,10 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">User</h1>
+              <h1 class="m-0">vehicle</h1>
             </div>
             <div class="col-sm-3">
-            <a href="{{route('users.index')}}" class=""><button class="btn btn-block bg-gradient-secondary">Back</button></a>
+            <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-secondary">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-12">
                   <div class="card">
-                    <div class="card-header">User Details</h3>
+                    <div class="card-header">vehicle Details</h3>
 
                       <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -44,34 +44,66 @@
                         <tbody>
                             <tr>
                                 <th>
-                                 Name
+                                 Company Name
                                 </th>
                                 <td>
-                                    {{$user->name}}
+                                    {{$vehicle->company_name}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>
-                                    Email
+                                    Fuel type
                                 </th>
                                 <td>
-                                    {{$user->email}}
+                                    {{$vehicle->fuel_type}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>
-                                    Role
+                                    Brand Name
                                 </th>
                                 <td>
-                                    {{$user->role->label}}
+                                    {{$vehicle->brand}}
                                 </td>
                             </tr>
                             <tr>
                                 <th>
-                                    Created At
+                                   Vehicle Number plate
                                 </th>
                                 <td>
-                                    {{$user->created_at}}
+                                    {{$vehicle->vehicle_number}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                 Description
+                                </th>
+                                <td>
+                                    {{$vehicle->description}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                Location
+                                </th>
+                                <td>
+                                    {{$vehicle->location}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Vehicle owner
+                                </th>
+                                <td>
+                                    {{$vehicle->owner_id}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Total seat count
+                                </th>
+                                <td>
+                                    {{$vehicle->seat_count}}
                                 </td>
                             </tr>
                         </tbody>

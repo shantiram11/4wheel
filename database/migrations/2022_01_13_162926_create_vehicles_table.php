@@ -20,9 +20,9 @@ class CreateVehiclesTable extends Migration
             $table->string('vehicle_number');
             $table->string('brand');
             $table->string('seat_count');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('location');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->unsignedBigInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

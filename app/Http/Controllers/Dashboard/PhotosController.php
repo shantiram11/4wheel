@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
-use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
-use App\Models\User;
-class VehicleController extends Controller
+use App\Models\Photos;
+class PhotosController extends Controller
 {
-    /**
+    /*
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -18,12 +18,8 @@ class VehicleController extends Controller
 
         if ($request->ajax()) {
             $columns = array(
-                0 => 'company_name',
-                1 => 'vehicle_number',
-                2 => 'description',
-                3 => 'location',
-                4 => 'status',
-                5 => 'owner',
+                0 => 'image',
+                0 => 'vehicle_number',
                 6 => 'action'
             );
             //            $meta = $this->defaultTableInput($request->only(['length', 'start', 'order']));
@@ -34,20 +30,14 @@ class VehicleController extends Controller
             $dir    = $request->input('order.0.dir') ?? 'asc';
             $search = $request->input('search.value') ?? '';
 
-            $query = \DB::table('vehicles as v')
-                ->join('users as u', 'u.id', 'v.owner_id')
+            $query = \DB::table('photos as p')
+                ->join('vehicles as v', 'v.id', 'p.vehicle_id')
                 ->select(
-                    'v.company_name',
-                    'v.vehicle_number',
-                    'v.description',
-                    'v.location',
-                    'v.status',
-                    'u.name as owner'
+                    'v.image',
+                    'p.vehicle_number as vehicle_number'
                 );
-            $query->where('v.company_name', 'like', $search . '%')
-                ->orWhere('v.vehicle_number', 'like', $search . '%')
-                ->orWhere('v.description', 'like', $search . '%')
-                ->orWhere('u.name', 'like', $search . '%');
+            $query->where('p
+            p.vehicle_number', 'like', $search . '%');
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
@@ -58,13 +48,9 @@ class VehicleController extends Controller
             $data = array();
             if (isset($records)) {
                 foreach ($records as $k => $v) {
-                    $nestedData['company_name'] = $v->company_name;
                     $nestedData['vehicle_number'] = $v->vehicle_number;
-                    $nestedData['description'] = $v->description;
-                    $nestedData['location'] = $v->location;
-                    $nestedData['status'] = $v->status;
-                    $nestedData['owner'] = $v->owner;
-                    $nestedData['action'] = \View::make('dashboard.vehicles._action')->with('r',$v)->render();
+                    $nestedData['image'] = "<img class='img-fluid ks-mw-150' src='".asset('storage/uploads/photos/'.$v->image)."'/>";
+                    $nestedData['action'] = \View::make('dashboard.photos._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -75,7 +61,7 @@ class VehicleController extends Controller
                 "data" => $data
             ], 200);
         }
-        return view('dashboard.vehicles.index');
+        return view('dashboard.photos.index');
     }
 
     /**
@@ -97,34 +83,6 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        $product_photos = $request->file('product_photo');
-        if($product_photos){
-            foreach($product_photos as $image) {
-                $imageName = SamanHarayoHelper::renameImageFileUpload($image);
-                $image->storeAs(
-                    'public/uploads/report', $imageName
-                );
-                Photo::create([
-                    'photo'         =>          $imageName,
-                    'report_id'     =>          null,
-                    'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                    'featured'      =>          Photo::NOT_FEATURED,
-                ]);
-            }
-        }
-        $featured_image = $request->file('featured_image');
-        if($featured_image){
-            $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
-            $image->storeAs(
-                'public/uploads/featured', $imageName
-            );
-            Photo::create([
-                'photo'         =>          $imageName,
-                'report_id'     =>          null,
-                'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                'featured'      =>          Photo::FEATURED,
-            ]);
-        }
         $vehicle = Vehicle::create([
             'company_name'              => $request->input('company_name'),
             'fuel_type'                 => $request->input('fuel_type'),

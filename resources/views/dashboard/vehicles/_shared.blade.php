@@ -1,8 +1,8 @@
 <script>
-    function deleteUser(id,redirect = false)
+    function deleteVehicle(id,redirect = false)
     {
-        let table = 'userDatatable';
-        let action = BASE_URL+"/dashboard/user/"+id;
+        let table = 'vehicleDatatable';
+        let action = BASE_URL+"/dashboard/vehicles/"+id;
         $.ajax({
             "url": action,
             "dataType":"json",
@@ -15,7 +15,7 @@
             success:function(resp){
                 // $form.removeClass("sp-loading");
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, "{{route('user.index')}}");
+                    alertifySuccessAndRedirect(resp.message, "{{route('vehicles.index')}}");
                 }else{
                     alertifySuccess(resp.message);
                 }

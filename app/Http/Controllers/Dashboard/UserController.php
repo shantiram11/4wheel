@@ -18,6 +18,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+
         if ($request->ajax()) {
             $columns = array(
                 0 => 'id',
@@ -103,7 +104,7 @@ class UserController extends Controller
             'email_verified_at' => now(),
             'password'          => $request->input('password')
         ]);
-        return redirect()->route('user.show', compact('user'))->with('alert.success', 'User Successfully Created !!');
+        return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Created !!');
     }
 
     /**
@@ -145,7 +146,7 @@ class UserController extends Controller
             'role_id'           => $request->input('role_id'),
             'updated_at'        => now(),
         ]);
-        return redirect()->route('user.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
+        return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
     }
 
     /**

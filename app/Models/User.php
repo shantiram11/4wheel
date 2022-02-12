@@ -125,4 +125,9 @@ class User extends Authenticatable implements MustVerifyEmail
      {
          return $this->belongsTo(Role::class);
      }
+
+     public function vehicles(): \Illuminate\Database\Eloquent\Relations\HasMany
+     {
+         return $this->hasMany(vehicles::class);
+     }
 }

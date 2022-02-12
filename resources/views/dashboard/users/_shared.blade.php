@@ -2,7 +2,7 @@
     function deleteUser(id,redirect = false)
     {
         let table = 'userDatatable';
-        let action = BASE_URL+"/dashboard/user/"+id;
+        let action = BASE_URL+"/dashboard/users/"+id;
         $.ajax({
             "url": action,
             "dataType":"json",
@@ -15,7 +15,7 @@
             success:function(resp){
                 // $form.removeClass("sp-loading");
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, "{{route('user.index')}}");
+                    alertifySuccessAndRedirect(resp.message, "{{route('users.index')}}");
                 }else{
                     alertifySuccess(resp.message);
                 }

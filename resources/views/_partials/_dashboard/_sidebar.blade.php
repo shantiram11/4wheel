@@ -34,6 +34,8 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+              <!-- users side menu bar -->
           <li class="nav-item">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-users"></i>
@@ -44,19 +46,45 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('user.index')}}" class="nav-link active">
+                <a href="{{route('users.index')}}" class="nav-link ">
                   <i class="fas fa-eye nav-icon"></i>
                   <p>View user listing</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('user.create')}}" class="nav-link">
+                <a href="{{route('users.create')}}" class="nav-link">
                   <i class="fas fa-user-plus nav-icon"></i>
                   <p>Add Users</p>
                 </a>
               </li>
             </ul>
           </li>
+     <!-- vehicles side menu bar -->
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-truck-pickup"></i>
+              <p>
+               Vehicles
+                <i class="right fas fa-angle-down"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('vehicles.index')}}" class="nav-link ">
+                  <i class="fas fa-eye nav-icon"></i>
+                  <p>View Vehicle listing</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('vehicles.create')}}" class="nav-link">
+                  <i class="fas fa-truck-pickup nav-icon"></i>
+                  <p>Add vehicles</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
