@@ -9,7 +9,7 @@
               <h1 class="m-0">User</h1>
             </div>
             <div class="col-sm-3">
-            <a href="#" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
+            <a href="{{route('users.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->

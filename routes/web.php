@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('vehicles', \App\Http\Controllers\Dashboard\VehicleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
         Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
+        Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
     });
 });
 
@@ -42,5 +43,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
 //session.cart middleware group starts
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
-
-//session.cart middleware group ends
+Route::get('/property', function () {
+    return view('front.detail.property');
+});

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Dashboard;
+use App\Helpers\AppHelper;
+use App\Models\Photo;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,7 +13,7 @@ class VehicleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\JsonResponse
      */
     public function index(Request $request)
     {
@@ -81,7 +83,7 @@ class VehicleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -93,36 +95,36 @@ class VehicleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        $product_photos = $request->file('product_photo');
+        $product_photos = $request->file('vehicle_photo');
         if($product_photos){
             foreach($product_photos as $image) {
-                $imageName = SamanHarayoHelper::renameImageFileUpload($image);
+                $imageName = AppHelper::renameImageFileUpload($image);
                 $image->storeAs(
-                    'public/uploads/report', $imageName
+                    'public/uploads/vehicle', $imageName
                 );
                 Photo::create([
-                    'photo'         =>          $imageName,
-                    'report_id'     =>          null,
-                    'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                    'featured'      =>          Photo::NOT_FEATURED,
+                    'image'          =>          $imageName,
+                    'vehicle_id'     =>          null,
+                    'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
+                    'featured'       =>          Photo::NOT_FEATURED,
                 ]);
             }
         }
         $featured_image = $request->file('featured_image');
         if($featured_image){
-            $imageName = SamanHarayoHelper::renameImageFileUpload($featured_image);
-            $image->storeAs(
-                'public/uploads/featured', $imageName
+            $imageName = AppHelper::renameImageFileUpload($featured_image);
+            $featured_image->storeAs(
+                'public/uploads/vehicle', $imageName
             );
             Photo::create([
-                'photo'         =>          $imageName,
-                'report_id'     =>          null,
-                'store_type'    =>          Photo::STORE_TYPE_TEMPORARY,
-                'featured'      =>          Photo::FEATURED,
+                'image'          =>          $imageName,
+                'vehicle_id'     =>          1,
+                'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
+                'featured'       =>          Photo::FEATURED,
             ]);
         }
         $vehicle = Vehicle::create([
@@ -134,11 +136,8 @@ class VehicleController extends Controller
             'description'               => $request->input('description'),
             'location'                  => $request->input('location'),
             'status'                    => $request->input('status'),
-            'brand'                     => $request->input('brand'),
-            'seat_count'                => $request->input('seat_count'),
             'owner_id'                  => auth()->user()->id,
         ]);
-
         return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
 
     }
@@ -147,7 +146,7 @@ class VehicleController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Vehicle $vehicle)
     {
@@ -158,11 +157,13 @@ class VehicleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Vehicle $vehicle)
     {
-        //
+        $users = User::pluck('name', 'id');
+
+        return view('dashboard.vehicles.edit', compact('vehicle', 'users'));
     }
 
     /**
@@ -170,11 +171,23 @@ class VehicleController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Vehicle $vehicle)
     {
-        //
+        User::where('id', $vehicle->id)->update([
+            'company_name'              => $request->input('company_name'),
+            'fuel_type'                 => $request->input('fuel_type'),
+            'vehicle_number'            => $request->input('vehicle_number'),
+            'brand'                     => $request->input('brand'),
+            'seat_count'                => $request->input('seat_count'),
+            'description'               => $request->input('description'),
+            'location'                  => $request->input('location'),
+            'status'                    => $request->input('status'),
+            'owner_id'                  => auth()->user()->id,
+            'updated_at'        => now(),
+        ]);
+        return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'vehicle Successfully Updated !!');
     }
 
     /**

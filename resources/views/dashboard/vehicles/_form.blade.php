@@ -55,7 +55,7 @@
                     <div class="form-group">
                         <label for="input-images">Images</label>
                         <div class="input-images @error('product_photo') is-invalid @enderror"></div>
-                        @error('product_photo')
+                        @error('vehicle_photo')
                         <span class="invalid-feedback" role="alert">
                             {{$message}}
                         </span>
@@ -101,28 +101,54 @@
                                  </span>
                                  @enderror
                   </div>
+                  <div class="form-group">
+                      <!--begin::Col-->
 
-                {{-- <div class="form-group">
-                  <label for="role">Role</label>
-                  <select class="form-control @error('role_id') is-invalid @enderror" name="role_id">
-                    <option value="">{{ __('-- Select Role --') }}</option>
-                    @foreach ($roles as $k => $v)
-                        <?php
-                        if (old('role_id', $vehicle->role_id) == $k) {
-                            $selected = 'selected';
-                        } else {
-                            $selected = '';
-                        }
-                        ?>
-                        <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
-                    @endforeach
-                </select>
-                @error('role_id')
-                <span class="invalid-feedback" role="alert">
-                {{ $message }}
-                </span>
-                @enderror
-                </div> --}}
+                          <label class="required fs-6 fw-bold mb-2" for="file">
+                              Profile Image
+                          </label>
+                          <input type="hidden" name="image_hidden_value" class="image_hidden_value"
+                                 value="{{ old('image', $vehicle->image) }}">
+
+                          <input type="file" name="featured_image" onchange="loadPreview(this);"
+                                 class="form-control form-control-solid @error('image') is-invalid @enderror" id="image"
+                                 value="{{ old('image', $vehicle->image) }}" />
+                          <div class="kt_preview_image_container {{ empty($vehicle->image) ? 'd-none' : '' }}">
+                              <img id="kt_preview_img"
+                                   src="{{ empty($vehicle->image) ? '' : asset('public/uploads/vehicles/' . $vehicle->image) }}"
+                                   class="img-fluid " />
+                              <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
+                          </div>
+                          @error('image')
+                          <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                          @enderror
+                      <!--end::Col-->
+                  </div>
+
+
+                  {{-- <div class="form-group">
+                    <label for="role">Role</label>
+                    <select class="form-control @error('role_id') is-invalid @enderror" name="role_id">
+                      <option value="">{{ __('-- Select Role --') }}</option>
+                      @foreach ($roles as $k => $v)
+                          <?php
+                          if (old('role_id', $vehicle->role_id) == $k) {
+                              $selected = 'selected';
+                          } else {
+                              $selected = '';
+                          }
+                          ?>
+                          <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                      @endforeach
+                  </select>
+                  @error('role_id')
+                  <span class="invalid-feedback" role="alert">
+                  {{ $message }}
+                  </span>
+                  @enderror
+                  </div> --}}
 
 
                 {{-- <div class="form-check">
@@ -139,4 +165,16 @@
             </form>
           </div>
           <!-- /.card -->
+@section('page_level_script')
+    <script>
+        $(document).ready(function() {
+            $('#image').change(function() {
+                $('.kt_preview_image_container').removeClass('d-none');
+            });
+        });
+        $(function(){
+            $('.input-images').imageUploader();
+        });
+    </script>
+@endsection
 

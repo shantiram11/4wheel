@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
-use App\Models\Photos;
+use App\Models\Photo;
 class PhotosController extends Controller
 {
     /*
@@ -79,7 +79,6 @@ class PhotosController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -87,8 +86,6 @@ class PhotosController extends Controller
             'company_name'              => $request->input('company_name'),
             'fuel_type'                 => $request->input('fuel_type'),
             'vehicle_number'            => $request->input('vehicle_number'),
-            'brand'                     => $request->input('brand'),
-            'seat_count'                => $request->input('seat_count'),
             'description'               => $request->input('description'),
             'location'                  => $request->input('location'),
             'status'                    => $request->input('status'),
@@ -104,8 +101,8 @@ class PhotosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Vehicle $vehicle
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Vehicle $vehicle)
     {

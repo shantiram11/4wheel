@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVehiclePhotosTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateVehiclePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle_photos', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('car_image');
+            $table->string('image');
+            $table->enum('store_type', ['temp', 'perm'])->default('temp');
+            $table->enum('featured', ['yes', 'no'])->default('no');
             $table->unsignedBigInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();

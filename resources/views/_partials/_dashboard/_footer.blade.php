@@ -21,7 +21,7 @@
 <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 
 <!-- Dropzone image upload Query -->
-<script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+ <script src="{{asset('adminlte/plugins/image-upload/image-uploader.min.js')}}"></script>
 
 <!-- Bootstrap 4 -->
 <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
