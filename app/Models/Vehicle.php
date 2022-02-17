@@ -31,4 +31,16 @@ class Vehicle extends Model
     {
         return $this->belongsToMany(users::class, '');
     }
+
+    public function featured_photo(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Photo::class, 'vehicle_id', 'id')->where(function($q){
+            $q->where('featured', 'yes');
+        });
+    }
+    public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Photo::class, 'vehicle_id', 'id');
+    }
+
 }

@@ -6,10 +6,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Create Roles</h1>
+                    <h1 class="m-0">Vehicle</h1>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{route('roles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
+                    <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->
@@ -17,6 +17,7 @@
     </div>
     <!-- /.content-header -->
     <!-- Main content -->
+
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -25,14 +26,15 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">User Roles and Permissions</h3>
+                            <h3 class="card-title">Update Vehicle Details</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form" action="{{route('roles.store')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @include('dashboard.roles._form',['show' => true, 'buttonText' => 'Create'])
+                        <form id="edit_vehicle_form" class="form" action="{{route('vehicles.update',$vehicle)}}" method="POST">
+                            {{ method_field('PUT') }}
+                            @include('dashboard.vehicles._form',['show' => false,'buttonText' => 'Update'])
                         </form>
                     </div>
                     <!-- /.card -->
 @endsection
+

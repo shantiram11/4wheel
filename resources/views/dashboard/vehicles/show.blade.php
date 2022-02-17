@@ -1,6 +1,10 @@
 @extends('layouts.dashboard')
 @section('content')
 
+    <?php
+        $featured_image = $vehicle->photos->where('featured','yes')->first();
+    ?>
+
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -106,6 +110,14 @@
                                     {{$vehicle->seat_count}}
                                 </td>
                             </tr>
+                            <tr>
+                                <th>
+                                    Profile Image
+                                </th>
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/vehicles/'.$featured_image->image) }}" />
+                                </td>
+                            </tr>
                         </tbody>
                       </table>
                     </div>
@@ -113,4 +125,10 @@
                   </div>
                   <!-- /.card -->
           <!-- /.card -->
+
+                    <style>
+                        .ks-mw-250{
+                            max-width: 250px;
+                        }
+                    </style>
 @endsection

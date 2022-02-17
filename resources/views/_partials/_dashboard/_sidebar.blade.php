@@ -97,13 +97,13 @@
                     <li class="nav-item">
                         <a href="{{route('roles.index')}}" class="nav-link ">
                             <i class=" fas fa-solid fa-circle-check"></i>
-                            <p>View Vehicle listing</p>
+                            <p>View Role listing</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('roles.create')}}" class="nav-link">
                             <i class=" fas fa-solid fa-circle-check"></i>
-                            <p>Add vehicles</p>
+                            <p>Add Roles</p>
                         </a>
                     </li>
                 </ul>

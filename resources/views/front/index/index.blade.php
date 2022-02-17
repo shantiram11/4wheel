@@ -79,7 +79,7 @@
                             </p>
                         </div>
                         <div class="caption-outside">
-                            <a class="button-sq link-sq" href="property_page.html">
+                            <a class="button-sq link-sq" href={{route('property')}}>
                                 <i class="icon big icon-slim-arrow-right"></i>
                                 <span>read more</span>
                             </a>
@@ -185,7 +185,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_01.jpg') }}"
@@ -196,7 +196,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">VW Golf 7 1.6 TDI -
+                                        <a href={{route('property')}} class="title-sq">VW Golf 7 1.6 TDI -
                                             DSG</a>
                                     </div>
 
@@ -229,7 +229,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_02.jpg') }}"
@@ -239,7 +239,7 @@
                                 </a>
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">Mercedes-Benz C AMG</a>
+                                        <a href={{route('property')}} class="title-sq">Mercedes-Benz C AMG</a>
                                     </div>
 
                                     {{-- <div class="icons-row">
@@ -271,7 +271,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_03.jpg') }}"
@@ -282,7 +282,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">Audi A3 2.0 TDI</a>
+                                        <a href={{route('property')}} class="title-sq">Audi A3 2.0 TDI</a>
                                     </div>
 
                                     {{-- <div class="icons-row">
@@ -314,7 +314,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_04.jpg') }}"
@@ -325,7 +325,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">1971 Buick Skylark
+                                        <a href={{route('property')}} class="title-sq">1971 Buick Skylark
                                             GSX</a>
                                     </div>
 
@@ -358,7 +358,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_05.jpg') }}"
@@ -369,7 +369,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">Lada VAZ 2101</a>
+                                        <a href={{route('property')}} class="title-sq">Lada VAZ 2101</a>
                                     </div>
 
                                     {{-- <div class="icons-row">
@@ -401,7 +401,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href="property_page.html">
+                                <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img src="{{ asset('assets/front/images/cars/property_item_cars_06.jpg') }}"
@@ -412,7 +412,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href="property_page.html" class="title-sq">BMW M4 2016</a>
+                                        <a href={{route('property')}} class="title-sq">BMW M4 2016</a>
                                     </div>
 
                                     {{-- <div class="icons-row">

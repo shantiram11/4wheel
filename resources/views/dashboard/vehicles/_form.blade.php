@@ -13,7 +13,8 @@
                     @enderror
                   </div> --}}
                 <div class="form-group">
-                  <label for="company_name">Company Name</label>
+                  <label for="company_name">Compan
+                      y Name</label>
                   <input type="text"
                                class="form-control @error('company_name') is-invalid @enderror" type="text" name="company_name" value="{{ old('company_name', $vehicle->company_name) }}">
                                @error('company_name')

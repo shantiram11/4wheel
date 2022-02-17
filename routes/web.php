@@ -45,4 +45,4 @@ Route::group(['middleware' => ['auth','verified']], function () {
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
 Route::get('/property', function () {
     return view('front.detail.property');
-});
+})->name('property');

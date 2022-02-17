@@ -39,6 +39,7 @@ class VehicleController extends Controller
             $query = \DB::table('vehicles as v')
                 ->join('users as u', 'u.id', 'v.owner_id')
                 ->select(
+                    'v.id',
                     'v.company_name',
                     'v.vehicle_number',
                     'v.description',
@@ -99,6 +100,18 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        $vehicle = Vehicle::create([
+            'company_name'              => $request->input('company_name'),
+            'fuel_type'                 => $request->input('fuel_type'),
+            'vehicle_number'            => $request->input('vehicle_number'),
+            'brand'                     => $request->input('brand'),
+            'seat_count'                => $request->input('seat_count'),
+            'description'               => $request->input('description'),
+            'location'                  => $request->input('location'),
+            'status'                    => $request->input('status'),
+            'owner_id'                  => auth()->user()->id,
+        ]);
+//        dd($request->file('vehicle_photo'));
         $product_photos = $request->file('vehicle_photo');
         if($product_photos){
             foreach($product_photos as $image) {
@@ -108,7 +121,7 @@ class VehicleController extends Controller
                 );
                 Photo::create([
                     'image'          =>          $imageName,
-                    'vehicle_id'     =>          null,
+                    'vehicle_id'     =>          $vehicle->id,
                     'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
                     'featured'       =>          Photo::NOT_FEATURED,
                 ]);
@@ -122,25 +135,16 @@ class VehicleController extends Controller
             );
             Photo::create([
                 'image'          =>          $imageName,
-                'vehicle_id'     =>          1,
+                'vehicle_id'     =>          $vehicle->id,
                 'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
                 'featured'       =>          Photo::FEATURED,
             ]);
         }
-        $vehicle = Vehicle::create([
-            'company_name'              => $request->input('company_name'),
-            'fuel_type'                 => $request->input('fuel_type'),
-            'vehicle_number'            => $request->input('vehicle_number'),
-            'brand'                     => $request->input('brand'),
-            'seat_count'                => $request->input('seat_count'),
-            'description'               => $request->input('description'),
-            'location'                  => $request->input('location'),
-            'status'                    => $request->input('status'),
-            'owner_id'                  => auth()->user()->id,
-        ]);
+
         return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
 
     }
+
 
     /**
      * Display the specified resource.
@@ -148,10 +152,12 @@ class VehicleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show(Vehicle $vehicle)
+    public function show($id)
     {
+        $vehicle = Vehicle::with('photos')->where('id', $id)->first();
         return view('dashboard.vehicles.show', compact('vehicle'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -185,7 +191,7 @@ class VehicleController extends Controller
             'location'                  => $request->input('location'),
             'status'                    => $request->input('status'),
             'owner_id'                  => auth()->user()->id,
-            'updated_at'        => now(),
+            'updated_at'                => now(),
         ]);
         return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'vehicle Successfully Updated !!');
     }
