@@ -80,6 +80,14 @@
                             </tr>
                             <tr>
                                 <th>
+                                   Rate
+                                </th>
+                                <td>
+                                    {{$vehicle->rate}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
                                  Description
                                 </th>
                                 <td>

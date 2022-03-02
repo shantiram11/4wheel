@@ -18,6 +18,8 @@ class Vehicle extends Model
         'fuel_type',
         'vehicle_number',
         'brand',
+        'model',
+        'rate',
         'seat_count',
         'description',
         'location',

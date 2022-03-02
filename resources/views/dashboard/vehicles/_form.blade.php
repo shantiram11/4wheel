@@ -13,8 +13,7 @@
                     @enderror
                   </div> --}}
                 <div class="form-group">
-                  <label for="company_name">Compan
-                      y Name</label>
+                  <label for="company_name">Company Name</label>
                   <input type="text"
                                class="form-control @error('company_name') is-invalid @enderror" type="text" name="company_name" value="{{ old('company_name', $vehicle->company_name) }}">
                                @error('company_name')
@@ -23,6 +22,16 @@
                                </span>
                                @enderror
                 </div>
+                  <div class="form-group">
+                      <label for="rate">Rate Per Hour </label>
+                      <input type="text"
+                             class="form-control @error('rate') is-invalid @enderror" type="text" name="rate" value="{{ old('rate', $vehicle->rate) }}">
+                      @error('rate')
+                      <span class="invalid-feedback" role="alert">
+                                     {{ $message }}
+                                 </span>
+                      @enderror
+                  </div>
                 <div class="form-group">
                     <label for="fuel_type">Fuel Type </label>
                     <input type="text"
@@ -128,34 +137,6 @@
                       <!--end::Col-->
                   </div>
 
-
-                  {{-- <div class="form-group">
-                    <label for="role">Role</label>
-                    <select class="form-control @error('role_id') is-invalid @enderror" name="role_id">
-                      <option value="">{{ __('-- Select Role --') }}</option>
-                      @foreach ($roles as $k => $v)
-                          <?php
-                          if (old('role_id', $vehicle->role_id) == $k) {
-                              $selected = 'selected';
-                          } else {
-                              $selected = '';
-                          }
-                          ?>
-                          <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
-                      @endforeach
-                  </select>
-                  @error('role_id')
-                  <span class="invalid-feedback" role="alert">
-                  {{ $message }}
-                  </span>
-                  @enderror
-                  </div> --}}
-
-
-                {{-- <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div> --}}
               </div>
               <!-- /.card-body -->
 

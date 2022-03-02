@@ -13,7 +13,7 @@
         </div>
     {{--@endif--}}
     <div class="form-group">
-        <label for="name">Description</label>
+        <label for="description">Description</label>
         <input type="text"
                class="form-control @error('description') is-invalid @enderror" type="text" name="description" value="{{ old('description', $role->description) }}">
         @error('description')
