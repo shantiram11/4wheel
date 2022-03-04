@@ -123,7 +123,7 @@
                                     Profile Image
                                 </th>
                                 <td>
-                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/vehicles/'.$featured_image->image) }}" />
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
                                 </td>
                             </tr>
                         </tbody>

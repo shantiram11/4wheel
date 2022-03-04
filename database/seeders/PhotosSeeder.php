@@ -14,13 +14,6 @@ class PhotosSeeder extends Seeder
      */
     public function run()
     {
-        Photo::upsert([
-            [
-                'image'                      => 'car.jpg',
-                'store_type'                     => 'perm',
-                'featured'         => 'yes',
-                'vehicle_id'                   => 1,
-            ]
-        ],[],[]);
+        \App\Models\Photo::factory(20)->create();
     }
 }
