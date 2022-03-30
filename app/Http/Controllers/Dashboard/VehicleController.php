@@ -92,7 +92,8 @@ class VehicleController extends Controller
     {
         $vehicle = new Vehicle();
         $vehicle_options = Vehicle::VEHICLE_OPTIONS;
-        return view('dashboard.vehicles.create', compact('vehicle','vehicle_options'));
+        $fuel_options = Vehicle::FUEL_OPTIONS;
+        return view('dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options'));
     }
 
     /**

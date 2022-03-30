@@ -35,15 +35,25 @@
                                  </span>
                       @enderror
                   </div>
-                <div class="form-group">
-                    <label for="fuel_type">Fuel Type </label>
-                    <input type="text"
-                                 class="form-control @error('fuel_type') is-invalid @enderror" type="text" name="fuel_type" value="{{ old('fuel_type', $vehicle->fuel_type) }}">
-                                 @error('fuel_type')
-                                 <span class="invalid-feedback" role="alert">
+                  <div class="form-group"><label for="vehicle_type">Fuel Type</label>
+                      <select class="form-control form-control-solid @error('fuel_type') is-invalid @enderror" name="fuel_type">fuel_type
+                          <option value="">{{ __('-- Select --') }}</option>
+                          @foreach($fuel_options as $options)
+                              <?php
+                              if( old('fuel_type', $vehicle->fuel_type) == $options){
+                                  $selected = "selected";
+                              }else{
+                                  $selected = '';
+                              }
+                              ?>
+                              <option value="{{$options}}" {{ $selected }}>{{ Str::title(str_replace('_', ' ', $options)) }}</option>
+                          @endforeach
+                      </select>
+                      @error('fuel_type')
+                      <span class="invalid-feedback" role="alert">
                                      {{ $message }}
                                  </span>
-                                 @enderror
+                      @enderror
                   </div>
                   <div class="form-group">
                     <label for="vehicle_number">Vehicle Number </label>

@@ -118,14 +118,14 @@
                                     {{$vehicle->seat_count}}
                                 </td>
                             </tr>
-{{--                            <tr>--}}
-{{--                                <th>--}}
-{{--                                    Profile Image--}}
-{{--                                </th>--}}
-{{--                                <td>--}}
-{{--                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />--}}
-{{--                                </td>--}}
-{{--                            </tr>--}}
+                            <tr>
+                                <th>
+                                    Profile Image
+                                </th>
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
+                                </td>
+                            </tr>
                         </tbody>
                       </table>
                     </div>

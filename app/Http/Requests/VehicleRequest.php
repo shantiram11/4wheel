@@ -25,13 +25,13 @@ class VehicleRequest extends FormRequest
     {
         return [
             'company_name' => ['required', 'string', 'max:191'],
-            'fuel_type' => ['required', 'string', 'max:191'],
+            'fuel_type' => ['required','in:petrol,diesel,hybrid,electric'],
             'vehicle_number' => ['required', 'string', 'max:191'],
             'brand' => ['required', 'string', 'max:191'],
             'seat_count' => ['required', 'string', 'max:191'],
             'description' => ['required', 'string', 'max:191'],
             'location' => ['required', 'string', 'max:191'],
-            'vehicle_type' => ['required', 'string', 'max:191'],
+            'vehicle_type'  => ['required','in:car,jeep,van,bike'],
             'model' => ['required', 'string', 'max:191'],
             'status' => ['nullable'],
             'owner_id' => ['nullable'],

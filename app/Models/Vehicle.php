@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     use HasFactory;
-const   VEHICLE_OPTIONS = [ 'car', 'jeep', 'bike','van'
-];
+    const   VEHICLE_OPTIONS = [ 'car', 'jeep', 'bike','van'];
+    const   FUEL_OPTIONS = [ 'hybrid', 'petrol', 'electric','diesel'];
     /**
      * The attributes that are mass assignable.
      *
