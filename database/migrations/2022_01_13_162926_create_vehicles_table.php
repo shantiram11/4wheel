@@ -22,7 +22,7 @@ class CreateVehiclesTable extends Migration
             $table->string('seat_count');
             $table->string('description')->nullable();
             $table->string('location');
-            $table->string('vehicle_type');
+            $table->enum('vehicle_type',['car','Motorbike','Jeep'])->default('car');
             $table->string('rate');
             $table->string('model');
             $table->string('status')->nullable();

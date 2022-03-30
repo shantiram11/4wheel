@@ -31,6 +31,7 @@
             <!-- form start -->
             <form class="form" action="{{route('vehicles.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
+
                 @include('dashboard.vehicles._form',['show' => true, 'buttonText' => 'Create'])
             </form>
           </div>

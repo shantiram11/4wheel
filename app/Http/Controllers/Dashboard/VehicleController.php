@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 use App\Helpers\AppHelper;
+use App\Http\Requests\VehicleRequest;
 use App\Models\Photo;
+use Codebyray\ReviewRateable\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -86,10 +88,11 @@ class VehicleController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function create()
+    public function create(Vehicle $vehicle)
     {
         $vehicle = new Vehicle();
-        return view('dashboard.vehicles.create', compact('vehicle'));
+        $vehicle_options = Vehicle::VEHICLE_OPTIONS;
+        return view('dashboard.vehicles.create', compact('vehicle','vehicle_options'));
     }
 
     /**
@@ -98,14 +101,16 @@ class VehicleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(VehicleRequest $request)
     {
         $vehicle = Vehicle::create([
             'company_name'              => $request->input('company_name'),
             'fuel_type'                 => $request->input('fuel_type'),
             'vehicle_number'            => $request->input('vehicle_number'),
             'brand'                     => $request->input('brand'),
-            'rate'                     => $request->input('rate'),
+            'vehicle_type'              => $request->input('vehicle_type'),
+            'model'                     => $request->input('model'),
+            'rate'                      => $request->input('rate'),
             'seat_count'                => $request->input('seat_count'),
             'description'               => $request->input('description'),
             'location'                  => $request->input('location'),
@@ -142,6 +147,7 @@ class VehicleController extends Controller
             ]);
         }
 
+
         return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
 
     }
@@ -164,13 +170,14 @@ class VehicleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return array
      */
     public function edit(Vehicle $vehicle)
     {
         $users = User::pluck('name', 'id');
-
-        return view('dashboard.vehicles.edit', compact('vehicle', 'users'));
+$vehicle_option = null;
+        return [$vehicle_option => Vehicle::VEHICLE_OPTIONS,
+            view('dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_option'))];
     }
 
     /**
@@ -180,7 +187,7 @@ class VehicleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Vehicle $vehicle)
+    public function update(VehicleRequest $request, Vehicle $vehicle)
     {
         User::where('id', $vehicle->id)->update([
             'company_name'              => $request->input('company_name'),
@@ -208,4 +215,17 @@ class VehicleController extends Controller
     {
         //
     }
+
+    /**
+     *To rate a individual vehicle
+     */
+    public function vehicleStar (Request $request, Vehicle $vehicle): \Illuminate\Http\RedirectResponse
+    {
+        $rating = new Rating;
+        $rating->user_id = Auth::id();
+        $rating->rating = $request->input('star');
+        $vehicle->rating()->save($rating);
+        return redirect()->back();
+    }
+
 }

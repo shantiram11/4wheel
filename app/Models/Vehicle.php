@@ -8,24 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     use HasFactory;
+const   VEHICLE_OPTIONS = [ 'car', 'jeep', 'bike','van'
+];
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-    protected $fillable = [
-        'company_name',
-        'fuel_type',
-        'vehicle_number',
-        'brand',
-        'model',
-        'rate',
-        'seat_count',
-        'description',
-        'location',
-        'status',
-        'owner_id'
-    ];
+    protected $guarded = ['id'];
 
 
 
@@ -44,5 +34,8 @@ class Vehicle extends Model
     {
         return $this->hasMany(Photo::class, 'vehicle_id', 'id');
     }
-
+    public function rating(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Rating::class);
+    }
 }

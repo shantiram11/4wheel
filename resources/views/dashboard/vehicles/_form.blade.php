@@ -1,5 +1,8 @@
+
 @include('utils._error')
+{{--@dd("adsfadsf");--}}
             <form>
+
                 @csrf
               <div class="card-body">
                 {{-- <div class="form-group">
@@ -52,8 +55,7 @@
                                  </span>
                                  @enderror
                   </div>
-                  <div class="form-group">
-                    <label for="brand">Brand</label>
+                  <div class="form-group"><label for="brand">Brand</label>
                     <input type="text"
                                  class="form-control @error('brand') is-invalid @enderror" type="text" name="brand" value="{{ old('brand', $vehicle->brand) }}">
                                  @error('brand')
@@ -62,8 +64,36 @@
                                  </span>
                                  @enderror
                   </div>
-                    <div class="form-group">
-                        <label for="input-images">Images</label>
+                  <div class="form-group"><label for="brand">Model</label>
+                      <input type="text"
+                             class="form-control @error('model') is-invalid @enderror" type="text" name="model" value="{{ old('model', $vehicle->model) }}">
+                      @error('model')
+                      <span class="invalid-feedback" role="alert">
+                                     {{ $message }}
+                                 </span>
+                      @enderror
+                  </div>
+                  <div class="form-group"><label for="vehicle_type">Vehicle Type</label>
+                      <select class="form-control form-control-solid @error('template') is-invalid @enderror" name="vehicle_type">vehicle_type
+                          <option value="">{{ __('-- Select --') }}</option>
+                          @foreach($vehicle_options as $options)
+                              <?php
+                              if( old('vehicle_type', $vehicle->vehicle_type) == $options){
+                                  $selected = "selected";
+                              }else{
+                                  $selected = '';
+                              }
+                              ?>
+                              <option value="{{$options}}" {{ $selected }}>{{ Str::title(str_replace('_', ' ', $options)) }}</option>
+                          @endforeach
+                      </select>
+                      @error('vehicle_type')
+                      <span class="invalid-feedback" role="alert">
+                                     {{ $message }}
+                                 </span>
+                      @enderror
+                  </div>
+                    <div class="form-group"><label for="input-images">Images</label>
                         <div class="input-images @error('product_photo') is-invalid @enderror"></div>
                         @error('vehicle_photo')
                         <span class="invalid-feedback" role="alert">
@@ -71,8 +101,7 @@
                         </span>
                         @enderror
                     </div>
-                  <div class="form-group">
-                    <label for="seat_count">Seat Count</label>
+                  <div class="form-group"><label for="seat_count">Seat Count</label>
                     <input type="text"
                                  class="form-control @error('seat_count') is-invalid @enderror" type="text" name="seat_count" value="{{ old('seat_count', $vehicle->seat_count) }}">
                                  @error('seat_count')
@@ -138,14 +167,13 @@
                   </div>
 
               </div>
-              <!-- /.card-body -->
+{{--              <!-- /.card-body -->--}}
 
               <div class="card-footer">
                 <button type="submit"
                 class="btn btn-info">{{$buttonText}}</button>
               </div>
             </form>
-          </div>
           <!-- /.card -->
 @section('page_level_script')
     <script>

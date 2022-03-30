@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
+        Codebyray\ReviewRateable\ReviewRateableServiceProvider::class
 
     ],
 

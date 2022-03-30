@@ -34,7 +34,7 @@ class VehicleRequest extends FormRequest
             'vehicle_type' => ['required', 'string', 'max:191'],
             'model' => ['required', 'string', 'max:191'],
             'status' => ['nullable'],
-            'owner_id' => ['required'],
+            'owner_id' => ['nullable'],
         ];
     }
 }

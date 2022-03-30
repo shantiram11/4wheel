@@ -90,6 +90,7 @@ class UserController extends Controller
         return view('dashboard.users.create', compact('user', 'roles'));
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
