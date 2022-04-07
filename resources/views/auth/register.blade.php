@@ -10,7 +10,7 @@
         <div class="card-body">
           <p class="login-box-msg">Register a new membership</p>
 
-          <form action="{{ route('register') }}" method="post">
+          <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input-group mb-3">
               <input type="text" name ="name" class="form-control" placeholder="Full name">
@@ -28,6 +28,75 @@
                 </div>
               </div>
             </div>
+            <div class="form-group">
+                      <!--begin::Col-->
+
+                          <label class="required fs-6 fw-bold mb-2" for="file">
+                              Current Image
+                          </label>
+                          <input type="file" name="current_image" onchange="loadPreview(this,'#kt_preview_img_0');"
+                                 class="form-control form-control-solid @error('image') is-invalid @enderror"
+                                />
+                          <div class="kt_preview_image_container {{ empty($user->image) ? 'd-none' : '' }}">
+                              <img id="kt_preview_img_0"
+                                   src="{{ empty($user->current_image) ? '' : asset('public/uploads/users/' . $user->current_image) }}"
+                                   class="img-fluid " />
+                              <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
+                          </div>
+                          @error('current_image')
+                          <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                          @enderror
+                      <!--end::Col-->
+                  </div>
+          
+            <div class="form-group">
+                      <!--begin::Col-->
+
+                          <label class="required fs-6 fw-bold mb-2" for="file">
+                            Identity Front Image
+                          </label>
+                          <input type="file" name="identity_front" onchange="loadPreview(this,'#kt_preview_img');"
+                                 class="form-control form-control-solid @error('image') is-invalid @enderror"
+                                />
+                          <div class="kt_preview_image_container {{ empty($user->identity_front) ? 'd-none' : '' }}">
+                              <img id="kt_preview_img"
+                                   src="{{ empty($user->identity_front) ? '' : asset('public/uploads/users/' . $user->identity_front) }}"
+                                   class="img-fluid " />
+                              <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
+                          </div>
+                          @error('identity_front')
+                          <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                          @enderror
+                      <!--end::Col-->
+                  </div>
+      
+            <div class="form-group">
+                      <!--begin::Col-->
+
+                          <label class="required fs-6 fw-bold mb-2" for="file">
+                            Identity Back Image
+                          </label>
+                          <input type="file" name="identity_back" onchange="loadPreview(this, '#kt_preview_img_1');"
+                                 class="form-control form-control-solid @error('image') is-invalid @enderror"
+                                />
+                          <div class="kt_preview_image_container {{ empty($user->identity_front) ? 'd-none' : '' }}">
+                              <img id="kt_preview_img_1"
+                                   src="{{ empty($user->identity_back) ? '' : asset('public/uploads/users/' . $user->identity_back) }}"
+                                   class="img-fluid " />
+                              <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
+                          </div>
+                          @error('identity_back')
+                          <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                          @enderror
+                      <!--end::Col-->
+                  </div>
+            
             <div class="input-group mb-3">
               <input type="password" name="password" class="form-control" placeholder="Password">
               <div class="input-group-append">
@@ -61,21 +130,19 @@
             </div>
           </form>
 
-          <div class="social-auth-links text-center">
-            <a href="#" class="btn btn-block btn-primary">
-              <i class="fab fa-facebook mr-2"></i>
-              Sign up using Facebook
-            </a>
-            <a href="#" class="btn btn-block btn-danger">
-              <i class="fab fa-google-plus mr-2"></i>
-              Sign up using Google+
-            </a>
-          </div>
-
           <a href="{{route('login')}}" class="text-center">I already have a membership</a>
         </div>
         <!-- /.form-box -->
       </div><!-- /.card -->
     </div>
     <!-- /.register-box -->
+@endsection
+@section('page_level_script')
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('#image').change(function() {
+                $('.galaxy_image_container').removeClass('d-none');
+            });
+        });
+</script>
 @endsection

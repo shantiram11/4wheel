@@ -37,6 +37,7 @@ class UserRequest extends FormRequest
                 'max:191',
                 Rule::unique(User::class)->ignore($id),
             ],
+           
             'role_id' => 'required|exists:roles,id'
         ];
         //adding rules for password for post request only

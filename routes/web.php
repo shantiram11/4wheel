@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StripePaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +33,12 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('vehicles', \App\Http\Controllers\Dashboard\VehicleController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
         Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
+        Route::put('user/verify/{user}', [\App\Http\Controllers\Dashboard\UserController::class, 'userVerify'])->name('user.verify');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::post('/rating/{vehicle}', [\App\Http\Controllers\Dashboard\vehicleController::class, 'vehicleStar'])->name('vehicleStar');
     });
-
+    Route::get('stripe', [StripePaymentController::class, 'stripe']);
+    Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
 });
 
 

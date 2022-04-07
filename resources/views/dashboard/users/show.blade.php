@@ -74,6 +74,32 @@
                                     {{$user->created_at}}
                                 </td>
                             </tr>
+                            <tr>
+                                <th>
+                                    Status
+                                </th>
+                                <td>
+                                <form action="{{route('user.verify',$user)}}" method="POST">
+                                        {{ method_field('PUT') }}
+                                        @csrf
+                                        <select class="form-select" name="user_verified">
+                                            @foreach (\App\Models\User::VERIFY as $k => $v)
+                                                <?php
+                                                if (old('user_verified', $user->verify) == $v) {
+                                                    $selected = 'selected';
+                                                } else {
+                                                    $selected = '';
+                                                }
+                                                ?>
+                                                <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                                            @endforeach
+                                        </select>
+                                        <button type="submit" class="btn btn-primary">
+                                            submit
+                                              </button>
+                                    </form>
+                                </td>
+                            </tr>
                         </tbody>
                       </table>
                     </div>

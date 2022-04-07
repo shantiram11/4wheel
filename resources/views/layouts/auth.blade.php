@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css') }}">
+ <link rel="stylesheet" href="{{asset('adminlte/css/theme.css')}}">
 </head>
 @yield('content')
 
@@ -22,5 +23,8 @@
 <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js') }}"></script>
+ <!-- Custom dashboard Query -->
+ <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
+ @yield('page_level_script')
 </body>
 </html>

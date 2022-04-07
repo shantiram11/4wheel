@@ -10,7 +10,33 @@
     max-width: 250px;
 }
 
-
+/*******************
+ ** 2. Form Data **
+ *******************/
+ .kt_preview_image_container{
+    max-width: 250px;
+    position: relative;
+}
+.kt_preview_image_close{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    vertical-align: middle;
+    right: 5px;
+    top: 5px;
+}
+.kt_preview_image_close .fas{
+    /*display: inline-block;*/
+    /*vertical-align: middle;*/
+    /*margin-top: -23px;*/
+    /*color: #ffffff;*/
+    /*margin-left: 5px;*/
+    position: absolute;
+    left: 24%;
+    top: 20%;
+}
 
 /** rating **/
 div.stars {

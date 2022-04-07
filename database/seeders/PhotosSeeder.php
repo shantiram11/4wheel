@@ -15,5 +15,8 @@ class PhotosSeeder extends Seeder
     public function run()
     {
         \App\Models\Photo::factory(20)->create();
+
+        //group by // unique
+
     }
 }

@@ -49,6 +49,7 @@ class VehicleController extends Controller
                     'v.status',
                     'u.name as owner'
                 );
+                
             $query->where('v.company_name', 'like', $search . '%')
                 ->orWhere('v.vehicle_number', 'like', $search . '%')
                 ->orWhere('v.description', 'like', $search . '%')
@@ -162,6 +163,7 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
+      
         $vehicle = Vehicle::with('photos')->where('id', $id)->first();
         return view('dashboard.vehicles.show', compact('vehicle'));
     }

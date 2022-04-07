@@ -17,7 +17,7 @@ class PhotoFactory extends Factory
         return [
             'image' => $this->faker->randomElement(['car2.jpg','car2.jpg','car3.jpg','car4.jpg','car5.jpg','car6.jpg','car7.jpg','car8.jpg',]),
             'store_type' => 'perm',
-            'featured' => 'yes',
+            'featured' => 'no',
             'vehicle_id'=> Vehicle::all()->random()->id,
         ];
     }

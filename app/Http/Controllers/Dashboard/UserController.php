@@ -164,4 +164,16 @@ class UserController extends Controller
             'message' => 'User Successfully Deleted',
         ], 200);
     }
+
+    public function userVerify(Request $request, User $user)
+    {
+        $request->validate([
+            'user_verified' => 'in:yes,no',
+        ]);
+        User::where('id', $user->id)->update([
+            'verify'             => $request->input('user_verified'),
+        ]);
+        return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
+  
+    }
 }
