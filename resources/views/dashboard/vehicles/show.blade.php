@@ -122,51 +122,16 @@
                                 <th>
                                     Profile Image
                                 </th>
-                                <td>
-                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
-                                </td>
+{{--                                <td>--}}
+{{--                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />--}}
+{{--                                </td>--}}
                             </tr>
                         </tbody>
                       </table>
                     </div>
                     <!-- /.card-body -->
-                      <form class="form-horizontal poststars" action="{{route('vehicleStar', $vehicle->id)}}" id="addStar" method="POST">
-                          @csrf
-                          <div class="form-group required">
-                              <div class="col-sm-12">
-                                  <input class="star star-5" value="5" id="star-5" type="radio" name="star"/>
-                                  <label class="star star-5" for="star-5"></label>
-                                  <input class="star star-4" value="4" id="star-4" type="radio" name="star"/>
-                                  <label class="star star-4" for="star-4"></label>
-                                  <input class="star star-3" value="3" id="star-3" type="radio" name="star"/>
-                                  <label class="star star-3" for="star-3"></label>
-                                  <input class="star star-2" value="2" id="star-2" type="radio" name="star"/>
-                                  <label class="star star-2" for="star-2"></label>
-                                  <input class="star star-1" value="1" id="star-1" type="radio" name="star"/>
-                                  <label class="star star-1" for="star-1"></label>
-                              </div>
-                          </div>
-{{--                          <div class="form-group card-body required">--}}
-{{--                              <div class="col-sm-12">--}}
-{{--                                  <div class="d-flex justify-content-center mt-5">--}}
-{{--                                      <div class="rating-card text-center mb-5">--}}
-{{--                                              <h6 class="mb-0">Rate vehicle</h6>--}}
-{{--                                              <div class="rating"> <input type="radio" name="star" value="5" id="5" ><label for="5">☆</label> <input type="radio" name="star" value="4" id="4"><label for="4">☆</label> <input type="radio" name="star" value="3" id="3"><label for="3">☆</label> <input type="radio" name="star" value="2" id="2"><label for="2">☆</label> <input type="radio" name="star" value="1" id="1"><label for="1">☆</label> </div>--}}
-{{--                                              <div class="buttons px-4 mt-0"> <button class="btn btn-warning btn-block rating-submit">Submit</button> </div>--}}
-{{--                                      </div>--}}
-{{--                                  </div>--}}
-{{--                              </div>--}}
-{{--                          </div>--}}
-                      </form>
-                  </div>
-                  <!-- /.card -->
+
           <!-- /.card -->
 
 @endsection
-@section('page_level_script')
-                    <script>
-                        $('#addStar').change('.star', function(e) {
-                            $(this).submit();
-                        });
-                    </script>
-@endsection
+

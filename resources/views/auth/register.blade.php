@@ -3,7 +3,7 @@
 @section('content')
 <body class="hold-transition register-page">
     <div class="register-box">
-      <div class="card card-outline card-primary">
+      <div class="card card-outline card-primary col-md-12">
         <div class="card-header text-center">
           <a href="{{ route('front.index') }}" class="h1"><b>4</b>Wheel</a>
         </div>
@@ -50,7 +50,7 @@
                           @enderror
                       <!--end::Col-->
                   </div>
-          
+
             <div class="form-group">
                       <!--begin::Col-->
 
@@ -73,7 +73,7 @@
                           @enderror
                       <!--end::Col-->
                   </div>
-      
+
             <div class="form-group">
                       <!--begin::Col-->
 
@@ -96,7 +96,7 @@
                           @enderror
                       <!--end::Col-->
                   </div>
-            
+
             <div class="input-group mb-3">
               <input type="password" name="password" class="form-control" placeholder="Password">
               <div class="input-group-append">
