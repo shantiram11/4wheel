@@ -4,7 +4,7 @@
 {{--@endcan--}}
 
 {{--@can('update',\App\Models\Vehicle::class)--}}
-{{--    <a href="{{ route('vehicles.edit', $r->id) }}" class="btn btn-icon btn-light-primary btn-sm ml-1p" title="{{ __('Update') }}"><i class="fas fa-pencil-alt"></i></a>--}}
+    <a href="{{ route('vehicles.edit', $r->id) }}" class="btn btn-icon btn-light-primary btn-sm ml-1p" title="{{ __('Update') }}"><i class="fas fa-pencil-alt"></i></a>
 {{--@endcan--}}
 
 {{--@can('destroy',\App\Models\Vehicle::class)--}}

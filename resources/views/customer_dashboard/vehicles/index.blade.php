@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.customer-dashboard')
 @section('content')
 
     <!-- Content Header (Page header) -->
@@ -8,6 +8,9 @@
             <div class="col-sm-6">
               <h1 class="m-0">Vehicles</h1>
             </div>
+            <div class="col-sm-3">
+            <a href="{{route('vehicles.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add Vehicles</button></a>
+              </div>
             <!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -61,7 +64,7 @@
 </div>
 @endsection
 @section('page_level_script')
-@include('dashboard.vehicles._shared')
+@include('customer_dashboard.vehicles._shared')
     <script>
         $(function(){
             $("#vehiclesDatatable").DataTable({

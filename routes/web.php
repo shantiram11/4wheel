@@ -37,6 +37,12 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::post('/rating/{vehicle}', [\App\Http\Controllers\Dashboard\vehicleController::class, 'vehicleStar'])->name('vehicleStar');
     });
+    /** €customer backend Starts*/
+    Route::group(['prefix' => 'customer-dashboard'], function () {
+        Route::get('/', [\App\Http\Controllers\customer\CustomerDashboardController::class, 'index'])->name('customer-dashboard.index');
+        // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
+        Route::resource('vehicles', \App\Http\Controllers\Customer\VehicleController::class);
+    });
     Route::get('stripe', [StripePaymentController::class, 'stripe']);
     Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
 });

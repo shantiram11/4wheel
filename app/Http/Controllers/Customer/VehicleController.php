@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Customer;
 use App\Helpers\AppHelper;
 use App\Http\Requests\VehicleRequest;
 use App\Models\Photo;
@@ -48,7 +48,7 @@ class VehicleController extends Controller
                     'v.location',
                     'v.status',
                     'u.name as owner'
-                )->where('owner_id',auth()->user()->id);
+                );
 
             $query->where('v.company_name', 'like', $search . '%')
                 ->orWhere('v.vehicle_number', 'like', $search . '%')
@@ -81,7 +81,7 @@ class VehicleController extends Controller
                 "data" => $data
             ], 200);
         }
-        return view('dashboard.vehicles.index');
+        return view('customer_dashboard.vehicles.index');
     }
 
     /**
@@ -94,7 +94,7 @@ class VehicleController extends Controller
         $vehicle = new Vehicle();
         $vehicle_options = Vehicle::VEHICLE_OPTIONS;
         $fuel_options = Vehicle::FUEL_OPTIONS;
-        return view('dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options'));
+        return view('customer_dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options'));
     }
 
     /**
@@ -165,7 +165,7 @@ class VehicleController extends Controller
     {
 
         $vehicle = Vehicle::with('photos')->where('id', $id)->first();
-        return view('dashboard.vehicles.show', compact('vehicle'));
+        return view('customer_dashboard.vehicles.show', compact('vehicle'));
     }
 
 
@@ -180,7 +180,7 @@ class VehicleController extends Controller
         $users = User::pluck('name', 'id');
         $vehicle_options = Vehicle::VEHICLE_OPTIONS;
         $fuel_options = Vehicle::FUEL_OPTIONS;
-        return view('dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_options','fuel_options'));
+        return view('customer_dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_options','fuel_options'));
     }
 
     /**

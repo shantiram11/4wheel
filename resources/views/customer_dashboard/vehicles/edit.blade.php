@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.customer-dashboard')
 @section('content')
 
     <!-- Content Header (Page header) -->
@@ -32,7 +32,7 @@
                         <!-- form start -->
                         <form id="edit_vehicle_form" class="form" action="{{route('vehicles.update',$vehicle)}}" method="POST">
                             {{ method_field('PUT') }}
-                            @include('dashboard.vehicles._form',['show' => false,'buttonText' => 'Update'])
+                            @include('customer_dashboard.vehicles._form',['show' => false,'buttonText' => 'Update'])
                         </form>
                     </div>
                     <!-- /.card -->

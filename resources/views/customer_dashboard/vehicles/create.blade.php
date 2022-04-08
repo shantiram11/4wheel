@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.customer-dashboard')
 @section('content')
 
     <!-- Content Header (Page header) -->
@@ -32,7 +32,7 @@
             <form class="form" action="{{route('vehicles.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
-                @include('dashboard.vehicles._form',['show' => true, 'buttonText' => 'Create'])
+                @include('customer_dashboard.vehicles._form',['show' => true, 'buttonText' => 'Create'])
             </form>
           </div>
           <!-- /.card -->

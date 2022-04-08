@@ -20,7 +20,7 @@ class vehicleFactory extends Factory
                 'brand'            => $this->faker->word(),
                 'seat_count'       => $this->faker->word(),
                 'description'      => $this->faker->word(),
-                'vehicle_type'     => $this->faker->word(),
+                'vehicle_type'     => 'car',
                 'rate'             => $this->faker->word(),
                 'location'         => $this->faker->word(),
                 'model'            => $this->faker->word(),
