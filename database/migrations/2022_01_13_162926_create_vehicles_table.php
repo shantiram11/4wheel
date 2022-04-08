@@ -25,7 +25,7 @@ class CreateVehiclesTable extends Migration
             $table->enum('vehicle_type',['car','Motorbike','Jeep'])->default('car');
             $table->string('rate');
             $table->string('model');
-            $table->string('status')->nullable();
+            $table->enum('status', ['available', 'reserved'])->default('available');
             $table->unsignedBigInteger('owner_id');
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();

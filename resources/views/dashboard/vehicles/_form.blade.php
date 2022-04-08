@@ -142,9 +142,18 @@
                   </div>
                   <div class="form-group">
                     <label for="status">status</label>
-                    <input type="text"
-                                 class="form-control @error('status') is-invalid @enderror" type="text" name="status" value="{{ old('status', $vehicle->status) }}">
-                                 @error('status')
+                      <select class="form-control  @error('active_status') is-invalid @enderror" name="active_status">
+                          @foreach (\App\Models\Vehicle::STATUS as $k => $v)
+                              <?php
+                              if (old('status', $vehicle->active_status) == $v) {
+                                  $selected = 'selected';
+                              } else {
+                                  $selected = '';
+                              }
+                              ?>
+                              <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                          @endforeach
+                      </select>    @error('status')
                                  <span class="invalid-feedback" role="alert">
                                      {{ $message }}
                                  </span>

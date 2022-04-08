@@ -10,6 +10,7 @@ class Vehicle extends Model
     use HasFactory;
     const   VEHICLE_OPTIONS = [ 'car', 'jeep', 'bike','van'];
     const   FUEL_OPTIONS = [ 'hybrid', 'petrol', 'electric','diesel'];
+    const STATUS = ['available','reserved'];
     /**
      * The attributes that are mass assignable.
      *

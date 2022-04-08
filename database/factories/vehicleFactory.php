@@ -24,7 +24,7 @@ class vehicleFactory extends Factory
                 'rate'             => $this->faker->word(),
                 'location'         => $this->faker->word(),
                 'model'            => $this->faker->word(),
-                'status'           => $this->faker->word(),
+                'status'           => 'available',
                 'owner_id'         =>1,
 
             ];
