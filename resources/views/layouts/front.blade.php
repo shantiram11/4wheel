@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/theme.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/icon/style.css') }}">
     <link rel="icon" href="{{ asset('assets/front/images/ico/favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <script src="{{asset('assets/js/plugins/custom/magnific-popup.css')}}"></script>
 
@@ -244,7 +245,7 @@ Default Header with a White Background & Dark text.
 
     <script src="{{ asset('assets/front/library/header.js') }}"></script>
     <script src="{{ asset('assets/front/library/functions.js') }}"></script>
-
+    @yield('page_level_script')
 </body>
 
 </html>

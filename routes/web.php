@@ -44,6 +44,11 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('vehicles', \App\Http\Controllers\Customer\VehicleController::class);
     });
 
+    /** Checkout routes */
+    Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
+    Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
+    Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
+
 });
 
 
