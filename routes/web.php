@@ -35,7 +35,16 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
         Route::put('user/verify/{user}', [\App\Http\Controllers\Dashboard\UserController::class, 'userVerify'])->name('user.verify');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
+        Route::resource('settings', \App\Http\Controllers\Dashboard\SettingController::class)->only(['index','store']);
         Route::post('/rating/{vehicle}', [\App\Http\Controllers\Dashboard\vehicleController::class, 'vehicleStar'])->name('vehicleStar');
+
+        //profile routes start
+        Route::get('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'index'])->name('profile.index');
+        Route::post('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'store'])->name('profile.store');
+        Route::get('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'getChangePassword'])->name('profile.changePassword');
+        Route::post('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'changePassword'])->name('profile.changePassword');
+        //profile routes end
+
     });
     /** €customer backend Starts*/
     Route::group(['prefix' => 'customer-dashboard'], function () {

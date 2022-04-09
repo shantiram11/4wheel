@@ -124,7 +124,6 @@
                                                 <label>Pick up location</label>
                                                 <input type="text" placeholder=" ">
                                             </div>
-
                                             <div class="div-c">
                                                 <label>Return location</label>
                                                 <input type="text" placeholder=" ">
@@ -370,188 +369,183 @@
                             </div>
                         </div>
 
-
-
-
-                    </div>
-
-                    <h3>Related Articles</h3>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="ui grid container stackable">
-            <div class="row">
-                <div class="sq-slick article-sq-slick" data-center-mode="true" data-center-padding="0px" data-desktop-center-padding="0px" data-show-slides="3" data-scroll-slides="3" data-desktop-show-slides="2" data-desktop-scroll-slides="2" data-tablet-show-slides="2" data-tablet-scroll-slides="2" data-mobile-show-slides="1" data-mobile-scroll-slides="1" data-tablet-center-padding="0px" data-mobile-center-padding="40px">
-
-
-                    <!-- Slide 01-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_01.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">Thousands Now Adware Removal Who Never Thought They Could</p>
-                                    <p class="typo-desc-sq">Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.</p>
-
-                                    <a href="article.html" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 02-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_02.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">Maui By Air The Best Way Around The Island</p>
-                                    <p class="typo-desc-sq">You love having a second home but the mortgage is putting a crater in your wallet. Many second home owners turn to renting their property as a vacation rental to help defray the costs of ownership. How do you price a vacation home rental without overcharging but making enough to cover your costs? Do your research.</p>
-
-                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 03-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_03.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-                                    <p class="typo-label-sq" data-label-before="Auto" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">Stu Unger Rise And Fall Of A Poker Genius</p>
-                                    <p class="typo-desc-sq">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun and excitement it provides, others may experience gambling as an addictive and distractive habit. Statistics show that while 85 percent of the adult population in the US enjoys some type of gambling every year, between 2 and 3 percent of will develop a gambling problem and 1 percent of them are diagnosed as pathological gamblers. Where can you draw the line between harmless gambling to problem gambling? How can you tell if you or your friend are compulsive gamblers? Here you can find answers to these questions and other questions regarding problem gambling and gambling addiction. What is the Meaning of Problem Gambling?</p>
-
-                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 04-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_04.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-
-                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">What Is Hdcp</p>
-                                    <p class="typo-desc-sq">If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps even your home office combo? First off, you will need to set a budget for your new purchase before deciding whether to shop for notebook or desktop computers. Many offices use desktop computers because they are not intended to be moved around a lot. In addition, affordability often plays a large role in someone’s decision as to whether to purchase notebook or desktop computers.</p>
-
-                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 05-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_05.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-                                    <p class="typo-label-sq" data-label-before="Auto" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">Anonymous Proxy</p>
-                                    <p class="typo-desc-sq">LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more portable technology than we’ve ever had access to before. From your wrist watch to your laptop, a lot of the on the go electronics that we tote from place to place are only possible because of their thin, light LCD display screens. Liquid crystal display (LCD) technology still has some stumbling blocks in its path that can make it unreliable at times, but on the whole the invention of the LCD screen has allowed great leaps forward in global technological progress.</p>
-
-                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 06-->
-                    <div>
-                        <div class="article-sq item">
-                            <div class="item-inner">
-
-                                <!-- image container -->
-                                <a class="image-sq" href="article.html">
-									<span class="image-wrapper">
-										<span class="image-inner">
-											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_06.jpg')}}" alt="">
-										</span>
-									</span>
-                                </a>
-
-                                <!-- typography container-->
-                                <div class="typo-sq">
-                                    <p class="typo-label-sq" data-label-before="Adventure" data-label-after="Rent a car"></p>
-                                    <p class="typo-title-sq">Live Poker How To Win Tournament Games</p>
-                                    <p class="typo-desc-sq">The term “boutique hotel” has been widely used in recent years, but what does it mean and why should you stay in one?</p>
-
-                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
                     </div>
 
                 </div>
             </div>
         </div>
+
+{{--        <div class="ui grid container stackable">--}}
+{{--            <div class="row">--}}
+{{--                <div class="sq-slick article-sq-slick" data-center-mode="true" data-center-padding="0px" data-desktop-center-padding="0px" data-show-slides="3" data-scroll-slides="3" data-desktop-show-slides="2" data-desktop-scroll-slides="2" data-tablet-show-slides="2" data-tablet-scroll-slides="2" data-mobile-show-slides="1" data-mobile-scroll-slides="1" data-tablet-center-padding="0px" data-mobile-center-padding="40px">--}}
+
+
+{{--                    <!-- Slide 01-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_01.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+{{--                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">Thousands Now Adware Removal Who Never Thought They Could</p>--}}
+{{--                                    <p class="typo-desc-sq">Few would argue that, despite the advancements of feminism over the past three decades, women still face a double standard when it comes to their behavior. While men’s borderline-inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach.</p>--}}
+
+{{--                                    <a href="article.html" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Slide 02-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_02.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+{{--                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">Maui By Air The Best Way Around The Island</p>--}}
+{{--                                    <p class="typo-desc-sq">You love having a second home but the mortgage is putting a crater in your wallet. Many second home owners turn to renting their property as a vacation rental to help defray the costs of ownership. How do you price a vacation home rental without overcharging but making enough to cover your costs? Do your research.</p>--}}
+
+{{--                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Slide 03-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_03.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+{{--                                    <p class="typo-label-sq" data-label-before="Auto" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">Stu Unger Rise And Fall Of A Poker Genius</p>--}}
+{{--                                    <p class="typo-desc-sq">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun and excitement it provides, others may experience gambling as an addictive and distractive habit. Statistics show that while 85 percent of the adult population in the US enjoys some type of gambling every year, between 2 and 3 percent of will develop a gambling problem and 1 percent of them are diagnosed as pathological gamblers. Where can you draw the line between harmless gambling to problem gambling? How can you tell if you or your friend are compulsive gamblers? Here you can find answers to these questions and other questions regarding problem gambling and gambling addiction. What is the Meaning of Problem Gambling?</p>--}}
+
+{{--                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Slide 04-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_04.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+
+{{--                                    <p class="typo-label-sq" data-label-before="Tech" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">What Is Hdcp</p>--}}
+{{--                                    <p class="typo-desc-sq">If you are in the market for a computer, there are a number of factors to consider. Will it be used for your home, your office or perhaps even your home office combo? First off, you will need to set a budget for your new purchase before deciding whether to shop for notebook or desktop computers. Many offices use desktop computers because they are not intended to be moved around a lot. In addition, affordability often plays a large role in someone’s decision as to whether to purchase notebook or desktop computers.</p>--}}
+
+{{--                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Slide 05-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_05.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+{{--                                    <p class="typo-label-sq" data-label-before="Auto" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">Anonymous Proxy</p>--}}
+{{--                                    <p class="typo-desc-sq">LCD screens are uniquely modern in style, and the liquid crystals that make them work have allowed humanity to create slimmer, more portable technology than we’ve ever had access to before. From your wrist watch to your laptop, a lot of the on the go electronics that we tote from place to place are only possible because of their thin, light LCD display screens. Liquid crystal display (LCD) technology still has some stumbling blocks in its path that can make it unreliable at times, but on the whole the invention of the LCD screen has allowed great leaps forward in global technological progress.</p>--}}
+
+{{--                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <!-- Slide 06-->--}}
+{{--                    <div>--}}
+{{--                        <div class="article-sq item">--}}
+{{--                            <div class="item-inner">--}}
+
+{{--                                <!-- image container -->--}}
+{{--                                <a class="image-sq" href="article.html">--}}
+{{--									<span class="image-wrapper">--}}
+{{--										<span class="image-inner">--}}
+{{--											<img class="image-sq" src="{{asset('assets/front/images/magic_grid/magic_grid_article_06.jpg')}}" alt="">--}}
+{{--										</span>--}}
+{{--									</span>--}}
+{{--                                </a>--}}
+
+{{--                                <!-- typography container-->--}}
+{{--                                <div class="typo-sq">--}}
+{{--                                    <p class="typo-label-sq" data-label-before="Adventure" data-label-after="Rent a car"></p>--}}
+{{--                                    <p class="typo-title-sq">Live Poker How To Win Tournament Games</p>--}}
+{{--                                    <p class="typo-desc-sq">The term “boutique hotel” has been widely used in recent years, but what does it mean and why should you stay in one?</p>--}}
+
+{{--                                    <a href="" class="read-more-sq">read more <i class="icon icon-arrow-right-122"></i></a>--}}
+{{--                                </div>--}}
+
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
         <br>
         <br>
