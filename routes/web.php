@@ -43,8 +43,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
         Route::resource('vehicles', \App\Http\Controllers\Customer\VehicleController::class);
     });
-    Route::get('stripe', [StripePaymentController::class, 'stripe']);
-    Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
+
 });
 
 
