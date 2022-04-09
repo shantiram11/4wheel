@@ -82,15 +82,6 @@ Default Header with a White Background & Dark text.
                             </a>
 
                             <ul class="main-menu">
-
-                                <li><a href="become_a_vendor.html" class="item">
-                                        <span>Become a Vendor</span>
-                                    </a>
-                                </li>
-
-
-
-
                                 <li><a href="{{ route('register') }}" class="item modal-ui-triggers"
                                         data-trigger-for="modal0134">
                                         <span>Sign Up</span>

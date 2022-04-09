@@ -18,7 +18,6 @@
                                     data-little-placeholder="Pickup location"></label>
                             </div>
                         </div>
-
                         <div class="search-item">
                             <i class="icon icon-return-location"></i>
                             <div class="fltp">
