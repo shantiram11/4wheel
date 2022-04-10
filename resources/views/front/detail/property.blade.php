@@ -118,21 +118,20 @@
                                     <!-- Right -->
                                     <div class="ui twelve wide mobile six wide computer column">
 
-                                        <form  class="property-checkout-container main-infos" action="{{route('booking.create')}}" method="POST" enctype="multipart/form-data">
+                                        <form  class="property-checkout-container main-infos">
 
                                             <div class="div-c">
                                                 <label>Pick up location</label>
-                                                <input type="text" placeholder=" ">
+                                                <input name="pickup_location" type="text" placeholder=" ">
                                             </div>
                                             <div class="div-c">
                                                 <label>Return location</label>
-                                                <input type="text" placeholder=" ">
+                                                <input name="return_location" type="text" placeholder=" ">
                                             </div>
                                             <div class="div-c">
                                                 <input type="checkbox" id="checkbox1">
                                                 <label for="checkbox1">Return car to the same location</label>
                                             </div>
-
 
                                             <div class="div-c inline-2 inline-check-in">
 
@@ -140,7 +139,7 @@
                                                     <label class="placeholder">Check in</label>
 
                                                     <div class="relative-sq">
-                                                        <input type="text" class="filter" value="" required placeholder="date">
+                                                        <input type="text" name="book_date" class="filter" value="" required placeholder="date">
 
                                                         <i class="icon icon-little-arrow filters-arrow"></i>
                                                     </div>
@@ -151,8 +150,7 @@
 
                                                     <label class="placeholder">Check Out</label>
 
-                                                    <input type="text" class="filter" value="" required placeholder="date">
-
+                                                    <input type="text" name="return_date" class="filter" value="" required placeholder="date">
                                                 </div>
                                             </div>
 
@@ -160,24 +158,10 @@
                                                 <label class="placeholder">Extras</label>
 
                                                 <div class="divided-column">
-                                                    <input type="checkbox" id="checkbox2">
-                                                    <label for="checkbox2">Child Seat</label>
-
-                                                    <span class="value-sq">$10</span>
-                                                </div>
-
-                                                <div class="divided-column">
                                                     <input type="checkbox" id="checkbox3">
                                                     <label for="checkbox3">Driver</label>
 
                                                     <span class="value-sq">$13</span>
-                                                </div>
-
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="checkbox4">
-                                                    <label for="checkbox4">Neque consequa es nterdum erat consequa es nterdum erat</label>
-
-                                                    <span class="value-sq">$10</span>
                                                 </div>
 
                                                 <div class="divided-column">
@@ -189,7 +173,6 @@
 
                                             </div>
 
-
                                             <div class="div-c total-sq">
                                                 <div class="divided-column">
                                                     <label class="placeholder">Total</label>
@@ -197,6 +180,8 @@
 
                                                 </div>
                                             </div>
+
+                                        </form>
 
                                             {{--Stripe Payment flow starts from here--}}
                                             <div id="stripe-card-element" class="card-input">
@@ -227,13 +212,9 @@
                                             </form>
                                             {{-- Stripe ends--}}
                                         </div>
-
-
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
 
@@ -548,10 +529,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
-        <br>
-        <br>
+{{--        <br>--}}
+{{--        <br>--}}
 
-    </div>
+{{--    </div>--}}
 @endsection
 @section('page_level_script')
     @include('front.detail.checkout-script')
