@@ -118,7 +118,7 @@
                                     <!-- Right -->
                                     <div class="ui twelve wide mobile six wide computer column">
 
-                                        <div class="property-checkout-container main-infos">
+                                        <form  class="property-checkout-container main-infos" action="{{route('booking.create')}}" method="POST" enctype="multipart/form-data">
 
                                             <div class="div-c">
                                                 <label>Pick up location</label>
@@ -197,6 +197,7 @@
 
                                                 </div>
                                             </div>
+
                                             {{--Stripe Payment flow starts from here--}}
                                             <div id="stripe-card-element" class="card-input">
                                                 <!-- A Stripe Element will be inserted here. -->

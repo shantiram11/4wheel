@@ -24,7 +24,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -127,4 +127,9 @@ class User extends Authenticatable implements MustVerifyEmail
      {
          return $this->hasMany(vehicles::class);
      }
+
+    public function booking(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Booking::class,'booked_by');
+    }
 }

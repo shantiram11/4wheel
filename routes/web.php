@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
         Route::put('user/verify/{user}', [\App\Http\Controllers\Dashboard\UserController::class, 'userVerify'])->name('user.verify');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
+
         Route::resource('settings', \App\Http\Controllers\Dashboard\SettingController::class)->only(['index','store']);
         Route::post('/rating/{vehicle}', [\App\Http\Controllers\Dashboard\vehicleController::class, 'vehicleStar'])->name('vehicleStar');
 
@@ -54,6 +55,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     });
 
     /** Checkout routes */
+    Route::resource('bookings', \App\Http\Controllers\Front\BookingController::class);
     Route::post('checkout/fulfill-order', [\App\Http\Controllers\Front\CheckoutController::class, 'fulfillOrder'])->name('checkout.fulfillOrder');
     Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
