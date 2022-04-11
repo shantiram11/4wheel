@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookingsTable extends Migration
+class Bookings extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bookings', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->string('pickup_location');
             $table->string('return_location')->nullable();
@@ -26,6 +26,7 @@ class CreateBookingsTable extends Migration
             $table->foreign('booked_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -35,8 +36,6 @@ class CreateBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            //
-        });
+        //
     }
 }

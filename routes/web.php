@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
 
+    Route::post('booking', [\App\Http\Controllers\front\BookingController::class, 'store'])->name('front.booking.store');
 });
 
 

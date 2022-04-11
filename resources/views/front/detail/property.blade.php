@@ -118,8 +118,8 @@
                                     <!-- Right -->
                                     <div class="ui twelve wide mobile six wide computer column">
 
-                                        <form  class="property-checkout-container main-infos">
-
+                                        <form  method="post" class="property-checkout-container main-infos" action="{{'front.booking.store'}}">
+                                            @csrf
                                             <div class="div-c">
                                                 <label>Pick up location</label>
                                                 <input name="pickup_location" type="text" placeholder=" ">
@@ -129,7 +129,7 @@
                                                 <input name="return_location" type="text" placeholder=" ">
                                             </div>
                                             <div class="div-c">
-                                                <input type="checkbox" id="checkbox1">
+                                                <input type="checkbox" name="return_same" id="checkbox1">
                                                 <label for="checkbox1">Return car to the same location</label>
                                             </div>
 
@@ -154,32 +154,32 @@
                                                 </div>
                                             </div>
 
-                                            <div class="div-c extras-sq">
-                                                <label class="placeholder">Extras</label>
+{{--                                            <div class="div-c extras-sq">--}}
+{{--                                                <label class="placeholder">Extras</label>--}}
 
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="checkbox3">
-                                                    <label for="checkbox3">Driver</label>
+{{--                                                <div class="divided-column">--}}
+{{--                                                    <input type="checkbox" id="checkbox3">--}}
+{{--                                                    <label for="checkbox3">Driver</label>--}}
 
-                                                    <span class="value-sq">$13</span>
-                                                </div>
+{{--                                                    <span class="value-sq">$13</span>--}}
+{{--                                                </div>--}}
 
-                                                <div class="divided-column">
-                                                    <input type="checkbox" id="checkbox5">
-                                                    <label for="checkbox5">Phasellus sed neque consequa es nterdum erat</label>
+{{--                                                <div class="divided-column">--}}
+{{--                                                    <input type="checkbox" id="checkbox5">--}}
+{{--                                                    <label for="checkbox5">Phasellus sed neque consequa es nterdum erat</label>--}}
 
-                                                    <span class="value-sq">$10</span>
-                                                </div>
+{{--                                                    <span class="value-sq">$10</span>--}}
+{{--                                                </div>--}}
 
-                                            </div>
+{{--                                            </div>--}}
 
-                                            <div class="div-c total-sq">
-                                                <div class="divided-column">
-                                                    <label class="placeholder">Total</label>
-                                                    <span class="value-sq">$200</span>
+{{--                                            <div class="div-c total-sq">--}}
+{{--                                                <div class="divided-column">--}}
+{{--                                                    <label class="placeholder">Total</label>--}}
+{{--                                                    <span class="value-sq">$200</span>--}}
 
-                                                </div>
-                                            </div>
+{{--                                                </div>--}}
+{{--                                            </div>--}}
 
                                         </form>
 
@@ -529,10 +529,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
-{{--        <br>--}}
-{{--        <br>--}}
+        <br>
+        <br>
 
-{{--    </div>--}}
+    </div>
 @endsection
 @section('page_level_script')
     @include('front.detail.checkout-script')

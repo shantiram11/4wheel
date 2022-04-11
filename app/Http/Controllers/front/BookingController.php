@@ -37,6 +37,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+
         $booking = Booking::create([
             'pickup_location'               => $request->input('pickup_location'),
             'return_location'               => $request->input('return_location'),
