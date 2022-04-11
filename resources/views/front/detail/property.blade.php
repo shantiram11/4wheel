@@ -118,7 +118,7 @@
                                     <!-- Right -->
                                     <div class="ui twelve wide mobile six wide computer column">
 
-                                        <form  method="post" class="property-checkout-container main-infos" action="{{'front.booking.store'}}">
+                                        <form  method="post" class="property-checkout-container main-infos" action="{{route('front.booking.store')}}">
                                             @csrf
                                             <div class="div-c">
                                                 <label>Pick up location</label>
@@ -135,7 +135,7 @@
 
                                             <div class="div-c inline-2 inline-check-in">
 
-                                                <div class="divided-column calendar-sq" id="sticky-box-rangestart">
+                                                <div class="divided-column calendar-sq" id="locationStart">
                                                     <label class="placeholder">Check in</label>
 
                                                     <div class="relative-sq">
@@ -146,70 +146,43 @@
 
                                                 </div>
 
-                                                <div class="divided-column calendar-sq" id="sticky-box-rangeend">
+                                                <div class="divided-column calendar-sq" id="locationEnd">
 
                                                     <label class="placeholder">Check Out</label>
 
                                                     <input type="text" name="return_date" class="filter" value="" required placeholder="date">
                                                 </div>
                                             </div>
-
-{{--                                            <div class="div-c extras-sq">--}}
-{{--                                                <label class="placeholder">Extras</label>--}}
-
-{{--                                                <div class="divided-column">--}}
-{{--                                                    <input type="checkbox" id="checkbox3">--}}
-{{--                                                    <label for="checkbox3">Driver</label>--}}
-
-{{--                                                    <span class="value-sq">$13</span>--}}
-{{--                                                </div>--}}
-
-{{--                                                <div class="divided-column">--}}
-{{--                                                    <input type="checkbox" id="checkbox5">--}}
-{{--                                                    <label for="checkbox5">Phasellus sed neque consequa es nterdum erat</label>--}}
-
-{{--                                                    <span class="value-sq">$10</span>--}}
-{{--                                                </div>--}}
-
-{{--                                            </div>--}}
-
-{{--                                            <div class="div-c total-sq">--}}
-{{--                                                <div class="divided-column">--}}
-{{--                                                    <label class="placeholder">Total</label>--}}
-{{--                                                    <span class="value-sq">$200</span>--}}
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-
+                                            <button class="button-sq fullwidth-sq font-weight-bold-sq"  type="submit">Instant Booking</button>
                                         </form>
 
                                             {{--Stripe Payment flow starts from here--}}
-                                            <div id="stripe-card-element" class="card-input">
+{{--                                            <div id="stripe-card-element" class="card-input">--}}
                                                 <!-- A Stripe Element will be inserted here. -->
-                                            </div>
-                                            <div class="checkout-terms form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                       id="terms_checkbox">
-                                                <label class="form-check-label" for="terms_checkbox" style="margin-top: 20px;">
-                                                    I agree to {{config('app.name')}}<a href="#" class="text-muted"> terms and conditions.</a>
-                                                    <a class="text-muted" href="#">Privacy Policy information.</a>
-                                                </label>
-                                            </div>
-                                            <form action="{{route('checkout.fulfillOrder')}}"
-                                                  id="payment-form-stripe" name="stripePayForm" method="POST">
-                                                @csrf
-                                                <input type="hidden" id="transaction_stripe"
-                                                       name="transaction_id" />
-                                                <input type="hidden" id="total_stripe" name="total" />
-                                                <div class="place-order-flex-box" style="position: relative;">
-                                                    <div class="checkout-page Place-order">
-                                                        <button class="button-sq fullwidth-sq font-weight-bold-sq"
-                                                        id="payStartBtnStripe" form="payment-form-stripe" type="submit">Instant Booking</button>
-                                                    </div>
-                                                    <div class="spinner-border"  id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none;  position: absolute;right: 13px;top: 8px;">
-                                                    </div>
-                                                </div>
-                                            </form>
+{{--                                            </div>--}}
+{{--                                            <div class="checkout-terms form-check">--}}
+{{--                                                <input class="form-check-input" type="checkbox" value=""--}}
+{{--                                                       id="terms_checkbox">--}}
+{{--                                                <label class="form-check-label" for="terms_checkbox" style="margin-top: 20px;">--}}
+{{--                                                    I agree to {{config('app.name')}}<a href="#" class="text-muted"> terms and conditions.</a>--}}
+{{--                                                    <a class="text-muted" href="#">Privacy Policy information.</a>--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
+{{--                                            <form action="{{route('checkout.fulfillOrder')}}"--}}
+{{--                                                  id="payment-form-stripe" name="stripePayForm" method="POST">--}}
+{{--                                                @csrf--}}
+{{--                                                <input type="hidden" id="transaction_stripe"--}}
+{{--                                                       name="transaction_id" />--}}
+{{--                                                <input type="hidden" id="total_stripe" name="total" />--}}
+{{--                                                <div class="place-order-flex-box" style="position: relative;">--}}
+{{--                                                    <div class="checkout-page Place-order">--}}
+{{--                                                        <button class="button-sq fullwidth-sq font-weight-bold-sq"--}}
+{{--                                                        id="payStartBtnStripe" form="payment-form-stripe" type="submit">Instant Booking</button>--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="spinner-border"  id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none;  position: absolute;right: 13px;top: 8px;">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </form>--}}
                                             {{-- Stripe ends--}}
                                         </div>
                                     </div>
@@ -537,4 +510,27 @@
 @section('page_level_script')
     @include('front.detail.checkout-script')
     @include('front.detail.stripe-script')
+    <script>
+        $(document).ready(function(){
+            $('#locationStart').calendar({
+                type: 'date',
+                endCalendar: $('#locationEnd'),
+                //inline: true,
+                className: {
+                    prevIcon: "icon icon-arrow-left-122",
+                    nextIcon: "icon icon-arrow-right-122"
+                }
+            });
+
+            $('#locationEnd').calendar({
+                type: 'date',
+                startCalendar: $('#locationStart'),
+                //inline: true,
+                className: {
+                    prevIcon: "icon icon-arrow-left-122",
+                    nextIcon: "icon icon-arrow-right-122"
+                }
+            });
+        });
+    </script>
 @endsection

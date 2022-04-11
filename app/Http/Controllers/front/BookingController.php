@@ -7,6 +7,7 @@ use App\Models\Booking;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Vehicle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -37,16 +38,26 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        if(session('booking')){
+            $request->session()->forget('booking');
+        }
+        $booked_date    = Carbon::parse($request->input('booked_date'));
+        $return_date    = Carbon::parse($request->input('return_date'));
+        $total_days     = $return_date->diffInDays($booked_date);
+         $total_cost    = $total_days * env('PER_DAY');
 
-        $booking = Booking::create([
+        $total_days * env('PER_DAY');
+        $booking = [
             'pickup_location'               => $request->input('pickup_location'),
             'return_location'               => $request->input('return_location'),
-            'booked_date'                   => $request->input('booked_date'),
+            'return_same'                   => $request->input('return_same'),
+            'book_date'                     => $request->input('booked_date'),
             'return_date'                   => $request->input('return_date'),
-            'duration'                      => $request->input('duration'),
-            'booked_by'                      => Auth::user()->id,
-        ]);
-        return redirect()->route('front.detail.property', compact('booking'))->with('alert.success', 'Booking Successfully Created !!');
+            'booked_by'                     => Auth::user()->id,
+            'duration'                      => $total_days
+        ];
+        session(['booking' => $booking]);
+        return view('front.payment.payment', compact('total_cost'))->with('alert.success', 'Waiting for payment!!');
     }
 
     /**
