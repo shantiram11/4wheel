@@ -74,3 +74,6 @@ Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->
 Route::get('/property', function () {
     return view('front.detail.property');
 })->name('property');
+Route::get('/payment', function () {
+    return view('front.detail.payment');
+})->name('payment');
