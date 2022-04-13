@@ -62,8 +62,14 @@ class LocationController extends Controller
      */
     public function store(LocationRequest $request)
     {
-        $input = $request->only('longitude','latitude');
-        $location = $this->locationRepository->store($input);
+//        $input = $request->only('longitude','latitude');
+
+        $location = Location::create([
+            'latitude'  => $request->input('latitude'),
+            'longitude'  => $request->input('longitude'),
+        ]);
+
+//        $location = $/this->locationRepository->store($input);
         return response([
             'data'     => new LocationResource($location),
             'message'  => __('crud.created'),
