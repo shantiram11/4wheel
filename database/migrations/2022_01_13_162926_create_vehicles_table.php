@@ -20,11 +20,11 @@ class CreateVehiclesTable extends Migration
             $table->string('fuel_type');
             $table->string('vehicle_number');
             $table->string('brand');
-            $table->string('seat_count');
+            $table->float('seat_count');
             $table->string('description')->nullable();
             $table->string('location');
             $table->enum('vehicle_type',['car','Motorbike','Jeep'])->default('car');
-            $table->string('rate');
+            $table->float('rate');
             $table->string('model');
             $table->enum('status', ['available', 'reserved'])->default('available');
             $table->unsignedBigInteger('owner_id');

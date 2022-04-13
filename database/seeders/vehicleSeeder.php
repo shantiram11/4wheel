@@ -15,23 +15,25 @@ class vehicleSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Vehicle::factory(20)->create();
-//        vehicle::upsert([
-//            [
-//                'company_name'                       => 'Audi',
-//                'vehicle_number'                     => 'shantiramtiwari0852@4wheel.test',
-//                'brand'                              => 'Audi A3 2.0 TDI',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',
-//                'featured_image'                     => '',//profile image
-//            ]
-//        ],[],[]);
+//        \App\Models\Vehicle::factory(20)->create();
+        vehicle::upsert([
+            [
+                'company_name'               => 'Audi',
+                'slug'                       => 'audi',
+                'fuel_type'                  => 'petrol',
+                'vehicle_number'             => 'ko 1 ka 6545',
+                'brand'                      => 'Audi',
+                'seat_count'                 => 4,
+                'description'                => 'New car in fresh condition.',
+                'location'                   =>'itahari',
+                'vehicle_type'               =>'car',
+                'rate'                       => 500,
+                'model'                      =>'2018',
+                'status'                     =>'available',
+                'owner_id'                   =>1,
+                'created_at'                 =>now(),
+                'updated_at'                 =>now(),
+            ]
+        ],[],[]);
     }
 }
