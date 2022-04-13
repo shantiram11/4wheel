@@ -10,7 +10,8 @@ class IndexController extends Controller
 {
     public function index()
     {
+        $vehicles = Vehicle::with('photos')->get();
 
-        return view('front.index.index');
+        return view('front.index.index',compact('vehicles'));
     }
 }

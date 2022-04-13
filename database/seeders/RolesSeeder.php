@@ -31,17 +31,9 @@ class RolesSeeder extends Seeder
                 'updated_at' => now()
             ],
             [
-                'name' => 'vendor',
-                'label' => 'Vendor',
-                'description' => 'User who is regsitered as a contributor',
-                'preserved' => 'yes',
-                'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
                 'name' => 'customer',
                 'label' => 'Customer',
-                'description' => 'User who registered just for purchasing the services',
+                'description' => 'User who registered just for using the services',
                 'preserved' => 'yes',
                 'created_at' => now(),
                 'updated_at' => now()

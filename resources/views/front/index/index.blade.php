@@ -174,12 +174,15 @@
                             <h2 class="text-align-center-sq">Popular Cars</h2>
                         </div>
                     </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
+@foreach ($vehicles as $v )
+                        <?php
+                        $featured_image = $v->photos->where('featured','yes')->first();
+                        ?>
+                        <div class="ui twelve wide mobile six wide tablet four wide computer column">
                         <div class="property-item caption-sq shadow-sq small-sq">
                             <div class="property-item-inner">
 
-                                <div class="price-tag-sq">16 &dollar; <span>/ hour</span></div>
+                                <div class="price-tag-sq">{{$v->rate}} <span>/ Day</span></div>
                                 <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
@@ -187,7 +190,7 @@
                                 <a class="image-sq" href={{route('property')}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_01.jpg') }}"
+                                            <img  src="{{ asset('storage/photos/'.$featured_image->image) }}"
                                                 alt="" class="">
                                         </span>
                                     </div>
@@ -195,8 +198,7 @@
 
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">VW Golf 7 1.6 TDI -
-                                            DSG</a>
+                                        <a href={{route('property')}} class="title-sq">{{$v->brand}}</a>
                                     </div>
 
                                     {{-- <div class="icons-row">
@@ -218,229 +220,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
-                        <div class="property-item caption-sq shadow-sq small-sq">
-                            <div class="property-item-inner">
-
-                                <div class="price-tag-sq">85 &dollar; <span>/ hour</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
-
-                                <a class="image-sq" href={{route('property')}}>
-                                    <div class="image-wrapper">
-                                        <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_02.jpg') }}"
-                                                alt="" class="">
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="main-details">
-                                    <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">Mercedes-Benz C AMG</a>
-                                    </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 9.9
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> A
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
-                        <div class="property-item caption-sq shadow-sq small-sq">
-                            <div class="property-item-inner">
-
-                                <div class="price-tag-sq">32 &dollar; <span>/ hour</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
-
-                                <a class="image-sq" href={{route('property')}}>
-                                    <div class="image-wrapper">
-                                        <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_03.jpg') }}"
-                                                alt="" class="">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <div class="main-details">
-                                    <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">Audi A3 2.0 TDI</a>
-                                    </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 8.9
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> A
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
-                        <div class="property-item caption-sq shadow-sq small-sq">
-                            <div class="property-item-inner">
-
-                                <div class="price-tag-sq">45 &dollar; <span>/ hour</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
-
-                                <a class="image-sq" href={{route('property')}}>
-                                    <div class="image-wrapper">
-                                        <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_04.jpg') }}"
-                                                alt="" class="">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <div class="main-details">
-                                    <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">1971 Buick Skylark
-                                            GSX</a>
-                                    </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 8.5
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> M
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
-                        <div class="property-item caption-sq shadow-sq small-sq">
-                            <div class="property-item-inner">
-
-                                <div class="price-tag-sq">13 &dollar; <span>/ hour</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
-
-                                <a class="image-sq" href={{route('property')}}>
-                                    <div class="image-wrapper">
-                                        <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_05.jpg') }}"
-                                                alt="" class="">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <div class="main-details">
-                                    <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">Lada VAZ 2101</a>
-                                    </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 7.8
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> A
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui twelve wide mobile six wide tablet four wide computer column">
-                        <div class="property-item caption-sq shadow-sq small-sq">
-                            <div class="property-item-inner">
-
-                                <div class="price-tag-sq">83 &dollar; <span>/ hour</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
-
-                                <a class="image-sq" href={{route('property')}}>
-                                    <div class="image-wrapper">
-                                        <span class="image-inner">
-                                            <img src="{{ asset('assets/front/images/cars/property_item_cars_06.jpg') }}"
-                                                alt="" class="">
-                                        </span>
-                                    </div>
-                                </a>
-
-                                <div class="main-details">
-                                    <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">BMW M4 2016</a>
-                                    </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 9.6
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> A
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ui twelve wide mobile twelve wide tablet twelve wide computer column">
-                        <div class="typo-section-sq thick-sq">
-                            <a class="more-trigger" data-more="See All" href="listing_page.html">
-                                <i class="icon icon-arrow-down-122"></i>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>

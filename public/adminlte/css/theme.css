@@ -6,6 +6,9 @@
     .ks-table-entry-header{
         padding-top: 15px;
     }
+.card-body table tbody tr td .ks-mw-250{
+    max-width: 250px;
+}
 .ks-mw-250{
     max-width: 250px;
 }

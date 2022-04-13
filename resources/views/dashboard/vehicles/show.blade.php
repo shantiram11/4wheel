@@ -2,7 +2,8 @@
 @section('content')
 
     <?php
-        $featured_image = $vehicle->photos->where('featured','yes')->first();
+        $featured_image = $vehicle->photos->where('featured','yes')->first();\
+
     ?>
 
     <!-- Content Header (Page header) -->
@@ -118,20 +119,24 @@
                                     {{$vehicle->seat_count}}
                                 </td>
                             </tr>
+                            @dd($featured_image)
                             <tr>
                                 <th>
                                     Profile Image
                                 </th>
-{{--                                <td>--}}
-{{--                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />--}}
-{{--                                </td>--}}
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
+                                </td>
                             </tr>
                         </tbody>
                       </table>
                     </div>
                     <!-- /.card-body -->
-
+                  </div>
+                </div>
           <!-- /.card -->
-
+            </div>
+    </div>
+</section>
 @endsection
 
