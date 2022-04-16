@@ -19,7 +19,8 @@ class DashboardLocationController extends Controller
             $columns = array(
                 0 => 'id',
                 1 => 'latitude',
-                2 => 'longitude',
+                2 => 'vehicle_id',
+                3 => 'longitude',
                 4 => 'action',
             );
             //            $meta = $this->defaultTableInput($request->only(['length', 'start', 'order']));
@@ -35,6 +36,7 @@ class DashboardLocationController extends Controller
                     'u.id',
                     'u.latitude',
                     'u.longitude',
+                    'u.vehicle_id',
                     'u.created_at',
                 );
             $query->where('u.latitude', 'like', $search . '%')
@@ -53,6 +55,7 @@ class DashboardLocationController extends Controller
                     $nestedData['id'] = $v->id;
                     $nestedData['latitude'] = $v->latitude;
                     $nestedData['longitude'] = $v->longitude;
+                    $nestedData['vehicle_id'] = $v->vehicle_id;
                     $nestedData['created_at'] = \Carbon\Carbon::parse($v->created_at)->format('Y-m-d');
                     $nestedData['action'] = \View::make('dashboard.locations._action')->with('r',$v)->render();
                     $data[] = $nestedData;

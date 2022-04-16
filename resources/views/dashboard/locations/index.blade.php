@@ -33,6 +33,7 @@
                                 <tr>
                                     <th>latitude</th>
                                     <th>longitude</th>
+                                    <th>vehicle ID</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -41,6 +42,7 @@
                                 <tr>
                                     <th>latitude</th>
                                     <th>longitude</th>
+                                    <th>vehicle ID</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
@@ -77,6 +79,7 @@
                 "columns": [
                     { "data": "longitude",},
                     { "data": "latitude" },
+                    { "data": "vehicle_id" },
                     {
                         "data": "action",
                         "searchable": false,

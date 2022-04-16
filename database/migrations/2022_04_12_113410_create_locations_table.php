@@ -17,6 +17,9 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->float('longitude');
             $table->float('latitude');
+            $table->unsignedBigInteger('vehicle_id')->nullable();
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('set null');
+
             $table->timestamps();
         });
     }
