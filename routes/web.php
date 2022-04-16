@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
         Route::resource('vehicles', \App\Http\Controllers\Dashboard\VehicleController::class);
+        Route::resource('dashboard-locations', \App\Http\Controllers\Dashboard\DashboardLocationController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
         Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
         Route::put('user/verify/{user}', [\App\Http\Controllers\Dashboard\UserController::class, 'userVerify'])->name('user.verify');

@@ -502,10 +502,10 @@
 {{--            </div>--}}
 {{--        </div>--}}
 
-        <br>
-        <br>
+{{--        <br>--}}
+{{--        <br>--}}
 
-    </div>
+{{--    </div>--}}
 @endsection
 @section('page_level_script')
     @include('front.detail.checkout-script')

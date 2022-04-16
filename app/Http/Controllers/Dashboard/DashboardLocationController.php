@@ -1,37 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use \App\Http\Requests\LocationRequest;
-use App\Http\Resources\LocationResource;
-use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\DB;
 
-use App\Interfaces\LocationRepositoryInterface;
-use App\Models\Location;
-use Illuminate\Support\Str;
-
-class LocationController extends Controller
+class DashboardLocationController extends Controller
 {
-
-    private $locationRepository;
-
-    public function __construct(LocationRepositoryInterface $locationRepository)
-    {
-        $this->locationRepository = $locationRepository;
-    }
-
     /**
      * Display a listing of the resource.
-     * @param Request $request
+     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
             $columns = array(
                 0 => 'id',
@@ -47,8 +30,7 @@ class LocationController extends Controller
             $dir    = $request->input('order.0.dir') ?? 'asc';
             $search = $request->input('search.value') ?? '';
 
-            $query = \DB::table('users as u')
-                ->join('roles as r', 'r.id', 'u.role_id')
+            $query = DB::table('locations as u')
                 ->select(
                     'u.id',
                     'u.latitude',
@@ -86,7 +68,6 @@ class LocationController extends Controller
         return view('dashboard.locations.index');
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
@@ -94,10 +75,7 @@ class LocationController extends Controller
      */
     public function create()
     {
-        // $this->authorize('create',Location::class);
-        return response([
-            'additionalFormData' => $this->getAdditionalDataForForm()
-        ], Response::HTTP_OK);
+        //
     }
 
     /**
@@ -106,20 +84,9 @@ class LocationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LocationRequest $request)
+    public function store(Request $request)
     {
-//        $input = $request->only('longitude','latitude');
-
-        $location = Location::create([
-            'latitude'  => $request->input('latitude'),
-            'longitude'  => $request->input('longitude'),
-        ]);
-
-//        $location = $/this->locationRepository->store($input);
-        return response([
-            'data'     => new LocationResource($location),
-            'message'  => __('crud.created'),
-        ],201);
+        //
     }
 
     /**
@@ -130,9 +97,7 @@ class LocationController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view',Location::class);
-        $location = $this->locationRepository->find($id);
-        return response(new LocationResource($location),Response::HTTP_OK);
+        //
     }
 
     /**
@@ -143,12 +108,7 @@ class LocationController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('update',Location::class);
-        $location = $this->locationRepository->find($id);
-        return response([
-            'location'  => $location,
-            'additionalFormData' => $this->getAdditionalDataForForm()
-        ],200);
+        //
     }
 
     /**
@@ -158,15 +118,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LocationRequest $request, Location $location)
+    public function update(Request $request, $id)
     {
-        $this->authorize('update',Location::class);
-        $input = $request->only('longitude','latitude');
-        $updatedLocation = $this->locationRepository->update($input, $location);
-        return response([
-            'data'     => new LocationResource($updatedLocation),
-            'message'  => __('crud.updated'),
-        ],201);
+        //
     }
 
     /**
@@ -175,10 +129,8 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Location $location)
+    public function destroy($id)
     {
-        // $this->authorize('destroy',Location::class);
-        $this->locationRepository->delete($location);
-        return response([],204);
+        //
     }
 }
