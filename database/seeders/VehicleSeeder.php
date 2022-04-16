@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Database\Seeder;
 
-class vehicleSeeder extends Seeder
+class VehicleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
