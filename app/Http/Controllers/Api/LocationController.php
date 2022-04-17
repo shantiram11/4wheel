@@ -26,18 +26,13 @@ class LocationController extends Controller
     /**
      * Display a listing of the resource.
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\JsonResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function index(Request $request)
     {
-        //  $this->authorize('view',Location::class);
-        $meta = AppHelper::defaultTableInput($request->only(['page', 'perPage', 'order', 'dir', 'searchCol','search']));
-        $resp = $this->locationRepository->paginatedWithQuery($meta);
-        return response()->json([
-            'data'      => LocationResource::collection($resp['results']),
-            'meta'      => $resp['meta']
-        ],200);
+
+      //
     }
 
 
@@ -66,6 +61,7 @@ class LocationController extends Controller
 
         $location = Location::create([
             'latitude'  => $request->input('latitude'),
+            'vehicle_id'  => $request->input('vehicle_id'),
             'longitude'  => $request->input('longitude'),
         ]);
 
