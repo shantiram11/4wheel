@@ -124,7 +124,7 @@ Default Header with a White Background & Dark text.
         </header>
 
 
-        @yield('content'))
+        @yield('content')
 
 
         <!--FOOTER-->
