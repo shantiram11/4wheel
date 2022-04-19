@@ -16,7 +16,7 @@ class IndexController extends Controller
     }
     public function show($slug)
     {
-        $vehicle = Vehicle::where('slug',$slug)->get();
+        $vehicle = Vehicle::where('slug',$slug)->first();
 
         return view('front.detail.property',compact('vehicle'));
     }
