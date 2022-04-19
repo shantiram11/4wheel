@@ -140,16 +140,16 @@
                                  </span>
                                  @enderror
                   </div>
-                  <div class="form-group">
-                    <label for="status">status</label>
-                    <input type="text"
-                                 class="form-control @error('status') is-invalid @enderror" type="text" name="status" value="{{ old('status', $vehicle->status) }}">
-                                 @error('status')
-                                 <span class="invalid-feedback" role="alert">
-                                     {{ $message }}
-                                 </span>
-                                 @enderror
-                  </div>
+{{--                  <div class="form-group">--}}
+{{--                    <label for="status">status</label>--}}
+{{--                    <input type="text"--}}
+{{--                                 class="form-control @error('status') is-invalid @enderror" type="text" name="status" value="{{ old('status', $vehicle->status) }}">--}}
+{{--                                 @error('status')--}}
+{{--                                 <span class="invalid-feedback" role="alert">--}}
+{{--                                     {{ $message }}--}}
+{{--                                 </span>--}}
+{{--                                 @enderror--}}
+{{--                  </div>--}}
                   <div class="form-group">
                       <!--begin::Col-->
 

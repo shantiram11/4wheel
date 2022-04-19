@@ -89,7 +89,7 @@
                                             </a>
                                         </div>
 
-                                        <h1 class="title-sq">Audi A3 2.0 TDI</h1>
+                                        <h1 class="title-sq">{{$vehicle->brand}}</h1>
 
                                         <div class="icons-row">
                                             <div class="icons-column">
@@ -110,8 +110,8 @@
                                         </div>
 
                                         <p class="description-sq">
-                                            In hac habitasse platea dictumst. Integer quis tortor enim. Integer et elit nec magna ultricies convallis. In venenatis eu erat et facilisis. Vestibulum congue enim nisl. Fusce arcu enim, porta a auctor vel, hendrerit a libero. Vivamus vel dapibus sem.
-                                        </p>
+                                            {{$vehicle->description}}
+                                              </p>
 
                                     </div>
 

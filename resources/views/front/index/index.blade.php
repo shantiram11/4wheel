@@ -78,7 +78,7 @@
                             </p>
                         </div>
                         <div class="caption-outside">
-                            <a class="button-sq link-sq" href={{route('property')}}>
+                            <a class="button-sq link-sq" href=''>
                                 <i class="icon big icon-slim-arrow-right"></i>
                                 <span>read more</span>
                             </a>
@@ -187,7 +187,7 @@
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
 
-                                <a class="image-sq" href={{route('property')}}>
+                                <a class="image-sq" href={{route('index.detail',['slug' => $v->slug])}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img  src="{{ asset('storage/photos/'.$featured_image->image) }}"

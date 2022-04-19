@@ -14,4 +14,10 @@ class IndexController extends Controller
 
         return view('front.index.index',compact('vehicles'));
     }
+    public function show($slug)
+    {
+        $vehicle = Vehicle::where('slug',$slug)->get();
+
+        return view('front.detail.property',compact('vehicle'));
+    }
 }
