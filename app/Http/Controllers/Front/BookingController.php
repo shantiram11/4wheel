@@ -38,26 +38,28 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        /** TODO: Booking request */
         if(session('booking')){
             $request->session()->forget('booking');
         }
+        $vehicle = Vehicle::where('slug', $request->input('vehicle'))->first();
         $booked_date    = Carbon::parse($request->input('booked_date'));
         $return_date    = Carbon::parse($request->input('return_date'));
         $total_days     = $return_date->diffInDays($booked_date);
-         $total_cost    = $total_days * env('PER_DAY');
-
-        $total_days * env('PER_DAY');
+        $total_cost    = $total_days * $vehicle->rate;
+        $return_location = $request->input('return_same') ? $request->input('pickup_location') : $request->input('return_location');
         $booking = [
             'pickup_location'               => $request->input('pickup_location'),
-            'return_location'               => $request->input('return_location'),
+            'return_location'               => $return_location,
             'return_same'                   => $request->input('return_same'),
             'book_date'                     => $request->input('booked_date'),
             'return_date'                   => $request->input('return_date'),
             'booked_by'                     => Auth::user()->id,
-            'duration'                      => $total_days
+            'duration'                      => $total_days,
+            'total_cost'                    => $total_cost,
         ];
         session(['booking' => $booking]);
-        return view('front.payment.payment', compact('total_cost'))->with('alert.success', 'Waiting for payment!!');
+        return view('front.payment.payment', compact('vehicle', 'booking'))->with('alert.success', 'Waiting for payment!!');
     }
 
     /**

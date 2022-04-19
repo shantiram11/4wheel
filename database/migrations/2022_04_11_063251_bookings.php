@@ -19,6 +19,7 @@ class Bookings extends Migration
             $table->string('return_location')->nullable();
             $table->string('book_date');
             $table->string('return_date');
+            $table->float('total_cost');
             $table->string('duration')->nullable();
             $table->unsignedBigInteger('vehicle_id');
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
