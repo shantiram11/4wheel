@@ -11,6 +11,9 @@
                 <div class="col-sm-3">
                     <a href="{{route('dashboard.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
                 </div>
+                <div class="col-sm-3">
+                    <a href="{{route('profile.changePassword')}}" class=""><button class="btn btn-block btn btn-secondary">Change Password</button></a>
+                </div>
                 <!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -33,7 +36,7 @@
                                 </div>
                             @endif
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group mt-4">
                                 <label for="name">Name</label>
                                 <input type="text"
                                        class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name', $user->name) }}">
@@ -43,7 +46,7 @@
     </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </form>

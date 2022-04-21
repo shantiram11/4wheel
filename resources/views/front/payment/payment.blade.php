@@ -11,32 +11,38 @@
             <span>{{ session("failureMsg") }}</span>
         </div>
     @endif
+    <div class="text-center">
+        <h3>Billing details </h3>
+    </div>
     <div class="alert alert-danger fade show mt-1" id="validationErrorAlert" role="alert" style="display:none;">
         <span id="validationErrorText"></span>
     </div>
-    <table>
-        <tr>
-            <th>Vechicle Price:</th>
-            <td>{{$vehicle->rate}}</td>
-        </tr>
-        <tr>
-            <th>Total Days</th>
-            <td>{{$booking_data['duration']}}</td>
-        </tr>
-        <tr>
-            <th>Begin Location</th>
-            <td>{{$booking_data['pickup_location']}}</td>
-        </tr>
-        <tr>
-            <th>Return Location</th>
-            <td>{{$booking_data['return_location']}}</td>
-        </tr>
-        <tr>
-            <th>Total:</th>
-            <td>{{$total}}</td>
-        </tr>
-    </table>
-
+    <section>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Vechicle Price: </th>
+                    <td>Rs.{{$vehicle->rate}} /Per Day</td>
+                </tr>
+                <tr>
+                    <th>Total Days</th>
+                    <td>{{$booking_data['duration']}}</td>
+                </tr>
+                <tr>
+                    <th>Pickup Location</th>
+                    <td>{{$booking_data['pickup_location']}}</td>
+                </tr>
+                <tr>
+                    <th>Return Location</th>
+                    <td>{{$booking_data['return_location']}}</td>
+                </tr>
+                <tr>
+                    <th>Total:</th>
+                    <td>{{$total}}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
 {{--    Stripe Payment flow starts from here--}}
             <div id="stripe-card-element" class="card-input">
         <!-- A Stripe Element will be inserted here. -->

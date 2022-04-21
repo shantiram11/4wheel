@@ -2,11 +2,7 @@
     function checkTermsAcceptance()
     {
         let isChecked = true;
-        // if(method === "paypal"){
-        //     if( $("#paypal_terms_checkbox").prop("checked") == false ){
-        //         isChecked = false;
-        //     }
-        // }
+
         if( $("#terms_checkbox").prop("checked") == false )
         {
             isChecked = false;
