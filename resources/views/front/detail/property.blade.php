@@ -1,10 +1,5 @@
 @extends('layouts.front')
 @section('content')
-    <?php
-    $stripePubKey = env('STRIPE_KEY');
-    $currencyTextRaw = 'USD';
-    $total = 100;
-    ?>
     <div class="ui layout">
         <!-- grid -->
         <div class="ui grid container stackable centered">
@@ -16,14 +11,6 @@
 
                             <div class="ui grid">
                                 <div class="row">
-                                    @if(session("failureMsg"))
-                                        <div class="alert alert-danger fade show mt-1" id="paymentErrorAlert" role="alert">
-                                            <span>{{ session("failureMsg") }}</span>
-                                        </div>
-                                    @endif
-                                    <div class="alert alert-danger fade show mt-1" id="validationErrorAlert" role="alert" style="display:none;">
-                                        <span id="validationErrorText"></span>
-                                    </div>
                                     <!-- Left-->
                                     <div class="ui twelve wide mobile six wide computer column">
 
@@ -88,8 +75,7 @@
 
                                             </a>
                                         </div>
-
-                                        <h1 class="title-sq">Audi A3 2.0 TDI</h1>
+                                        <h1 class="title-sq">{{$vehicle->brand}}</h1>
 
                                         <div class="icons-row">
                                             <div class="icons-column">
@@ -110,8 +96,8 @@
                                         </div>
 
                                         <p class="description-sq">
-                                            In hac habitasse platea dictumst. Integer quis tortor enim. Integer et elit nec magna ultricies convallis. In venenatis eu erat et facilisis. Vestibulum congue enim nisl. Fusce arcu enim, porta a auctor vel, hendrerit a libero. Vivamus vel dapibus sem.
-                                        </p>
+                                            {{$vehicle->description}}
+                                              </p>
 
                                     </div>
 
@@ -120,6 +106,7 @@
 
                                         <form  method="post" class="property-checkout-container main-infos" action="{{route('front.booking.store')}}">
                                             @csrf
+                                            <input type="hidden" value="{{$vehicle->slug}}" name="vehicle">
                                             <div class="div-c">
                                                 <label>Pick up location</label>
                                                 <input name="pickup_location" type="text" placeholder=" ">
@@ -156,34 +143,6 @@
                                             <button class="button-sq fullwidth-sq font-weight-bold-sq"  type="submit">Instant Booking</button>
                                         </form>
 
-                                            {{--Stripe Payment flow starts from here--}}
-{{--                                            <div id="stripe-card-element" class="card-input">--}}
-                                                <!-- A Stripe Element will be inserted here. -->
-{{--                                            </div>--}}
-{{--                                            <div class="checkout-terms form-check">--}}
-{{--                                                <input class="form-check-input" type="checkbox" value=""--}}
-{{--                                                       id="terms_checkbox">--}}
-{{--                                                <label class="form-check-label" for="terms_checkbox" style="margin-top: 20px;">--}}
-{{--                                                    I agree to {{config('app.name')}}<a href="#" class="text-muted"> terms and conditions.</a>--}}
-{{--                                                    <a class="text-muted" href="#">Privacy Policy information.</a>--}}
-{{--                                                </label>--}}
-{{--                                            </div>--}}
-{{--                                            <form action="{{route('checkout.fulfillOrder')}}"--}}
-{{--                                                  id="payment-form-stripe" name="stripePayForm" method="POST">--}}
-{{--                                                @csrf--}}
-{{--                                                <input type="hidden" id="transaction_stripe"--}}
-{{--                                                       name="transaction_id" />--}}
-{{--                                                <input type="hidden" id="total_stripe" name="total" />--}}
-{{--                                                <div class="place-order-flex-box" style="position: relative;">--}}
-{{--                                                    <div class="checkout-page Place-order">--}}
-{{--                                                        <button class="button-sq fullwidth-sq font-weight-bold-sq"--}}
-{{--                                                        id="payStartBtnStripe" form="payment-form-stripe" type="submit">Instant Booking</button>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="spinner-border"  id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none;  position: absolute;right: 13px;top: 8px;">--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </form>--}}
-                                            {{-- Stripe ends--}}
                                         </div>
                                     </div>
                                 </div>
@@ -508,8 +467,6 @@
 {{--    </div>--}}
 @endsection
 @section('page_level_script')
-    @include('front.detail.checkout-script')
-    @include('front.detail.stripe-script')
     <script>
         $(document).ready(function(){
             $('#locationStart').calendar({

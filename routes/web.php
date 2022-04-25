@@ -72,9 +72,10 @@ Route::group(['middleware' => ['auth','verified']], function () {
 //session.cart middleware group starts
 
 Route::get('/', [\App\Http\Controllers\Front\IndexController::class, 'index'])->name('front.index');
-Route::get('/property', function () {
-    return view('front.detail.property');
-})->name('property');
+Route::get('/property/{slug}', [\App\Http\Controllers\Front\IndexController::class, 'show'])->name('front.detail');
+//Route::get('/property', function () {
+//    return view('front.detail.property');
+//})->name('property');
 Route::get('/payment', function () {
     return view('front.detail.payment');
 })->name('payment');

@@ -36,7 +36,7 @@ class VehicleSeeder extends Seeder
             ],
             [
             'company_name'               => 'Mercedes',
-            'slug'                       => 'audi',
+            'slug'                       => 'mercedes',
             'fuel_type'                  => 'petrol',
             'vehicle_number'             => 'ko 1 ka 6545',
             'brand'                      => 'Mercedes-Benz C AMG',
@@ -53,7 +53,7 @@ class VehicleSeeder extends Seeder
         ],
             [
                 'company_name'               => 'Volkswagen',
-                'slug'                       => 'audi',
+                'slug'                       => 'volkswagen',
                 'fuel_type'                  => 'petrol',
                 'vehicle_number'             => 'ko 1 ka 6545',
                 'brand'                      => 'VW Golf 7 1.6 TDI - DSG',
@@ -87,7 +87,7 @@ class VehicleSeeder extends Seeder
             ],
             [
             'company_name'               => 'Lada',
-            'slug'                       => 'vaz',
+            'slug'                       => 'lada',
             'fuel_type'                  => 'petrol',
             'vehicle_number'             => 'ko 1 ka 6545',
             'brand'                      => 'Lada VAZ 2101',

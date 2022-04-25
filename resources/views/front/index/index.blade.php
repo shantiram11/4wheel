@@ -78,7 +78,7 @@
                             </p>
                         </div>
                         <div class="caption-outside">
-                            <a class="button-sq link-sq" href={{route('property')}}>
+                            <a class="button-sq link-sq" href=''>
                                 <i class="icon big icon-slim-arrow-right"></i>
                                 <span>read more</span>
                             </a>
@@ -186,8 +186,7 @@
                                 <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
                                     <i class="icon icon-add-wishlist"></i>
                                 </a>
-
-                                <a class="image-sq" href={{route('property')}}>
+                                <a class="image-sq" href={{route('front.detail',$v->slug)}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             <img  src="{{ asset('storage/photos/'.$featured_image->image) }}"
@@ -195,10 +194,9 @@
                                         </span>
                                     </div>
                                 </a>
-
                                 <div class="main-details">
                                     <div class="title-row">
-                                        <a href={{route('property')}} class="title-sq">{{$v->brand}}</a>
+                                        <a href={{route('front.detail',$v->slug)}} class="title-sq">{{$v->brand}}</a>
                                     </div>
 
                                     {{-- <div class="icons-row">
