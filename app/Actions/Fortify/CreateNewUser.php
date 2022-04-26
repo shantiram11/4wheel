@@ -55,7 +55,7 @@ class CreateNewUser implements CreatesNewUsers
             'identity_back'     => $backImageName,
             'identity_front'     => $frontImageName,
             'password'          => Hash::make($input['password']),
-            'role_id'           => 4,
+            'role_id'           => 3,
         ]);
     }
 }
