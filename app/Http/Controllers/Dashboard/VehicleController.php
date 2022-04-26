@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 use App\Helpers\AppHelper;
 use App\Http\Requests\VehicleRequest;
+use App\Models\Location;
 use App\Models\Photo;
+use Carbon\Carbon;
 use Codebyray\ReviewRateable\Models\Rating;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -230,5 +232,46 @@ class VehicleController extends Controller
         $vehicle->rating()->save($rating);
         return redirect()->back();
     }
+
+    public function travelledLocations(Request $request, $id)
+    {
+        $date = $request->input('date') ?? date('Y-m-d');
+//        $date = Carbon::today();
+        $date = '2022-04-17';
+        $vehicle = Vehicle::findOrFail($id);
+        $locations = Location::where('vehicle_id',$vehicle->id)
+                ->whereDate('created_at', $date)
+                ->select('latitude as lat', 'longitude as lng')
+                ->get()->toArray();
+//        dd($locations);
+        $locations = [
+            [
+                'lat' => 26.663552,
+                'lng'=> 87.273414
+            ],
+            [
+                'lat' => 26.643884,
+                'lng'=> 87.275220
+            ],
+            [
+                'lat' => 26.630995,
+                'lng'=> 87.273503
+            ],
+            [
+                'lat' => 26.607883,
+                'lng'=> 87.275039
+            ]
+        ];
+        return view('dashboard.vehicles.travelled_locations',compact('locations'));
+//        if()
+//
+//            ->orderBy('created_at','desc')
+//            ->get()
+//            ->groupBy(function($item) {
+//                return $item->created_at->format('Y-m-d');
+//            })->first();
+
+    }
+
 
 }

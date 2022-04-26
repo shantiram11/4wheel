@@ -18,4 +18,6 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('adminlte/css/theme.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+
   </head>
