@@ -2,7 +2,7 @@
     function deleteVehicle(id,redirect = false)
     {
         let table = 'vehicleDatatable';
-        let action = BASE_URL+"/dashboard/vehicles/"+id;
+        let action = BASE_URL+"/customer-dashboard/customerVehicles/"+id;
         $.ajax({
             "url": action,
             "dataType":"json",

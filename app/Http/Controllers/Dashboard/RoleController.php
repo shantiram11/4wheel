@@ -11,6 +11,12 @@ use App\Http\Requests\RoleRequest;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
+
     /**
      * Instantiate a new controller instance.
      *

@@ -11,7 +11,7 @@ class Booking extends Model
     use HasFactory;
     protected $table = 'bookings';
     protected $guarded = ['id'];
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = ['created_at', 'updated_at', 'book_date', 'return_date'];
 
     /** ==============
      * Relations

@@ -13,6 +13,12 @@ use DB;
 
 class SettingController extends DashboardController
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
+
     /**
      * Instantiate a new controller instance.
      *

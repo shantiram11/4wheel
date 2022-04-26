@@ -43,7 +43,7 @@ class BookingController extends Controller
             $request->session()->forget('booking');
         }
         $vehicle = Vehicle::where('slug', $request->input('vehicle'))->first();
-        $booked_date    = Carbon::parse($request->input('booked_date'));
+        $booked_date    = Carbon::parse($request->input('book_date'));
         $return_date    = Carbon::parse($request->input('return_date'));
         $total_days     = $return_date->diffInDays($booked_date);
         $total_cost    = $total_days * $vehicle->rate;
@@ -52,8 +52,8 @@ class BookingController extends Controller
             'pickup_location'               => $request->input('pickup_location'),
             'return_location'               => $return_location,
             'return_same'                   => $request->input('return_same'),
-            'book_date'                     => $request->input('booked_date'),
-            'return_date'                   => $request->input('return_date'),
+            'book_date'                     => $booked_date,
+            'return_date'                   => $return_date,
             'booked_by'                     => Auth::user()->id,
             'duration'                      => $total_days,
             'total_cost'                    => $total_cost,

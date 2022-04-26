@@ -17,6 +17,7 @@ class Bookings extends Migration
             $table->id();
             $table->string('pickup_location');
             $table->string('return_location')->nullable();
+            $table->string('transaction_id');
             $table->string('book_date');
             $table->string('return_date');
             $table->float('total_cost');

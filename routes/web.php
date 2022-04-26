@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::group(['prefix' => 'customer-dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\customer\CustomerDashboardController::class, 'index'])->name('customer-dashboard.index');
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
-        Route::resource('vehicles', \App\Http\Controllers\Customer\VehicleController::class);
+        Route::resource('customerVehicles', \App\Http\Controllers\Customer\VehicleController::class);
     });
 
     /** Checkout routes */

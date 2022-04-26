@@ -71,7 +71,7 @@
 
                 "serverSide": true,
                     "ajax": {
-                        "url": BASE_URL + '/dashboard/vehicles',
+                        "url": BASE_URL + '/customer-dashboard/customerVehicles',
                         "dataType": "json",
                         "type": "GET",
                         "data": {

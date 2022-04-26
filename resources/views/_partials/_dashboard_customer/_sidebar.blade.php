@@ -46,13 +46,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('vehicles.index')}}" class="nav-link ">
+                <a href="{{route('customerVehicles.index')}}" class="nav-link ">
                   <i class="fas fa-eye nav-icon"></i>
                   <p>View Vehicle listing</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('vehicles.create')}}" class="nav-link">
+                <a href="{{route('customerVehicles.create')}}" class="nav-link">
                   <i class="fas fa-truck-pickup nav-icon"></i>
                   <p>Add vehicles</p>
                 </a>

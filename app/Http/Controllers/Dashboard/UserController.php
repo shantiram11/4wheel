@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -174,6 +179,6 @@ class UserController extends Controller
             'verify'             => $request->input('user_verified'),
         ]);
         return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
-  
+
     }
 }

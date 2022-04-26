@@ -164,7 +164,6 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
-
         $vehicle = Vehicle::with('photos')->where('id', $id)->first();
         return view('dashboard.vehicles.show', compact('vehicle'));
     }

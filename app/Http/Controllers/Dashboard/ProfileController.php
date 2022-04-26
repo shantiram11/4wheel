@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'isAdmin']);
+    }
+
+
     /**
      * Display a listing of the resource.
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View

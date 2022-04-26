@@ -9,7 +9,7 @@
                     <h1 class="m-0">Vehicle</h1>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
+                    <a href="{{route('customerVehicles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->
@@ -30,7 +30,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="edit_vehicle_form" class="form" action="{{route('vehicles.update',$vehicle)}}" method="POST">
+                        <form id="edit_vehicle_form" class="form" action="{{route('customerVehicles.update',$vehicle)}}" method="POST">
                             {{ method_field('PUT') }}
                             @include('customer_dashboard.vehicles._form',['show' => false,'buttonText' => 'Update'])
                         </form>

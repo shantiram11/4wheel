@@ -19,7 +19,6 @@ class VehicleController extends Controller
      */
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
             $columns = array(
                 0 => 'company_name',
@@ -70,7 +69,7 @@ class VehicleController extends Controller
                     $nestedData['location'] = $v->location;
                     $nestedData['status'] = $v->status;
                     $nestedData['owner'] = $v->owner;
-                    $nestedData['action'] = \View::make('dashboard.vehicles._action')->with('r',$v)->render();
+                    $nestedData['action'] = \View::make('customer_dashboard.vehicles._action')->with('r',$v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -162,8 +161,9 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
-
         $vehicle = Vehicle::with('photos')->where('id', $id)->first();
+//        $vehicle_images = $vehicle->photos->where('featured','no');
+//        $featured_image = $vehicle->photos->where('featured','yes')->first();
         return view('customer_dashboard.vehicles.show', compact('vehicle'));
     }
 
@@ -174,8 +174,9 @@ class VehicleController extends Controller
      * @param  int  $id
      * @return array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Vehicle $vehicle)
+    public function edit($id)
     {
+        $vehicle = Vehicle::findOrFail($id);
         $users = User::pluck('name', 'id');
         $vehicle_options = Vehicle::VEHICLE_OPTIONS;
         $fuel_options = Vehicle::FUEL_OPTIONS;
