@@ -116,7 +116,6 @@ class VehicleController extends Controller
             'seat_count'                => $request->input('seat_count'),
             'description'               => $request->input('description'),
             'location'                  => $request->input('location'),
-            'status'                    => $request->input('status'),
             'owner_id'                  => auth()->user()->id,
         ]);
 //        dd($request->file('vehicle_photo'));

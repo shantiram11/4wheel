@@ -57,6 +57,7 @@ class BookingController extends Controller
             'booked_by'                     => Auth::user()->id,
             'duration'                      => $total_days,
             'total_cost'                    => $total_cost,
+            'vehicle_id'                    =>$vehicle->id,
         ];
         session(['booking' => $booking]);
         return view('front.payment.payment', compact('vehicle', 'booking'))->with('alert.success', 'Waiting for payment!!');

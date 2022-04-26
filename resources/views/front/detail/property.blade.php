@@ -62,18 +62,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
-
-                                            <a class="host-sq" href="vendor_details.html">
-                                                <span class="avatar-sq">
-                                                    <img src="{{asset('assets/front/images/avatar/avatar_04.jpg')}}" alt="">
-                                                </span>
-                                                <p class="host-name-sq">
-                                                    Dustin Porter
-                                                </p>
-
-                                            </a>
                                         </div>
                                         <h1 class="title-sq">{{$vehicle->brand}}</h1>
 
@@ -109,11 +98,11 @@
                                             <input type="hidden" value="{{$vehicle->slug}}" name="vehicle">
                                             <div class="div-c">
                                                 <label>Pick up location</label>
-                                                <input name="pickup_location" type="text" placeholder=" ">
+                                                <input name="pickup_location" type="text" placeholder=" "/>
                                             </div>
                                             <div class="div-c">
                                                 <label>Return location</label>
-                                                <input name="return_location" type="text" placeholder=" ">
+                                                <input name="return_location" type="text" placeholder=" "/>
                                             </div>
                                             <div class="div-c">
                                                 <input type="checkbox" name="return_same" id="checkbox1">

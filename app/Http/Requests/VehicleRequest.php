@@ -24,14 +24,14 @@ class VehicleRequest extends FormRequest
     public function rules()
     {
         return [
-            'company_name' => ['required', 'string', 'max:191'],
+            'company_name' => ['required', 'string','min:3', 'max:191'],
             'fuel_type' => ['required','in:petrol,diesel,hybrid,electric'],
-            'vehicle_number' => ['required', 'string', 'max:191', 'min:3'],
+            'vehicle_number' => ['required', 'string', 'max:191', 'min:4'],
             'brand' => ['required', 'string', 'max:191', 'min:3'],
             'seat_count' => ['required', 'numeric', 'max:191'],
-            'rate' => ['required', 'numeric', 'max:191'],
+            'rate' => ['required', 'numeric',],
             'description' => ['required', 'string','min:10', 'max:191'],
-            'location' => ['required', 'string', 'max:191'],
+            'location' => ['required', 'string', 'max:20'],
             'vehicle_type'  => ['required','in:car,jeep,van,bike'],
             'model' => ['required', 'string', 'max:191'],
             'status' => ['nullable'],
