@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [\App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard.index');
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
+        Route::get('vehicles/{id}/travelled-locations',[\App\Http\Controllers\Dashboard\VehicleController::class,'travelledLocations'])->name('vehicle.TravelledLocations');
         Route::resource('vehicles', \App\Http\Controllers\Dashboard\VehicleController::class);
         Route::resource('dashboard-locations', \App\Http\Controllers\Dashboard\DashboardLocationController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
@@ -64,7 +65,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
 //    Route::get('checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'payment'])->name('')
 
 });
-
 
 
 

@@ -45,6 +45,8 @@
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
  <!-- Custom dashboard Query -->
  <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_API_KEY')}}"
+ ></script>
 @include('utils._toastify')
 @include('utils._alertify')
 @yield('page_level_script')
