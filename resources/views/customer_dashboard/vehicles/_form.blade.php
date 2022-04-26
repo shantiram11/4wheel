@@ -122,9 +122,10 @@
                   </div>
                   <div class="form-group">
                     <label for="description">description </label>
-                    <input type="text"
-                                 class="form-control @error('description') is-invalid @enderror" type="text" name="description" value="{{ old('description', $vehicle->description) }}">
-                                 @error('description')
+
+                    <textarea type="text" rows="5" class="form-control @error('description') is-invalid @enderror" type="text" name="description">{{$vehicle->description}}</textarea>
+
+                      @error('description')
                                  <span class="invalid-feedback" role="alert">
                                      {{ $message }}
                                  </span>
