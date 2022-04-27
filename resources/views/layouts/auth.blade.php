@@ -14,6 +14,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css') }}">
  <link rel="stylesheet" href="{{asset('adminlte/css/theme.css')}}">
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
 </head>
 @yield('content')
 
@@ -25,6 +27,8 @@
 <script src="{{asset('adminlte/dist/js/adminlte.min.js') }}"></script>
  <!-- Custom dashboard Query -->
  <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
+<link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}">
  @yield('page_level_script')
 </body>
 </html>

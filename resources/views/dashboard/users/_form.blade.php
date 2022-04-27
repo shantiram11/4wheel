@@ -32,6 +32,7 @@
                                  </span>
             @enderror
         </div>
+        @if($buttonText == 'Create')
         <div class="form-group">
             <label for="password">password </label>
             <input type="password"
@@ -42,7 +43,7 @@
                                  </span>
             @enderror
         </div>
-
+        @endif
 
          <div class="form-group">
           <label for="role">Role</label>

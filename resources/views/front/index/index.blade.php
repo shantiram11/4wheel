@@ -239,24 +239,24 @@
             Sign Up Now
         </div>
 
-        <div class="content">
-            <a href="" class="button-sq fullwidth-sq modal-ui-trigger" data-trigger-for="modal03">
-                <i class="icon icon-email-2"></i>
-                <span>Sign Up with Email</span>
-            </a>
+{{--        <div class="content">--}}
+{{--            <a href="" class="button-sq fullwidth-sq modal-ui-trigger" data-trigger-for="modal03">--}}
+{{--                <i class="icon icon-email-2"></i>--}}
+{{--                <span>Sign Up with Email</span>--}}
+{{--            </a>--}}
 
-            <a href="" class="button-sq fullwidth-sq facebook-button">
-                <i class="icon icon-logo-facebook2"></i>
-                <span>Sign Up with Facebook</span>
-            </a>
+{{--            <a href="" class="button-sq fullwidth-sq facebook-button">--}}
+{{--                <i class="icon icon-logo-facebook2"></i>--}}
+{{--                <span>Sign Up with Facebook</span>--}}
+{{--            </a>--}}
 
-            <a href="" class="button-sq fullwidth-sq google-button">
-                <img src="{{ asset('assets/front/images/icon-google-plus.svg') }}" alt="">
-                <span>Sign Up with Google</span>
-            </a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel ex semper, in
-                pharetra justo pulvinar. </p>
-        </div>
+{{--            <a href="" class="button-sq fullwidth-sq google-button">--}}
+{{--                <img src="{{ asset('assets/front/images/icon-google-plus.svg') }}" alt="">--}}
+{{--                <span>Sign Up with Google</span>--}}
+{{--            </a>--}}
+{{--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel ex semper, in--}}
+{{--                pharetra justo pulvinar. </p>--}}
+{{--        </div>--}}
 
         <div class="actions">
             <div class="border-container">

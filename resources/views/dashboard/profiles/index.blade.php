@@ -26,7 +26,7 @@
                 <!-- left column -->
                 <div class="col-md-9">
                     <!-- general form elements -->
-                    <div class="card card-primary">
+                    <div class="card card-primary" style="padding: 20px;">
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="{{route('profile.store')}}" method="POST">

@@ -40,7 +40,7 @@ class ProfileController extends Controller
         $user->name = $request->input('name');
         $user->updated_at = date('Y-m-d H:i:s');
         $user->save();
-        return redirect()->route('profile.index')->with('successMessage','Successfully Updated!!');
+        return redirect()->route('profile.index')->with('alert.success', 'User Successfully Updated !!');
     }
     public function getChangePassword()
     {
@@ -53,7 +53,7 @@ class ProfileController extends Controller
         $user->password = Hash::make($request->input('password'));
         $user->updated_at = now();
         $user->save();
-        return redirect()->route('profile.changePassword')->with('successMessage','Password Succesfully Changed!!');
+        return redirect()->route('profile.changePassword')->with('alert.success', 'Password Successfully Changed !!');
     }
 
 }

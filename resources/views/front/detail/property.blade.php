@@ -153,13 +153,11 @@
                                 <span>9.2</span>
                                 <i class="icon icon-heart"></i>
                             </div>
-                            <div class="rating-info">
-                                <p>More than <strong>95%</strong> of guests recommend this place</p>
-                            </div>
+
                         </div>
                         <div class="rating-percentage">
                             <div class="rating-column">
-                                <p class="rating-label"><strong>Accuracy</strong></p>
+                                <p class="rating-label"><strong>Quality</strong></p>
                                 <div class="basic-progressbar">
                                     <div class="inner" style="width:75%"></div>
                                 </div>
@@ -180,7 +178,7 @@
                             </div>
 
                             <div class="rating-column">
-                                <p class="rating-label"><strong>Cleanliness</strong></p>
+                                <p class="rating-label"><strong>Safety</strong></p>
                                 <div class="basic-progressbar">
                                     <div class="inner" style="width:80%"></div>
                                 </div>
@@ -207,7 +205,7 @@
                             <div class="comment-sq">
                                 <span class="date-sq">12 september 2017</span>
 
-                                <p>As the saying goes: “Hospitality is making your guests feel at home, even though you wish they were". So please treat the place and the building neighbours as you would do your own.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie.  </p>
                             </div>
                         </div>
 
@@ -221,8 +219,7 @@
                             <div class="comment-sq">
                                 <span class="date-sq">24 august 2017</span>
 
-                                <p>With your budget in mind, it is easy to plan a chartered yacht vacation. Companies often have a fleet of sailing vessels that can accommodate parties of various sizes. You may want to make it a more intimate trip with only close family. There are charters that can be rented for as few as two people.</p>
-                            </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie.</p>                            </div>
                         </div>
 
                         <div class="reviews-row">
@@ -241,14 +238,12 @@
                                         <a class="accordion-trigger more-trigger right-sq" data-more="More" data-less="Less">
                                             <i class="icon icon-arrow-down-122"></i>
                                         </a>
-                                        <p>It is important to choose a hotel that makes you feel comfortable – contemporary or traditional furnishings, local decor or international, formal or relaxed. The ideal hotel directory should let you know of the options available.
-                                        </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie. Quisque pulvinar consequat massa, a auctor velit porta in. Aliquam eu convallis velit. Proin mollis ut erat non volutpat. Donec quis lorem nisl. Nunc a hendrerit mauris. Donec suscipit porttitor diam, scelerisque laoreet quam porta feugiat. Curabitur congue urna libero, ut pulvinar nisi porttitor eget. Praesent viverra, nisl at imperdiet cursus, nulla justo fringilla lacus, eu tempus metus velit pretium ex. Suspendisse congue eros at sapien auctor lobortis.  </p>
 
                                     </div>
 
                                     <div class="content">
-                                        <p>If it matters that your hotel is, for example, on the beach, close to the theme park, or convenient for the airport, then location is paramount. Any decent directory should offer a location map of the hotel and its surroundings. There should be distance charts to the airport offered as well as some form of interactive map.
-                                        </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie. Quisque pulvinar consequat massa, a auctor velit porta in. Aliquam eu convallis velit. Proin mollis ut erat non volutpat. Donec quis lorem nisl. Nunc a hendrerit mauris. Donec suscipit porttitor diam, scelerisque laoreet quam porta feugiat. Curabitur congue urna libero, ut pulvinar nisi porttitor eget. Praesent viverra, nisl at imperdiet cursus, nulla justo fringilla lacus, eu tempus metus velit pretium ex. Suspendisse congue eros at sapien auctor lobortis.  </p>
                                     </div>
                                 </div>
 
@@ -259,9 +254,9 @@
 
                             <div class="review-meta">
                                 <div class="avatar-sq verified-sq my-avatar-sq">
-                                    <img src="{{asset('assets/front/images/avatar/my_avatar.jpg')}}" alt="">
+                                    <img src="{{asset('assets/front/images/avatar/dummy.png')}}" alt="">
                                 </div>
-                                <p class="name-sq">Me</p>
+                                <p class="name-sq">Shantiram Tiwari</p>
                             </div>
 
                             <div class="comment-sq">

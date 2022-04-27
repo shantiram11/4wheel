@@ -1,9 +1,7 @@
  <!-- Main Footer -->
  <footer class="main-footer">
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
+
     <!-- Default to the left -->
   </footer>
 </div>
@@ -39,11 +37,14 @@
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-
+ <script src=" https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
  <!-- Custom dashboard Query -->
  <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
+
+ <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+ <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
 @include('utils._toastify')
 @include('utils._alertify')
 @yield('page_level_script')

@@ -1,12 +1,9 @@
  <!-- Main Footer -->
  <footer class="main-footer">
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
+
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+    </footer>
 </div>
 <!-- ./wrapper -->
 
@@ -16,7 +13,7 @@
     const BASE_URL = "{{url('/')}}";
     const CSRF_TOKEN = "{{csrf_token()}}"
 </script>
-
+ <script src=" https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <!-- jQuery -->
 <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 
@@ -46,6 +43,8 @@
  <!-- Custom dashboard Query -->
  <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
  <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_API_KEY')}}"
+ <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+ <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
  ></script>
 @include('utils._toastify')
 @include('utils._alertify')

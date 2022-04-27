@@ -103,14 +103,6 @@
                                  </span>
                       @enderror
                   </div>
-                    <div class="form-group"><label for="input-images">Images</label>
-                        <div class="input-images @error('product_photo') is-invalid @enderror"></div>
-                        @error('vehicle_photo')
-                        <span class="invalid-feedback" role="alert">
-                            {{$message}}
-                        </span>
-                        @enderror
-                    </div>
                   <div class="form-group"><label for="seat_count">Seat Count</label>
                     <input type="text"
                                  class="form-control @error('seat_count') is-invalid @enderror" type="text" name="seat_count" value="{{ old('seat_count', $vehicle->seat_count) }}">
@@ -176,8 +168,16 @@
                           @enderror
                       <!--end::Col-->
                   </div>
-
+                  <div class="form-group"><label for="input-images">Images</label>
+                      <div class="input-images @error('vehicle_photo') is-invalid @enderror"></div>
+                      @error('vehicle_photo')
+                      <span class="invalid-feedback" role="alert">
+                            {{$message}}
+                        </span>
+                      @enderror
+                  </div>
               </div>
+
 {{--              <!-- /.card-body -->--}}
 
               <div class="card-footer">

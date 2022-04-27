@@ -21,9 +21,9 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-9">
+                <div class="col-md-9 ">
                     <!-- general form elements -->
-                    <div class="card card-primary">
+                    <div class="card card-primary" style="padding: 20px;">
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form action="{{route('profile.changePassword')}}" method="POST">
@@ -34,27 +34,27 @@
                             @endif
                             @csrf
                             <div class="form-group">
-                                <label for="current_password">current password</label>
-                                <input type="current_password" name="current_password" class="form-control @error('current_password') is-invalid @enderror">   @error('current_password')
+                                <label for="current_password">Current Password</label>
+                                <input type="password" name="current_password" class="form-control @error('current_password') is-invalid @enderror">   @error('current_password')
                                 <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-                                @enderror
+                                <strong>{{ $message }}</strong>
+                            </span>
+                                                        @enderror
                             </div>
                                 <div class="form-group">
-                                    <label for="password">password</label>
-                                    <input type="password" name="current_password" class="form-control @error('password') is-invalid @enderror">   @error('name')
+                                    <label for="password">New Password</label>
+                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">   @error('name')
                                     <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
+                                <strong>{{ $message }}</strong>
+                            </span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="password_confirmation">password_confirmation</label>
-                                    <input type="password" name="current_password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror">   @error('name')
+                                    <label for="password_confirmation">Password Confirmation</label>
+                                    <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror">   @error('name')
                                     <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
+                                        <strong>{{ $message }}</strong>
+                                    </span>
                                     @enderror
                                 </div>
                             <div class="form-group">

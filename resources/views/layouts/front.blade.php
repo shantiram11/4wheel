@@ -12,12 +12,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/header.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/theme.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/icon/style.css') }}">
+
     <link rel="icon" href="{{ asset('assets/front/images/ico/favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <script src="{{asset('assets/js/plugins/custom/magnific-popup.css')}}"></script>
+{{--    <script src="{{asset('assets/js/plugins/custom/magnific-popup.css')}}"></script>--}}
 
     <script src="{{ asset('assets/front/library/modernizr-custom.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}">
+
 
     <title>Homepage</title>
 
@@ -45,15 +49,7 @@ Default Header with a White Background & Dark text.
 
                     <div class="header-item header-center flex-grow-true">
 
-                        <a class="logo item" href="homepage.html">
-                            <img src="{{ asset('assets/front/images/logo-mycar-transparent.png') }}"
-                                srcset="{{ asset('assets/front/images/logo-mycar-transparent.png') }} 1x, {{ asset('assets/front/images/logo-mycar-transparent@2x.png') }} 2x"
-                                alt="myCar logo" class="logo-transparent">
 
-                            <img src=".{{ asset('assets/front/images/logo-mycar.png') }}"
-                                srcset="{{ asset('assets/front/images/logo-mycar.png') }} 1x, {{ asset('assets/front/images/logo-mycar@2x.png') }} 2x"
-                                alt="myCar logo">
-                        </a>
                     </div>
 
                     <div class="header-item header-right flex-align-right">
@@ -174,9 +170,9 @@ Default Header with a White Background & Dark text.
                     <div class="row">
                         <div class="ui twelve wide mobile eight wide computer column">
                             <a href="" class="footer-logo">
-                                <img src="{{ asset('assets/front/images/logo-mycar-transparent.png') }}"
-                                    srcset="{{ asset('assets/front/images/logo-mycar-transparent.png') }} 1x, {{ asset('assets/front/images/logo-mycar-transparent@2x.png') }} 2x"
-                                    alt="mycar logo">
+{{--                                <img src="{{ asset('assets/front/images/logo-mycar-transparent.png') }}"--}}
+{{--                                    srcset="{{ asset('assets/front/images/logo-mycar-transparent.png') }} 1x, {{ asset('assets/front/images/logo-mycar-transparent@2x.png') }} 2x"--}}
+{{--                                    alt="mycar logo">--}}
                                 © 4wheel 2021 </a>
                         </div>
                         <div class="ui twelve wide mobile four wide computer column">
@@ -201,7 +197,7 @@ Default Header with a White Background & Dark text.
 
     </div>
     <!--end #page-wrapper-->
-    <script src="{{asset('assets/js/plugins/custom/magnific-popup.js')}}"></script>
+{{--    <script src="{{asset('assets/js/plugins/custom/magnific-popup.js')}}"></script>--}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="{{ asset('assets/front/library/jquery-2.2.0.min.js') }}"></script>
@@ -236,6 +232,10 @@ Default Header with a White Background & Dark text.
 
     <script src="{{ asset('assets/front/library/header.js') }}"></script>
     <script src="{{ asset('assets/front/library/functions.js') }}"></script>
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
+    @include('utils._toastify')
+    @include('utils._alertify')
     @yield('page_level_script')
 </body>
 

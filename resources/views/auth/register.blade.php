@@ -13,7 +13,7 @@
           <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
             @csrf
               <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-9 " style="margin:auto;">
                     <div class="input-group mb-3">
                       <input type="text" name ="name" class="form-control" placeholder="Full name">
                       <div class="input-group-append">
@@ -48,7 +48,7 @@
                       </div>
                   </div>
 
-                  <div class="col-md-3">
+                  <div class="col-md-9 " style="margin:auto;">
                         <div class="form-group">
                                   <!--begin::Col-->
 
@@ -72,7 +72,7 @@
                                   <!--end::Col-->
                         </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-9 " style="margin:auto;">
                 <div class="form-group">
                           <!--begin::Col-->
 
@@ -96,7 +96,7 @@
                           <!--end::Col-->
                       </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-9 " style="margin:auto;">
                 <div class="form-group">
                           <!--begin::Col-->
 
@@ -119,26 +119,30 @@
                               @enderror
                           <!--end::Col-->
                       </div>
+                      <div class="col-md-2">
+                          <button type="submit" class="btn btn-primary btn-block">Register</button>
+                      </div>
                   </div>
+
               </div>
               <!-- /.col -->
-              <div class="col-2">
-                  <button type="submit" class="btn btn-primary btn-block">Register</button>
-              </div>
+
               <!-- /.col -->
           </form>
             <div class="row">
-                <div class="col-8">
+                <div class="col-md-9 " style="margin:auto;">
                     <div class="icheck-primary">
                         <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                         <label for="agreeTerms">
                             I agree to the <a href="#">terms</a>
                         </label>
                     </div>
+
+                    <a href="{{route('login')}}" class="text-center mt-3">I already have a membership</a>
                 </div>
 
             </div>
-          <a href="{{route('login')}}" class="text-center">I already have a membership</a>
+
         </div>
         <!-- /.form-box -->
       </div><!-- /.card -->

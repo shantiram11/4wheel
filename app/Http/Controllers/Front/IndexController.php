@@ -18,6 +18,6 @@ class IndexController extends Controller
     {
         $vehicle = Vehicle::where('slug',$slug)->first();
 
-        return view('front.detail.property',compact('vehicle'));
+        return view('front.detail.property',compact('vehicle'))->with('toast.success', 'User Successfully Updated !!');
     }
 }

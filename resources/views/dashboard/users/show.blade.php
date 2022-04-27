@@ -76,7 +76,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    Status
+                                    Verify
                                 </th>
                                 <td>
                                 <form action="{{route('user.verify',$user)}}" method="POST">
