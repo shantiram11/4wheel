@@ -19,7 +19,6 @@ class CheckoutController extends Controller
     }
 
     public function prePaymentValidation(Request $request){
-        /*TODO: Chane this 100 with total value from database*/
         $booking = session()->get('booking');
         $database_total = $booking['total_cost'];
         $total = $request->input('total');

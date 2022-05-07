@@ -18,3 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::resource('locations', \App\Http\Controllers\Api\LocationController::class);
+//Route::post('locations', [\App\Http\Controllers\Api\LocationController::class, 'store'])->name('storeLocation');

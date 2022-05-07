@@ -194,6 +194,8 @@
                     </div>
 
                     <div class="reviews-feed">
+
+                        @foreach($reviews as $review)
                         <div class="reviews-row">
                             <div class="review-meta">
                                 <a class="avatar-sq verified-sq" href="vendor_details.html">
@@ -203,67 +205,38 @@
                             </div>
 
                             <div class="comment-sq">
-                                <span class="date-sq">12 september 2017</span>
+                                <span class="date-sq">{{ $review->created_at->format('M d,y') }}</span>
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie.  </p>
+                                <p> {{$review->body}}     </p>
                             </div>
                         </div>
-
+                        @endforeach
                         <div class="reviews-row">
-                            <div class="review-meta">
-                                <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                    <img src="{{asset('assets/front/images/avatar/avatar_03.jpg')}}" alt="">
-                                </a>
-                                <a class="name-sq" href="vendor_details.html">Nathaniel Brown</a>
-                            </div>
-                            <div class="comment-sq">
-                                <span class="date-sq">24 august 2017</span>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie.</p>                            </div>
-                        </div>
-
-                        <div class="reviews-row">
-                            <div class="review-meta">
-                                <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                    <img src="{{asset('assets/front/images/avatar/avatar_02.jpg')}}" alt="">
-                                </a>
-                                <a class="name-sq" href="vendor_details.html">Adele Burke</a>
-                            </div>
-
-                            <div class="comment-sq">
-                                <span class="date-sq">06 May 2017</span>
-
-                                <div class="ui accordion more-sq">
-                                    <div class="title">
-                                        <a class="accordion-trigger more-trigger right-sq" data-more="More" data-less="Less">
-                                            <i class="icon icon-arrow-down-122"></i>
-                                        </a>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie. Quisque pulvinar consequat massa, a auctor velit porta in. Aliquam eu convallis velit. Proin mollis ut erat non volutpat. Donec quis lorem nisl. Nunc a hendrerit mauris. Donec suscipit porttitor diam, scelerisque laoreet quam porta feugiat. Curabitur congue urna libero, ut pulvinar nisi porttitor eget. Praesent viverra, nisl at imperdiet cursus, nulla justo fringilla lacus, eu tempus metus velit pretium ex. Suspendisse congue eros at sapien auctor lobortis.  </p>
-
-                                    </div>
-
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer et vehicula arcu. Praesent pulvinar arcu vitae nibh varius, et posuere neque finibus. Mauris vitae pretium lorem, eu tempus dui. Integer semper sapien nec quam venenatis molestie. Quisque pulvinar consequat massa, a auctor velit porta in. Aliquam eu convallis velit. Proin mollis ut erat non volutpat. Donec quis lorem nisl. Nunc a hendrerit mauris. Donec suscipit porttitor diam, scelerisque laoreet quam porta feugiat. Curabitur congue urna libero, ut pulvinar nisi porttitor eget. Praesent viverra, nisl at imperdiet cursus, nulla justo fringilla lacus, eu tempus metus velit pretium ex. Suspendisse congue eros at sapien auctor lobortis.  </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="reviews-row">
-
                             <div class="review-meta">
                                 <div class="avatar-sq verified-sq my-avatar-sq">
                                     <img src="{{asset('assets/front/images/avatar/dummy.png')}}" alt="">
                                 </div>
-                                <p class="name-sq">Shantiram Tiwari</p>
+                                <p class="name-sq">{{Auth()->user()->name}}</p>
                             </div>
 
-                            <div class="comment-sq">
-                                <textarea class="comment-textarea"  cols="30" rows="5" placeholder="Comment here"></textarea>
+                            <div class="comment-sq mb-4">
+                                <form  method="POST" action="{{route('storeReview',$vehicle->slug)}}">
+                                    @csrf
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            {{ implode('', $errors->all(':message')) }}
+                                        </div>
+                                    @endif
+                                    <textarea class="comment-textarea" name="body"  cols="30" rows="5" placeholder="Comment here"></textarea>
+                                    @error('body')
+                                    <span class="invalid-feedback" role="alert">
+                                   {{ $message }}
+                               </span>
+                                    @enderror
                                 <br>
                                 <br>
-                                <a class="button-sq font-weight-extrabold-sq small-sq float-right-sq" href="">Post comment</a>
+                                <button type="submit" class="button-sq font-weight-extrabold-sq small-sq float-right-sq" href="">Post comment</button>
+                                </form>
                             </div>
                         </div>
 

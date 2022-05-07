@@ -21,7 +21,7 @@ class Booking extends Model
      */
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(User::class, 'permission_role');
+        return $this->belongsTo(User::class, 'booked_by');
     }
     public function vehicle(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

@@ -20,6 +20,7 @@ class VehicleController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
+
             $columns = array(
                 0 => 'company_name',
                 1 => 'vehicle_number',
@@ -48,11 +49,16 @@ class VehicleController extends Controller
                     'v.status',
                     'u.name as owner'
                 );
+            $query->where('v.owner_id',Auth::user()->id);
 
-            $query->where('v.company_name', 'like', $search . '%')
-                ->orWhere('v.vehicle_number', 'like', $search . '%')
-                ->orWhere('v.description', 'like', $search . '%')
-                ->orWhere('u.name', 'like', $search . '%');
+
+            $query->where(function ($q) use ($search) {
+                $q->where('v.company_name', 'like', $search . '%')
+                    ->orWhere('v.vehicle_number', 'like', $search . '%')
+                    ->orWhere('v.description', 'like', $search . '%')
+                    ->orWhere('u.name', 'like', $search . '%');
+            });
+
             $totalData = $query->count();
             $query->orderBy($order, $dir);
             if ($limit != '-1') {
@@ -219,16 +225,6 @@ class VehicleController extends Controller
         //
     }
 
-    /**
-     *To rate a individual vehicle
-     */
-    public function vehicleStar (Request $request, Vehicle $vehicle): \Illuminate\Http\RedirectResponse
-    {
-        $rating = new Rating;
-        $rating->user_id = Auth::id();
-        $rating->rating = $request->input('star');
-        $vehicle->rating()->save($rating);
-        return redirect()->back();
-    }
+
 
 }

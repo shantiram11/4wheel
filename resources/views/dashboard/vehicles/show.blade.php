@@ -2,8 +2,8 @@
 @section('content')
 
     <?php
-        $featured_image = $vehicle->photos->where('featured','yes')->first();\
-
+        $featured_image = $vehicle->photos->where('featured','yes')->first();
+        $images = $vehicle->photos->where('featured','no');
     ?>
 
     <!-- Content Header (Page header) -->
@@ -119,13 +119,30 @@
                                     {{$vehicle->seat_count}}
                                 </td>
                             </tr>
-                            @dd($featured_image)
                             <tr>
                                 <th>
                                     Profile Image
                                 </th>
                                 <td>
                                     <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                 Images
+                                </th>
+                                @foreach ($images as $image)
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$image->image) }}" />
+                                </td>
+                                @endforeach
+                            </tr>
+                            <tr>
+                                <th>
+                                  Status
+                                </th>
+                                <td>
+                                    {{$vehicle->status}}
                                 </td>
                             </tr>
                         </tbody>

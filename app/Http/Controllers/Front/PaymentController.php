@@ -11,7 +11,6 @@ class PaymentController extends Controller
 {
     public function getStripePaymentIntent(Request $request){
         $total = $request->input('total');
-        /** TODO: change env with config*/
         $stripe_secret = env('STRIPE_SECRET');
         Stripe::setApiKey($stripe_secret);
         $intent = null;

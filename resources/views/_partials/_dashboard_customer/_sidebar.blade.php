@@ -60,13 +60,23 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('customer-bookings.index')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Bookings
+                  <span class="right badge badge-danger">Bookings</span>
               </p>
             </a>
           </li>
+            <li class="nav-item">
+                <a href="{{route('customer-profile.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Profile
+                        <span class="right badge badge-danger">Profile</span>
+                    </p>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

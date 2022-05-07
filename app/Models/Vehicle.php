@@ -18,13 +18,10 @@ class Vehicle extends Model
      */
     protected $guarded = ['id'];
 
-
-
-    public function users(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsToMany(users::class, '');
+        return $this->belongsTo(User::class,'owner_id');
     }
-
     public function featured_photo(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Photo::class, 'vehicle_id', 'id')->where(function($q){

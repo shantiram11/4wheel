@@ -125,7 +125,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
      public function vehicles(): \Illuminate\Database\Eloquent\Relations\HasMany
      {
-         return $this->hasMany(vehicles::class);
+         return $this->hasMany(Vehicle::class);
      }
 
     public function booking(): \Illuminate\Database\Eloquent\Relations\HasMany

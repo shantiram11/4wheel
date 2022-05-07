@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Rating extends Model
 {
     use HasFactory;
-    protected $table = 'ratings';
+    protected $table = 'reviews';
 
-    public $fillable = ['rating', 'rateable_id', 'user_id'];
+    public $fillable = ['rating', 'body', 'user_id','vehicle_id'];
 
     /**
      * @return mixed
