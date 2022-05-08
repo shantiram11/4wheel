@@ -62,6 +62,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         //profile routes end
         Route::resource('customer-bookings', \App\Http\Controllers\Customer\BookingController::class);
     });
+    Route::post('/reviews/vehicles/{slug}', [App\Http\Controllers\Front\ReviewController::class, 'storeReview'])->name('storeReview');
 
     /** Checkout routes */
     Route::resource('bookings', \App\Http\Controllers\Front\BookingController::class);
@@ -83,7 +84,6 @@ Route::get('/property/{slug}', [\App\Http\Controllers\Front\IndexController::cla
 //Route::get('/property', function () {
 //    return view('front.detail.property');
 //})->name('property');
-Route::post('/reviews/vehicles/{slug}', [App\Http\Controllers\Front\ReviewController::class, 'storeReview'])->name('storeReview');
 Route::get('/payment', function () {
     return view('front.detail.payment');
 })->name('payment');

@@ -216,7 +216,11 @@
                                 <div class="avatar-sq verified-sq my-avatar-sq">
                                     <img src="{{asset('assets/front/images/avatar/dummy.png')}}" alt="">
                                 </div>
-                                <p class="name-sq">{{Auth()->user()->name}}</p>
+                                @if(auth()->check())
+                                <p class="name-sq">
+                                    {{Auth()->user()->name}}
+                                </p>
+                                @endif
                             </div>
 
                             <div class="comment-sq mb-4">
@@ -227,6 +231,21 @@
                                             {{ implode('', $errors->all(':message')) }}
                                         </div>
                                     @endif
+                                    <fieldset>
+                                        <span class="star-cb-group">
+                                          <input  type="radio" id="rating-5" name="rating" value="5"   {{ old('rating') == 5 ? 'checked' : '' }} /><label for="rating-5">5</label>
+                                          <input  type="radio" id="rating-4" name="rating" value="4"  {{ old('rating') == 4 ? 'checked' : '' }}  /><label for="rating-4">4</label>
+                                          <input  type="radio" id="rating-3" name="rating" value="3"  {{ old('rating') == 3 ? 'checked' : '' }} /><label for="rating-3">3</label>
+                                          <input  type="radio" id="rating-2" name="rating" value="2"  {{ old('rating') == 2 ? 'checked' : '' }} /><label for="rating-2">2</label>
+                                          <input  type="radio" id="rating-1" name="rating" value="1"  {{ old('rating') == 1 ? 'checked' : '' }} /><label for="rating-1">1</label>
+                                          <input  type="radio" id="rating-0" name="rating" value="0"  {{ old('rating') == 0 ? 'checked' : '' }} class="star-cb-clear" /><label for="rating-0">0</label>
+                                        </span>
+                                    </fieldset>
+                                    @error('rating')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                     <textarea class="comment-textarea" name="body"  cols="30" rows="5" placeholder="Comment here"></textarea>
                                     @error('body')
                                     <span class="invalid-feedback" role="alert">
