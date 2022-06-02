@@ -46,25 +46,25 @@
         @endif
 
          <div class="form-group">
-          <label for="role">Role</label>
-          <select class="form-control @error('role_id') is-invalid @enderror" name="role_id">
-            <option value="">{{ __('-- Select Role --') }}</option>
-            @foreach ($roles as $k => $v)
-                <?php
-                  if (old('role_id', $user->role_id) == $k) {
-                    $selected = 'selected';
-                } else {
-                    $selected = '';
-                }
-                ?>
-                <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
-            @endforeach
-        </select>
-        @error('role_id')
-        <span class="invalid-feedback" role="alert">
-        {{ $message }}
-        </span>
-        @enderror
+              <label for="role">Role</label>
+              <select class="form-control @error('role_id') is-invalid @enderror" name="role_id">
+                <option value="">{{ __('-- Select Role --') }}</option>
+                @foreach ($roles as $k => $v)
+                    <?php
+                      if (old('role_id', $user->role_id) == $k) {
+                        $selected = 'selected';
+                    } else {
+                        $selected = '';
+                    }
+                    ?>
+                    <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                @endforeach
+            </select>
+            @error('role_id')
+            <span class="invalid-feedback" role="alert">
+            {{ $message }}
+            </span>
+            @enderror
         </div>
 
 

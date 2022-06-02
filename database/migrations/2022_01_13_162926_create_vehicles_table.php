@@ -23,7 +23,8 @@ class CreateVehiclesTable extends Migration
             $table->float('seat_count');
             $table->string('description')->nullable();
             $table->string('location');
-            $table->enum('vehicle_type',['car','Motorbike','Jeep'])->default('car');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->float('rate');
             $table->string('model');
             $table->enum('status', ['available', 'reserved'])->default('available');

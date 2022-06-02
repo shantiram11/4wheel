@@ -34,7 +34,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('vehicles', \App\Http\Controllers\Dashboard\VehicleController::class);
         Route::resource('dashboard-locations', \App\Http\Controllers\Dashboard\DashboardLocationController::class);
         Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);
-        Route::resource('photos', \App\Http\Controllers\Dashboard\UserController::class);
+        Route::resource('categories', \App\Http\Controllers\Dashboard\CategoryController::class);
         Route::put('user/verify/{user}', [\App\Http\Controllers\Dashboard\UserController::class, 'userVerify'])->name('user.verify');
         Route::resource('roles', \App\Http\Controllers\Dashboard\RoleController::class);
         Route::resource('all-bookings', \App\Http\Controllers\Dashboard\BookingController::class);

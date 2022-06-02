@@ -91,6 +91,31 @@ label.star:before {
         #ff7e1a;
 
 }
+.ks-dash-box{
+    padding: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%) !important;
+    /*text-align: center;*/
+}
+.ks-dash-box .d-flex{
+    gap: 10px;
+}
+.ks-dash-box .mdi{
+    font-size: 10rem;
+}
+.ks-dash-box .right-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ks-dash-box .right-col .stat-title{
+    font-size: 2rem;
+}
+.ks-dash-box .right-col .stat-count{
+    font-size: 3rem;
+    font-weight: bold;
+}
 /** end rating **/
 /*!** rating **!
 body {*/

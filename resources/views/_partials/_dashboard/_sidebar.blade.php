@@ -75,15 +75,32 @@
                   <p>View Vehicle listing</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('vehicles.create')}}" class="nav-link">
-                  <i class="fas fa-truck-pickup nav-icon"></i>
-                  <p>Add vehicles</p>
-                </a>
-              </li>
             </ul>
           </li>
-
+            <!-- categories side menu bar -->
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-truck-pickup"></i>
+                    <p>
+                        Categories
+                        <i class="right fas fa-angle-down"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('categories.index')}}" class="nav-link ">
+                            <i class="fas fa-eye nav-icon"></i>
+                            <p>View Category listing</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('categories.create')}}" class="nav-link">
+                            <i class="fas fa-truck-pickup nav-icon"></i>
+                            <p>Add Category</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
             <!-- Roles side menu bar -->
             <li class="nav-item">
                 <a href="#" class="nav-link active">

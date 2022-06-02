@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSettingsTables extends Migration
+class CreateCategoriesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateSettingsTables extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('key_name')->unique();
-            $table->string('key_value')->nullable();
-            $table->enum('type',['text','image'])->default('text');
+            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateSettingsTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings_tables');
+        Schema::dropIfExists('categories_tables');
     }
 }

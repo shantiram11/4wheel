@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     use HasFactory;
-    const   VEHICLE_OPTIONS = [ 'car', 'jeep', 'bike','van'];
     const   FUEL_OPTIONS = [ 'hybrid', 'petrol', 'electric','diesel'];
     const STATUS = ['available','reserved'];
     /**
@@ -35,5 +34,12 @@ class Vehicle extends Model
     public function rating(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Rating::class);
+    }
+    /**
+     * Relations
+     */
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Category::class);
     }
 }
