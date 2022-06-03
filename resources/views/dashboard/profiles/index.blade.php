@@ -1,4 +1,4 @@
-@extends('layouts.customer-dashboard')
+@extends('layouts.dashboard')
 @section('content')
 
     <!-- Content Header (Page header) -->

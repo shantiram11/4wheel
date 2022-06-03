@@ -83,24 +83,25 @@
                                  </span>
                       @enderror
                   </div>
-                  <div class="form-group"><label for="vehicle_type">Vehicle Type</label>
-                      <select class="form-control form-control-solid @error('template') is-invalid @enderror" name="vehicle_type">vehicle_type
-                          <option value="">{{ __('-- Select --') }}</option>
-                          @foreach($vehicle_options as $options)
+                  <div class="form-group">
+                      <label for="category">Role</label>
+                      <select class="form-control @error('category_id') is-invalid @enderror" name="vehicle_type">
+                          <option value="">{{ __('-- Select Role --') }}</option>
+                          @foreach ($vehicle_options as $k => $v)
                               <?php
-                              if( old('vehicle_type', $vehicle->vehicle_type) == $options){
-                                  $selected = "selected";
-                              }else{
+                              if (old('category_id', $vehicle->category_id) == $k) {
+                                  $selected = 'selected';
+                              } else {
                                   $selected = '';
                               }
                               ?>
-                              <option value="{{$options}}" {{ $selected }}>{{ Str::title(str_replace('_', ' ', $options)) }}</option>
+                              <option value="{{ $k }}" {{ $selected }}>{{ ucwords($v) }}</option>
                           @endforeach
                       </select>
-                      @error('vehicle_type')
+                      @error('category_id')
                       <span class="invalid-feedback" role="alert">
-                                     {{ $message }}
-                                 </span>
+            {{ $message }}
+            </span>
                       @enderror
                   </div>
                   <div class="form-group"><label for="seat_count">Seat Count</label>
@@ -169,6 +170,19 @@
                       <!--end::Col-->
                   </div>
                   <div class="form-group"><label for="input-images">Images</label>
+                      @if ($buttonText== 'Update')
+                      <?php $images = $vehicle->photos->where('featured','no'); ?>
+
+                        <div class="row">
+                            @foreach ($images as $image)
+                                <div class="image-edit">
+                                    <img class='ks-mw-250 m-4' src="{{ asset('storage/photos/'.$image->image) }}" />
+                                    <i class="far fa-times-circle" ></i>
+                                </div>
+                            @endforeach
+                        </div>
+
+                      @endif
                       <div class="input-images @error('vehicle_photo') is-invalid @enderror"></div>
                       @error('vehicle_photo')
                       <span class="invalid-feedback" role="alert">

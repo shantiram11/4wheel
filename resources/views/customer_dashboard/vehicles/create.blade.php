@@ -9,7 +9,7 @@
               <h1 class="m-0">List Vehicles</h1>
             </div>
             <div class="col-sm-3">
-            <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
+            <a href="{{route('customerVehicles.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
@@ -21,7 +21,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-9">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
@@ -29,11 +29,14 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form class="form" action="{{route('vehicles.store')}}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{route('customerVehicles.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-
                 @include('customer_dashboard.vehicles._form',['show' => true, 'buttonText' => 'Create'])
             </form>
           </div>
           <!-- /.card -->
+        </div>
+      </div>
+    </div>
+</section>
 @endsection

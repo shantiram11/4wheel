@@ -82,7 +82,7 @@
                                 <form action="{{route('user.verify',$user)}}" method="POST">
                                         {{ method_field('PUT') }}
                                         @csrf
-                                        <select class="form-select" name="user_verified">
+                                        <select class="form-select m-2 p-1" name="user_verified">
                                             @foreach (\App\Models\User::VERIFY as $k => $v)
                                                 <?php
                                                 if (old('user_verified', $user->verify) == $v) {

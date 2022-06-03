@@ -17,33 +17,29 @@ class SettingsSeeder extends Seeder
         Setting::insertOrIgnore([
         [
             'key_name'                              => 'app_name',
-            'key_value'                             => 'LocalHub',
+            'key_value'                             => '4Wheel',
             'type'                                  => 'text',
-            'availability'                          => 'all',
             'created_at'                            => now(),
             'updated_at'                            => now()
         ],
             [
                 'key_name'                              => 'admin_email',
-                'key_value'                             => 'thesarojstha@gmail.com',
+                'key_value'                             => 'shantiramtiwari0852@gmail.com',
                 'type'                                  => 'text',
-                'availability'                          => 'all',
                 'created_at'                            => now(),
                 'updated_at'                            => now()
             ],
             [
                 'key_name'                              => 'stripe_test_publishable_key',
-                'key_value'                             => null,
+                'key_value'                             => "pk_test_51KmJxlKcTuD99JLxTLOwsvOtLqShVjF5wJtxV8PXD4AeI4RjodyWDp7brNPoFCoO69KL2HVYErEZ8Epc5kqBILzq00xgxjhAbQ",
                 'type'                                  => 'text',
-                'availability'                          => 'all',
                 'created_at'                            => now(),
                 'updated_at'                            => now()
             ],
             [
                 'key_name'                              => 'stripe_test_secret_key',
-                'key_value'                             => null,
+                'key_value'                             => "sk_test_51KmJxlKcTuD99JLxjxT6JAUsgXHrCYlxtOpAWrWP5mJDZxy3aQmtmgniNUJ5TXU9jFSWx2RuMq76lc7zG3KDRcbc004vPp6tlG",
                 'type'                                  => 'text',
-                'availability'                          => 'all',
                 'created_at'                            => now(),
                 'updated_at'                            => now()
             ],

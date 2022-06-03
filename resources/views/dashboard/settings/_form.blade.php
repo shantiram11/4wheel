@@ -6,23 +6,10 @@
 </div>
 @endif
 
-<?php
-$all_settings = [];
-$keys_arr = $settings->pluck('key_name');
-foreach($keys_arr as $k => $v){
-    $row = $settings->where('key_name',$v)->first();
-    if(empty($row)){
-        $all_settings[$v] = null;
-    }else{
-        $all_settings[$v] = $row->key_value;
-    }
-}
-?>
-
 <div class="form-group">
     <label for="app_name">App Name</label>
     <input type="text"
-           class="form-control @error('app_name') is-invalid @enderror" type="text" name="app_name" value="{{ old('app_name', $all_settings['app_name']) }}">
+           class="form-control @error('app_name') is-invalid @enderror" type="text" name="app_name" value="{{ old('app_name', $settings['app_name']) }}">
     @error('app_name')
     <span class="invalid-feedback" role="alert">
                                        {{ $message }}
@@ -32,7 +19,7 @@ foreach($keys_arr as $k => $v){
 <div class="form-group">
     <label for="admin_email">Admin Email</label>
     <input type="text"
-           class="form-control @error('admin_email') is-invalid @enderror" type="text" name="admin_email" value="{{ old('admin_email', $all_settings['admin_email']) }}">
+           class="form-control @error('admin_email') is-invalid @enderror" type="text" name="admin_email" value="{{ old('admin_email', $settings['admin_email']) }}">
     @error('admin_email')
     <span class="invalid-feedback" role="alert">
                                        {{ $message }}
@@ -42,7 +29,7 @@ foreach($keys_arr as $k => $v){
 <div class="form-group">
     <label for="stripe_test_publishable_key">Stripe test publishable key</label>
     <input type="text"
-           class="form-control @error('stripe_test_publishable_key') is-invalid @enderror" type="text" name="stripe_test_publishable_key" value="{{ old('stripe_test_publishable_key', $all_settings['stripe_test_publishable_key']) }}">
+           class="form-control @error('stripe_test_publishable_key') is-invalid @enderror" type="text" name="stripe_test_publishable_key" value="{{ old('stripe_test_publishable_key', $settings['stripe_test_publishable_key']) }}">
     @error('stripe_test_publishable_key')
     <span class="invalid-feedback" role="alert">
                                        {{ $message }}
@@ -50,11 +37,10 @@ foreach($keys_arr as $k => $v){
     @enderror
 </div>
 
-
 <div class="form-group">
     <label for="stripe_test_secret_key">Stripe test secret key</label>
     <input type="text"
-           class="form-control @error('stripe_test_secret_key') is-invalid @enderror" type="text" name="stripe_test_secret_key" value="{{ old('stripe_test_secret_key', $all_settings['stripe_test_secret_key']) }}">
+           class="form-control @error('stripe_test_secret_key') is-invalid @enderror" type="text" name="stripe_test_secret_key" value="{{ old('stripe_test_secret_key', $settings['stripe_test_secret_key']) }}">
     @error('stripe_test_secret_key')
     <span class="invalid-feedback" role="alert">
                                        {{ $message }}

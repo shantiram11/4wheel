@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 use App\Helpers\AppHelper;
 use App\Http\Requests\VehicleRequest;
+use App\Models\Category;
 use App\Models\Photo;
 use Codebyray\ReviewRateable\Models\Rating;
 use Illuminate\Support\Facades\Auth;
@@ -97,7 +98,7 @@ class VehicleController extends Controller
     public function create(Vehicle $vehicle)
     {
         $vehicle = new Vehicle();
-        $vehicle_options = Vehicle::VEHICLE_OPTIONS;
+        $vehicle_options = Category::pluck('name', 'id');
         $fuel_options = Vehicle::FUEL_OPTIONS;
         return view('customer_dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options'));
     }
@@ -115,7 +116,7 @@ class VehicleController extends Controller
             'fuel_type'                 => $request->input('fuel_type'),
             'vehicle_number'            => $request->input('vehicle_number'),
             'brand'                     => $request->input('brand'),
-            'vehicle_type'              => $request->input('vehicle_type'),
+            'category_id'              => $request->input('vehicle_type'),
             'model'                     => $request->input('model'),
             'rate'                      => $request->input('rate'),
             'seat_count'                => $request->input('seat_count'),
@@ -184,7 +185,7 @@ class VehicleController extends Controller
     {
         $vehicle = Vehicle::findOrFail($id);
         $users = User::pluck('name', 'id');
-        $vehicle_options = Vehicle::VEHICLE_OPTIONS;
+        $vehicle_options = Category::pluck('name', 'id');
         $fuel_options = Vehicle::FUEL_OPTIONS;
         return view('customer_dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_options','fuel_options'));
     }

@@ -55,10 +55,10 @@ Route::group(['middleware' => ['auth','verified']], function () {
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
         Route::resource('customerVehicles', \App\Http\Controllers\Customer\VehicleController::class);
         //profile routes start
-        Route::get('profile', [\App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('customer-profile.index');
-        Route::post('profile', [\App\Http\Controllers\Customer\ProfileController::class, 'store'])->name('customer-profile.store');
-        Route::get('profile/change-password', [\App\Http\Controllers\Customer\ProfileController::class, 'getChangePassword'])->name('customer-profile.changePassword');
-        Route::post('profile/change-password', [\App\Http\Controllers\Customer\ProfileController::class, 'changePassword'])->name('customer-profile.changePassword');
+        Route::get('your-profile', [\App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('customer-profile.index');
+        Route::post('your-profile', [\App\Http\Controllers\Customer\ProfileController::class, 'store'])->name('customer-profile.store');
+        Route::get('your-profile/change-password', [\App\Http\Controllers\Customer\ProfileController::class, 'getChangePassword'])->name('customer-profile.changePassword');
+        Route::post('your-profile/change-password', [\App\Http\Controllers\Customer\ProfileController::class, 'changePassword'])->name('customer-profile.changePassword');
         //profile routes end
         Route::resource('customer-bookings', \App\Http\Controllers\Customer\BookingController::class);
     });

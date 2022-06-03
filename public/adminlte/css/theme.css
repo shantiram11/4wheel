@@ -12,7 +12,14 @@
 .ks-mw-250{
     max-width: 250px;
 }
-
+.image-edit{
+    position: relative;
+}
+.image-edit .fa-times-circle{
+    position:absolute;
+    right: 5px;
+    top: 15px;
+}
 /*******************
  ** 2. Form Data **
  *******************/
