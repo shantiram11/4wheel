@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class UserVerifyMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +28,8 @@ class UserVerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $userMailData = $this->user;
+        return $this->subject('Identity')
+            ->view('mails.user_identity_verify',compact('userMailData'));
     }
 }

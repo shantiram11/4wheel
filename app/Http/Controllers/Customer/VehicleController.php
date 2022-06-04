@@ -219,13 +219,29 @@ class VehicleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
-        //
+        Vehicle::where('id', $id)->delete();
+        return response()->json([
+            'message' => 'User Successfully Deleted',
+        ], 200);
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function removeImage($id)
+    {
+        Photo::where('id', $id)->delete();
+        return response()->json([
+            'message' => 'Image Successfully Removed',
+        ], 200);
+    }
 
 
 }

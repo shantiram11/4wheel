@@ -176,12 +176,11 @@ class UserController extends Controller
         $request->validate([
             'user_verified' => 'in:yes,no',
         ]);
-        $user = User::where('id', $user->id)->update([
+         User::where('id', $user->id)->update([
             'verify'             => $request->input('user_verified'),
         ]);
-        $user->save();
 
-        Mail::to(config('app.admin_email'))->send(new \App\Mail\UserVerifyMail($user));
+        Mail::to($user->email)->send(new \App\Mail\UserVerifyMail($user));
         return redirect()->route('users.show', compact('user'))->with('alert.success', 'User Successfully Updated !!');
 
     }

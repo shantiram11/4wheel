@@ -30,7 +30,7 @@ class UsersSeeder extends Seeder
             ],
             [
                 'name'                      => 'Shantiram Tiwari',
-                'email'                     => 'shantiramtiwari0852@gmail.com',
+                'email'                     => 'shantiramtiwari@gmail.com',
                 'email_verified_at'         => now(),
                 'current_image'             => 'user1.jpg',
                 'identity_front'             => 'userback.jpg',

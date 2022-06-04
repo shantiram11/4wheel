@@ -17,7 +17,7 @@
                             <div class="ks-dash-box">
                                 <div class="d-flex justify-content-space-between">
                                     <div>
-                                        <i class="mdi mdi-school text-primary"></i>
+                                        <i class="fas fa-users" style="font-size:100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">Users</strong>
@@ -31,7 +31,7 @@
                             <div class="ks-dash-box">
                                 <div class="d-flex justify-content-space-between">
                                     <div>
-                                        <i class="mdi mdi-account-multiple-outline text-danger"></i>
+                                        <i class="fas fa-car-side" style="font-size: 100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">vehicles</strong>
@@ -45,7 +45,7 @@
                             <div class="ks-dash-box">
                                 <div class="d-flex justify-content-space-between">
                                     <div>
-                                        <i class="mdi mdi-chemical-weapon text-success"></i>
+                                        <i class="fas fa-calendar-check" style="font-size: 100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">Bookings</strong>

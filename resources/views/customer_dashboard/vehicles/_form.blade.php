@@ -177,7 +177,7 @@
                             @foreach ($images as $image)
                                 <div class="image-edit">
                                     <img class='ks-mw-250 m-4' src="{{ asset('storage/photos/'.$image->image) }}" />
-                                    <i class="far fa-times-circle" ></i>
+                                    <i class="far fa-times-circle"  onclick="removeImage(this)" data-subject-id="{{$image->id}}"></i>
                                 </div>
                             @endforeach
                         </div>
@@ -210,6 +210,31 @@
         $(function(){
             $('.input-images').imageUploader();
         });
+        function removeImage(id,redirect = false)
+            {
+                let action =  BASE_URL+"/customer-dashboard/removeImage/"+id;
+                $.ajax({
+                "url": action,
+                "dataType":"json",
+                "type":"DELETE",
+                "data":{"_token":CSRF_TOKEN},
+                beforeSend:function(){
+                    $(id).closest('.image-edit').hide();
+                // $form.addClass("sp-loading");
+            },
+                success:function(resp){
+                // $form.removeClass("sp-loading");
+
+                alertifySuccess(resp.message);
+            },
+                error: function(xhr){
+                let obj = JSON.parse(xhr.responseText);
+                alertifyError(obj.message);
+                // $form.removeClass("sp-loading");
+            }
+            });
+
+            }
     </script>
 @endsection
 
