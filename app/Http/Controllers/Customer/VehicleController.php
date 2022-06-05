@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 class VehicleController extends Controller
 {
     /**
@@ -237,7 +240,18 @@ class VehicleController extends Controller
      */
     public function removeImage($id)
     {
-        Photo::where('id', $id)->delete();
+        $photo = Photo::where('id', $id)->first();
+        DB::beginTransaction();
+        try{
+            Storage::delete('public/uploads/vehicle/'.$photo->image);
+            Photo::where('id', $id)->delete();
+        }catch (\Exception $e){
+            DB::rollBack();
+            return response()->json([
+                'message' => 'Could not remove image',
+            ], 500);
+        }
+        DB::commit();
         return response()->json([
             'message' => 'Image Successfully Removed',
         ], 200);
