@@ -15,12 +15,14 @@ class LoginResponse implements LoginResponseContract
      */
     public function toResponse($request)
     {
-        $user = User::where('email',$request->email)->with('role')->first();
-        if($user->isAdmin()){
-            $destination = RouteServiceProvider::DASHBOARD;
-        }else{
-            $destination = RouteServiceProvider::HOME;
-        }
-        return redirect()->intended($destination);
+//        $user = User::where('email',$request->email)->with('role')->first();
+//        if($user->isAdmin()){
+//            $destination = RouteServiceProvider::DASHBOARD;
+//        }else{
+//            $destination = RouteServiceProvider::HOME;
+//        }
+//        return redirect()->intended($destination);
+        $home = auth()->user()->isAdmin() ? RouteServiceProvider::DASHBOARD : RouteServiceProvider::HOME;
+        return redirect()->intended($home);
     }
 }

@@ -177,7 +177,7 @@
                             @foreach ($images as $image)
                                 <div class="image-edit">
                                     <img class='ks-mw-250 m-4' src="{{ asset('storage/photos/'.$image->image) }}" />
-                                    <i class="far fa-times-circle"  onclick="removeImage(this)" data-subject-id="{{$image->id}}"></i>
+                                    <i class="far fa-times-circle"  onclick="removeImage(this)" data-subject_id="{{$image->id}}"></i>
                                 </div>
                             @endforeach
                         </div>
@@ -202,6 +202,7 @@
           <!-- /.card -->
 @section('page_level_script')
     <script>
+
         $(document).ready(function() {
             $('#image').change(function() {
                 $('.kt_preview_image_container').removeClass('d-none');
@@ -210,16 +211,18 @@
         $(function(){
             $('.input-images').imageUploader();
         });
-        function removeImage(id,redirect = false)
+        function removeImage(that,redirect = false)
             {
-                let action =  BASE_URL+"/customer-dashboard/removeImage/"+id;
+                let id = that.dataset.subject_id;
+                console.log(id);
+                let action =  BASE_URL+"/customer-dashboard/remove-image/"+id;
                 $.ajax({
                 "url": action,
                 "dataType":"json",
                 "type":"DELETE",
                 "data":{"_token":CSRF_TOKEN},
                 beforeSend:function(){
-                    $(id).closest('.image-edit').hide();
+                    $(that).closest('.image-edit').hide();
                 // $form.addClass("sp-loading");
             },
                 success:function(resp){
@@ -228,8 +231,8 @@
                 alertifySuccess(resp.message);
             },
                 error: function(xhr){
-                let obj = JSON.parse(xhr.responseText);
-                alertifyError(obj.message);
+                // let obj = JSON.parse(xhr.responseText);
+                // alertifyError(obj.message);
                 // $form.removeClass("sp-loading");
             }
             });
