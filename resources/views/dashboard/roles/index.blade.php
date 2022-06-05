@@ -6,10 +6,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Users</h1>
+                    <h1 class="m-0">Roles</h1>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{route('roles.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add User</button></a>
+                    <a href="{{route('roles.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add Role</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->
@@ -24,7 +24,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Users Databale</h3>
+                            <h3 class="card-title">Roles Databale</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

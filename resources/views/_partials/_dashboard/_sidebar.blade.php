@@ -134,6 +134,15 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('all-bookings.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Bookings
+                        <span class="right badge badge-danger">Bookings</span>
+                    </p>
+                </a>
+            </li>
           <li class="nav-item">
             <a href="{{route('settings.index')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

@@ -106,6 +106,8 @@ class BookingController extends Controller
 
     public function update (){}
 
-    public function destroy (){}
+    public function destroy (){
+
+    }
 
 }

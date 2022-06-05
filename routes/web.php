@@ -62,6 +62,8 @@ Route::group(['middleware' => ['auth','verified']], function () {
         //profile routes end
         Route::resource('customer-bookings', \App\Http\Controllers\Customer\BookingController::class);
         Route::get('remove-image/{id}', [\App\Http\Controllers\Customer\VehicleController::class, 'removeImage'])->name('removeImage');
+        Route::get('your-documents', [\App\Http\Controllers\Customer\ProfileController::class, 'getDocument'])->name('getDocument');
+
     });
     Route::post('/reviews/vehicles/{slug}', [App\Http\Controllers\Front\ReviewController::class, 'storeReview'])->name('storeReview');
 
@@ -71,7 +73,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
     Route::post('booking', [\App\Http\Controllers\Front\BookingController::class, 'store'])->name('front.booking.store');
-//    Route::get('checkout', [\App\Http\Controllers\Front\CheckoutController::class, 'payment'])->name('')
 
 });
 

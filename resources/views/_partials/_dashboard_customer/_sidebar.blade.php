@@ -77,6 +77,15 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{route('getDocument')}}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Documents
+                        <span class="right badge badge-danger">Documents</span>
+                    </p>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

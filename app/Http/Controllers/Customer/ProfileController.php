@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Helpers\AppHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordRequest;
 use App\Http\Requests\UserRequest;
@@ -31,8 +32,13 @@ class ProfileController extends Controller
         $request->validate([
             'name'=> ['required','string','min:3','max:30']
         ]);
+        $currentImageName = AppHelper::renameImageFileUpload($request['current_image']);
+        $request['current_image']->storeAs(
+            'public/uploads/users', $currentImageName
+        );
         $user = Auth::User();
         $user->name = $request->input('name');
+        $user->current_image = $request->input('current_image');
         $user->updated_at = date('Y-m-d H:i:s');
         $user->save();
         return redirect()->route('customer-profile.index')->with('alert.success', 'User Successfully Updated !!');
@@ -51,4 +57,9 @@ class ProfileController extends Controller
         return redirect()->route('customer-profile.changePassword')->with('alert.success', 'Password Successfully Changed !!');
     }
 
+    public function getDocument()
+    {
+        $user = Auth::user();
+        return view('customer_dashboard.documents.index',compact('user'));
+    }
 }

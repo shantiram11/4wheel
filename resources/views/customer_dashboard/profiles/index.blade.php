@@ -42,14 +42,55 @@
                                        class="form-control @error('name') is-invalid @enderror" type="text" name="name" value="{{ old('name', $user->name) }}">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
+                                    <strong>{{ $message }}</strong>
+                                </span>
                                 @enderror
                             </div>
+                                <div class="form-group">
+                                    <!--begin::Col-->
+
+                                    <label class="required fs-6 fw-bold mb-2" for="file">
+                                        Profile Image
+                                    </label>
+                                    <input type="hidden" name="image_hidden_value" class="image_hidden_value"
+                                           value="{{ old('current_image', $user->current_image) }}">
+
+                                    <input type="file" name="current_image" onchange="loadPreview(this);"
+                                           class="form-control form-control-solid @error('current_image') is-invalid @enderror" id="current_image"
+                                           value="{{ old('current_image', $user->current_image) }}" />
+                                    <div class="kt_preview_image_container {{ empty($user->current_image) ? 'd-none' : '' }}">
+                                        <img id="kt_preview_img"
+                                             src="{{ empty($user->current_image) ? '' : asset('public/uploads/users/' . $user->current_image) }}"
+                                             class="img-fluid " />
+                                        <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
+                                    </div>
+                                    @error('current_image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                <!--end::Col-->
+                                </div>
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </form>
                     </div>
-                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+
+    <!-- /.card -->
+@endsection
+        @section('page_level_script')
+<script>
+    $(document).ready(function() {
+        $('#image').change(function() {
+            $('.kt_preview_image_container').removeClass('d-none');
+        });
+    });
+    $(function(){
+        $('.input-images').imageUploader();
+    });
+</script>
 @endsection

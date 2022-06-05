@@ -179,9 +179,9 @@
                               <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
                           </div>
                           @error('image')
-                          <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                           @enderror
                       <!--end::Col-->
                   </div>
