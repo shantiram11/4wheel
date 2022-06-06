@@ -21,8 +21,6 @@
     <script src="{{ asset('assets/front/library/modernizr-custom.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}">
-
-
     <title>Homepage</title>
 
 </head>
@@ -61,39 +59,41 @@ Default Header with a White Background & Dark text.
                                 <span class="hamburger-inner"></span>
                             </span>
                         </a>
-
-
                         <!-- Include Menu -->
-
                         <!-- Header Menu-->
-
                         <div class="menu-default burger-sidemenu sidemenu-open-right icons-left profile-priority slide-out-sq dimmed dropdown-open-right"
                             data-burger="menu01">
 
                             <a class="sidemenu-trigger xclose-sq hamburger hamburger-elastic item"
                                 data-trigger-for="menu01">
-
                                 <span class="hamburger-box">
                                     <span class="hamburger-inner"></span>
                                 </span>
                             </a>
-
                             <ul class="main-menu">
+                                @if (!auth()->user())
                                 <li><a href="{{ route('register') }}" class="item modal-ui-triggers"
                                         data-trigger-for="modal0134">
                                         <span>Sign Up</span>
                                     </a>
                                 </li>
-
+                                @endif
                                 @if (auth()->user())
-                                    <li><a href="{{ route('login') }}" class="item modal-ui-triggers"
+                                    <li>  @if (Auth::user()->isAdmin())
+                                        <a href="{{ route('dashboard.index') }}" class="item modal-ui-triggers"
                                             data-trigger-for="modal0234">
                                             <span>Dashboard</span>
                                         </a>
+                                        @else
+                                            <a href="{{ route('customer-dashboard.index') }}" class="item modal-ui-triggers"
+                                               data-trigger-for="modal0234">
+                                                <span>Dashboard</span>
+                                            </a>
+                                              @endif
+
                                     </li>
                                     <li class="mr-0">
-                                        <a href="{{ route('logout') }}" class="nav-link p-0 "
-                                            onclick="event.preventDefault(); document.getElementById('logout-form2').submit();">
+                                        <a href="{{ route('logout') }}" class="nav-link p-0 " onclick="event.preventDefault(); document.getElementById('logout-form2').submit();">
                                             <span>Logout</span>
                                         </a>
                                         <form id="logout-form2" action="{{ route('logout') }}" method="POST"
