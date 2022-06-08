@@ -37,7 +37,7 @@
 
               <!-- users side menu bar -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link {{ current_page('users') ? 'active' : '' }}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                Users
@@ -61,7 +61,7 @@
           </li>
      <!-- vehicles side menu bar -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link {{ current_page('vehicles') ? 'active' : '' }}">
               <i class="nav-icon fas fa-truck-pickup"></i>
               <p>
                Vehicles
@@ -79,7 +79,7 @@
           </li>
             <!-- categories side menu bar -->
             <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link {{ current_page('categories') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-truck-pickup"></i>
                     <p>
                         Categories
@@ -103,7 +103,7 @@
             </li>
             <!-- Roles side menu bar -->
             <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link {{ current_page('roles') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-solid fa-circle-check"></i>
                     <p>
                         Roles
@@ -134,7 +134,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('all-bookings.index')}}" class="nav-link">
+                <a href="{{route('all-bookings.index')}}" class="nav-link {{ current_page('profile') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-calendar"></i>
                     <p>
                         Bookings
