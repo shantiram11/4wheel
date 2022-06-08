@@ -37,7 +37,7 @@
 
      <!-- vehicles side menu bar -->
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link  {{ current_page('customerVehicles') ? 'active' : '' }} ">
               <i class="nav-icon fas fa-truck-pickup"></i>
               <p>
                Vehicles
@@ -52,7 +52,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('customerVehicles.create')}}" class="nav-link">
+                <a href="{{route('customerVehicles.create')}}" class="nav-link ">
                   <i class="fas fa-truck-pickup nav-icon"></i>
                   <p>Add vehicles</p>
                 </a>
@@ -60,7 +60,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{route('customer-bookings.index')}}" class="nav-link">
+            <a href="{{route('customer-bookings.index')}}" class="nav-link {{ current_page('customer-bookings') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-calendar"></i>
               <p>
                   Lent Bookings
@@ -68,7 +68,7 @@
             </a>
           </li>
             <li class="nav-item">
-                <a href="{{route('my-vehicle-bookings.index')}}" class="nav-link">
+                <a href="{{route('my-vehicle-bookings.index')}}" class="nav-link {{ current_page('my-vehicle-bookings') ? 'active' : '' }}">
                     <i class=" nav-icon fas fa-align-justify"></i>
                     <p>
                         Loaned Bookings
@@ -76,7 +76,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('customer-profile.index')}}" class="nav-link">
+                <a href="{{route('customer-profile.index')}}" class="nav-link {{ current_page('your-profile') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-user-alt"></i>
                     <p>
                         Profile
@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('getDocument')}}" class="nav-link">
+                <a href="{{route('getDocument')}}" class="nav-link {{ current_page('your-documents') ? 'active' : '' }}">
                     <i class="nav-icons fal fa-address-card"></i>
                     <p>
                         Documents
