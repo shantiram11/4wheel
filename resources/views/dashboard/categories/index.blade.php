@@ -9,7 +9,7 @@
                     <h1 class="m-0">Categories</h1>
                 </div>
                 <div class="col-sm-3">
-                    <a href="{{route('categories.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add User</button></a>
+                    <a href="{{route('categories.create')}}" class=""><button class="btn btn-block bg-gradient-primary">Create</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->

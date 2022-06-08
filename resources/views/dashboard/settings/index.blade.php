@@ -7,8 +7,8 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Settings</h1>
                 </div>
-                <div class="col-sm-3">
-                    <a href="{{route('dashboard.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
+                <div class="col-sm-6 text-right">
+                    <a href="{{route('dashboard.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Back</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->

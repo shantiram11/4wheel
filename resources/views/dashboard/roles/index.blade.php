@@ -8,8 +8,8 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Roles</h1>
                 </div>
-                <div class="col-sm-3">
-                    <a href="{{route('roles.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add Role</button></a>
+                <div class="col-sm-6 text-right">
+                    <a href="{{route('roles.create')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Add Role</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->

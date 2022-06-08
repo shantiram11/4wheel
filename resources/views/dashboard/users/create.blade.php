@@ -9,7 +9,7 @@
               <h1 class="m-0">Create Users</h1>
             </div>
               <div class="col-sm-6 text-right">
-                  <a href="{{route('users.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Add user</button></a>
+                  <a href="{{route('users.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
@@ -25,7 +25,7 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Quick Example</h3>
+              <h3 class="card-title">User Registration</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->

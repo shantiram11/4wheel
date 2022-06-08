@@ -13,8 +13,8 @@
             <div class="col-sm-6">
               <h1 class="m-0">vehicle</h1>
             </div>
-            <div class="col-sm-3">
-            <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-secondary">Back</button></a>
+              <div class="col-sm-6 text-right">
+                  <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->

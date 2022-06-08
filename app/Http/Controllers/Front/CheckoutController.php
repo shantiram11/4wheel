@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,7 +17,10 @@ class CheckoutController extends Controller
         $booking['transaction_id'] = $transactionId;
        $final_booking = Booking::create($booking);
         $request->session()->forget('booking');
-
+        $vehicle_id = $request->vehicle_id;
+        Vehicle::where('id',$vehicle_id)->update([
+            'status' => 'reserved',
+        ]);
 //        Mail::to($booking->vehicle->user->email)->send(new \App\Mail\BookingMail($final_booking));
         return redirect()->route('front.index')->with('toast.success', 'Booking recorded');
     }

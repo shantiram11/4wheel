@@ -8,7 +8,9 @@
             <div class="col-sm-6">
               <h1 class="m-0">My Bookings</h1>
             </div>
-
+              <div class="col-sm-6 text-right">
+                  <a href="{{route('dashboard.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Back</button></a>
+              </div>
             <!-- /.col -->
           </div><!-- /.row -->
         </div><!-- /.container-fluid -->
