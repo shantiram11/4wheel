@@ -58,12 +58,11 @@
 
                     </div>
                 </div>
-                <div class="card mt-5">
+                <div class="card mt-5 px-4">
                     <div class="card-header">
-                        <h6>Total number vehicles category wise</h6>
+                        <h6 class="font-weight-bold">Total number vehicles category wise</h6>
                     </div>
-
-                    <canvas id="barChart"></canvas>
+                    <canvas id="barChart2"></canvas>
                 </div>
 
             </div>
@@ -72,29 +71,34 @@
 @endsection
 @section('page_level_script')
     <script>
-        $(function(){
-            var ctx = document.getElementById("barChart").getContext('2d');
-            var barChart = new Chart(ctx, {
-                type: 'pie',
+        $(function() {
+            let vehicleCategories = {!! json_encode(array_keys($vehicleCountByCategories)) !!};
+            let vehicleCounts = {!! json_encode(array_values($vehicleCountByCategories)) !!};
+            console.log(vehicleCategories);
+            console.log(vehicleCounts);
+
+            var ctx = document.getElementById("barChart2").getContext('2d');
+            var barChart2 = new Chart(ctx, {
+                type: 'bar',
                 data: {
-                    labels: {!! json_encode($categories) !!},
+                    labels: vehicleCategories,
                     datasets: [{
-                        // label: 'students',
-                        data: {!! json_encode($vehicles_count_arr) !!},
+                        label: 'Total number vehicles category wise',
+                        data: vehicleCounts,
                         backgroundColor: dynamicColors,
                         barThickness: 35,
-                        // maxBarThickness: 8,
                     }]
                 },
                 options: {
-                    plugins:{
+                    plugins: {
                         legend: {
-                            display: false
-                        },
-                    },
+                            display: false,
+                        }
+                    }
                 }
             });
         });
+
         function dynamicColors() {
             var r = Math.floor(Math.random() * 255);
             var g = Math.floor(Math.random() * 255);

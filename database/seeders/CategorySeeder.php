@@ -17,17 +17,17 @@ class CategorySeeder extends Seeder
         Category::upsert([
             [
                 'name'                      => 'Car',
-                'description'                     => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
+                'description'               => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
 
             ],
             [
                 'name'                      => 'jeep',
-                'description'                     => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
+                'description'               => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
 
             ],
             [
                 'name'                      => 'Motorcycle',
-                'description'                     => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
+                'description'               => 'lorem ipsum lorem upsum lorem ipsum lorem ipsum',
 
             ],
         ],['name'],[]);
