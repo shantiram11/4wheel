@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
     <!-- Theme style -->
+    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/css/theme.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
