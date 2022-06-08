@@ -10,17 +10,16 @@ use Illuminate\Queue\SerializesModels;
 class BookingMail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $final_booking;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($final_booking)
     {
-        //
+        $this->final_booking = $final_booking;
     }
-
     /**
      * Build the message.
      *
@@ -28,6 +27,8 @@ class BookingMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        $bookingRequestMailData = $this->final_booking;
+        return $this->subject('Booking Verified')
+            ->view('mails.booking_request_mail',compact('bookingRequestMailData'));
     }
 }

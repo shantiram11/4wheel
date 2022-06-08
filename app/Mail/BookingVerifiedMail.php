@@ -30,6 +30,6 @@ class BookingVerifiedMail extends Mailable
     {
         $bookingMailData = $this->booking;
         return $this->subject('Booking Verified')
-            ->view('mails.user_identity_verify',compact('bookingMailData'));
+            ->view('mails.bookingVerify',compact('bookingMailData'));
     }
 }

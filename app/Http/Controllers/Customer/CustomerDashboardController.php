@@ -9,6 +9,8 @@ class CustomerDashboardController extends Controller
 {
     public function index()
     {
-        return view('layouts.customer-dashboard',);
+        $total_bookings = Auth()->user()->booking()->count();
+        $total_vehicles = Auth()->user()->vehicles()->count();
+        return view('customer_dashboard.index',compact('total_bookings','total_vehicles'));
     }
 }

@@ -63,7 +63,7 @@
             <a href="{{route('customer-bookings.index')}}" class="nav-link {{ current_page('customer-bookings') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-calendar"></i>
               <p>
-                  Lent Bookings
+                  Loaned Bookings
               </p>
             </a>
           </li>
@@ -71,7 +71,7 @@
                 <a href="{{route('my-vehicle-bookings.index')}}" class="nav-link {{ current_page('my-vehicle-bookings') ? 'active' : '' }}">
                     <i class=" nav-icon fas fa-align-justify"></i>
                     <p>
-                        Loaned Bookings
+                        Lent Bookings
                     </p>
                 </a>
             </li>

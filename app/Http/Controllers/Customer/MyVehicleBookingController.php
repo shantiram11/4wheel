@@ -79,6 +79,7 @@ class MyVehicleBookingController extends Controller
                     $nestedData['vehicle_owner'] = $v->vehicle_owner;
                     $nestedData['pickup_location'] = $v->pickup_location;
                     $nestedData['return_location'] = $v->return_location;
+                    $nestedData['booked_by'] = $v->booked_by;
                     $nestedData['action'] = \View::make('dashboard.my_vehicle_bookings._action')->with('r', $v)->render();
                     $data[] = $nestedData;
                 }
@@ -120,7 +121,7 @@ class MyVehicleBookingController extends Controller
         ]);
 
 //        Mail::to($user->email)->send(new \App\Mail\UserVerifyMail($user));
-        return redirect()->route('booking.show', compact('booking'))->with('alert.success', 'Booking Successfully Verified !!');
+        return redirect()->route('my-vehicle-bookings.show', compact('booking'))->with('alert.success', 'Booking Successfully Verified !!');
 
     }
 }

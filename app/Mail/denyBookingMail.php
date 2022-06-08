@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ReturnProductMail extends Mailable
+class denyBookingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
