@@ -41,11 +41,9 @@
                     <td>{{$total}}</td>
                 </tr>
             </table>
-        </div>
-    </section>
-{{--    Stripe Payment flow starts from here--}}
+            {{--    Stripe Payment flow starts from here--}}
             <div id="stripe-card-element" class="card-input">
-        <!-- A Stripe Element will be inserted here. -->
+                <!-- A Stripe Element will be inserted here. -->
             </div>
             <div class="checkout-terms form-check">
                 <input class="form-check-input" type="checkbox" value=""
@@ -55,22 +53,25 @@
                     <a class="text-muted" href="#">Privacy Policy information.</a>
                 </label>
             </div>
-            <form action="{{route('checkout.fulfillOrder')}}"
+            <form action="{{route('checkout.fulfillOrder')}}" class="mb-4 mt-2"
                   id="payment-form-stripe" name="stripePayForm" method="POST">
                 @csrf
                 <input type="hidden" id="transaction_stripe"
                        name="transaction_id" />
                 <input type="hidden" id="total_stripe" name="total" />
-                <div class="place-order-flex-box" style="position: relative;">
+                <div class="place-order-flex-box d-inline-block position-relative">
                     <div class="checkout-page Place-order">
                         <button class="button-sq fullwidth-sq font-weight-bold-sq"
-                        id="payStartBtnStripe" form="payment-form-stripe" type="submit">Instant Booking</button>
+                                id="payStartBtnStripe" form="payment-form-stripe" type="submit">Instant Booking</button>
                     </div>
                     <div class="spinner-border"  id="payStartSpinner" role="status"  style="width: 2rem; height: 2rem; display: none;  position: absolute;right: 13px;top: 8px;">
                     </div>
                 </div>
             </form>
-{{--     Stripe ends--}}
+            {{--     Stripe ends--}}
+        </div>
+    </section>
+
 
 @endsection
 @section('page_level_script')

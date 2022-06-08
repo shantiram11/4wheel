@@ -76,6 +76,7 @@ class BookingController extends Controller
                     $nestedData['vehicle_owner'] = $v->vehicle_owner;
                     $nestedData['pickup_location'] = $v->pickup_location;
                     $nestedData['return_location'] = $v->return_location;
+                    $nestedData['booked_by'] = $v->booked_by;
                     $nestedData['action'] = \View::make('customer_dashboard.bookings._action')->with('r', $v)->render();
                     $data[] = $nestedData;
                 }

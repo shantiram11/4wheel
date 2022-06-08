@@ -207,7 +207,7 @@
                         @endforeach
                         <div class="reviews-row">
                             <div class="review-meta">
-                                <div class="avatar-sq {{(Auth()->user()->verify == 'yes') ? 'verified-sq' : ''}} my-avatar-sq">
+                                <div class="avatar-sq {{(auth()->check() && auth()->user()->verify == 'yes') ? 'verified-sq' : ''}} my-avatar-sq">
                                     @if(auth()->check())
                                     <img src="{{asset('public/uploads/users/'.Auth()->user()->current_image)}}" alt="">
                                         @endif
