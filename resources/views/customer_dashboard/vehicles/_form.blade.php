@@ -146,19 +146,18 @@
 {{--                  </div>--}}
                   <div class="form-group">
                       <!--begin::Col-->
-
+                      <?php $image = $vehicle->photos->where('featured','yes'); ?>
                           <label class="required fs-6 fw-bold mb-2" for="file">
                               Profile Image
                           </label>
                           <input type="hidden" name="image_hidden_value" class="image_hidden_value"
-                                 value="{{ old('image', $vehicle->image) }}">
 
                           <input type="file" name="featured_image" onchange="loadPreview(this);"
                                  class="form-control form-control-solid @error('image') is-invalid @enderror" id="image"
-                                 value="{{ old('image', $vehicle->image) }}" />
-                          <div class="kt_preview_image_container {{ empty($vehicle->image) ? 'd-none' : '' }}">
+                                 value="{{ old('featured_image', $image['image']) }}" />
+                          <div class="kt_preview_image_container {{ empty($image['image']) ? 'd-none' : '' }}">
                               <img id="kt_preview_img"
-                                   src="{{ empty($vehicle->image) ? '' : asset('public/uploads/vehicles/' . $vehicle->image) }}"
+                                   src="{{ empty($image) ? '' : asset('public/uploads/vehicles/' . $image['image']) }}"
                                    class="img-fluid " />
                               <a href="!#" class="kt_preview_image_close"><i class="fas fa-times"></i></a>
                           </div>
