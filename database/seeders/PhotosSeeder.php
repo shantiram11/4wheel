@@ -158,6 +158,30 @@ class PhotosSeeder extends Seeder
                 'vehicle_id'                   =>6,
                 'created_at'                 =>now(),
                 'updated_at'                 =>now(),
+            ]  ,
+            [
+            'image'                      => 'bike1.jpg',
+            'store_type'                 => 'perm',
+            'featured'                   => 'yes',
+            'vehicle_id'                   =>7,
+            'created_at'                 =>now(),
+            'updated_at'                 =>now(),
+        ],
+            [
+                'image'                      => 'bike2.jpg',
+                'store_type'                 => 'perm',
+                'featured'                   => 'no',
+                'vehicle_id'                   =>7,
+                'created_at'                 =>now(),
+                'updated_at'                 =>now(),
+            ],
+            [
+                'image'                      => 'bike3.jpg',
+                'store_type'                 => 'perm',
+                'featured'                   => 'no',
+                'vehicle_id'                   =>7,
+                'created_at'                 =>now(),
+                'updated_at'                 =>now(),
             ]
         ],[],[]);
 
