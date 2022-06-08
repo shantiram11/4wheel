@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="ks-dash-box">
-                                <div class="d-flex justify-content-space-between">
+                                <div class="d-flex justify-content-space-between" style="justify-content: space-between;">
                                     <div>
                                         <i class="fas fa-users" style="font-size:100px"></i>
                                     </div>
@@ -24,7 +24,6 @@
                                         <p class="stat-count">{{$total_bookings}}</p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="col-md-4">
