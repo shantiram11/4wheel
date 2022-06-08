@@ -67,7 +67,7 @@
 
                 "serverSide": true,
                 "ajax": {
-                    "url": BASE_URL + '/dashboard/my-vehicle-bookings',
+                    "url": BASE_URL + '/customer-dashboard/my-vehicle-bookings',
                     "dataType": "json",
                     "type": "GET",
                     "data": {
