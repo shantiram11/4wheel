@@ -8,60 +8,60 @@
             <div class="hero-search-full-page low-sq next-sq">
                 <!-- Hero Search Vertical Default -->
                 <div class="h-search-v narrow-sq animate-sq shadow-sq">
-                    <form action="listing_page.html" class="hero-search-form">
+{{--                    <form action="listing_page.html" class="hero-search-form">--}}
 
-                        <div class="search-item">
-                            <i class="icon icon-pickup-location"></i>
-                            <div class="fltp">
-                                <input type="text" value="" required>
-                                <label class="placeholder" data-big-placeholder="Pickup location"
-                                    data-little-placeholder="Pickup location"></label>
-                            </div>
-                        </div>
-                        <div class="search-item">
-                            <i class="icon icon-return-location"></i>
-                            <div class="fltp">
-                                <input type="text" value="" required>
-                                <label class="placeholder" data-big-placeholder="Return location"
-                                    data-little-placeholder="Return location"></label>
-                            </div>
-                        </div>
+{{--                        <div class="search-item">--}}
+{{--                            <i class="icon icon-pickup-location"></i>--}}
+{{--                            <div class="fltp">--}}
+{{--                                <input type="text" value="" required>--}}
+{{--                                <label class="placeholder" data-big-placeholder="Pickup location"--}}
+{{--                                    data-little-placeholder="Pickup location"></label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="search-item">--}}
+{{--                            <i class="icon icon-return-location"></i>--}}
+{{--                            <div class="fltp">--}}
+{{--                                <input type="text" value="" required>--}}
+{{--                                <label class="placeholder" data-big-placeholder="Return location"--}}
+{{--                                    data-little-placeholder="Return location"></label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="search-item">
-                            <div class="checkbox-wrapper">
-                                <input type="checkbox" id="checkbox11">
-                                <label for="checkbox11">Return car to pickup location</label>
-                            </div>
-                        </div>
+{{--                        <div class="search-item">--}}
+{{--                            <div class="checkbox-wrapper">--}}
+{{--                                <input type="checkbox" id="checkbox11">--}}
+{{--                                <label for="checkbox11">Return car to pickup location</label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="search-item">
-                            <i class="icon icon-pickup-date"></i>
-                            <div class="fltp calendar-sq" id="rangestart">
-                                <input type="text" class="filter" value="" required placeholder="enter date">
-                                <label class="placeholder" data-big-placeholder="Pickup date"
-                                    data-little-placeholder="Pickup date"></label>
-                            </div>
-                        </div>
+{{--                        <div class="search-item">--}}
+{{--                            <i class="icon icon-pickup-date"></i>--}}
+{{--                            <div class="fltp calendar-sq" id="rangestart">--}}
+{{--                                <input type="text" class="filter" value="" required placeholder="enter date">--}}
+{{--                                <label class="placeholder" data-big-placeholder="Pickup date"--}}
+{{--                                    data-little-placeholder="Pickup date"></label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="search-item">
-                            <i class="icon icon-return-date"></i>
-                            <div class="fltp calendar-sq" id="rangeend">
-                                <input type="text" class="filter" value="" required placeholder="enter date">
-                                <label class="placeholder" data-big-placeholder="Return date"
-                                    data-little-placeholder="Return date"></label>
-                            </div>
-                        </div>
+{{--                        <div class="search-item">--}}
+{{--                            <i class="icon icon-return-date"></i>--}}
+{{--                            <div class="fltp calendar-sq" id="rangeend">--}}
+{{--                                <input type="text" class="filter" value="" required placeholder="enter date">--}}
+{{--                                <label class="placeholder" data-big-placeholder="Return date"--}}
+{{--                                    data-little-placeholder="Return date"></label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="search-item">
+{{--                        <div class="search-item">--}}
 
-                            <button class="button-sq">
-                                <i class="icon icon-search"></i>
-                                <span>Find a car</span>
-                            </button>
+{{--                            <button class="button-sq">--}}
+{{--                                <i class="icon icon-search"></i>--}}
+{{--                                <span>Find a car</span>--}}
+{{--                            </button>--}}
 
-                        </div>
+{{--                        </div>--}}
 
-                    </form>
+{{--                    </form>--}}
                 </div>
 
                 <!-- Hero Big - Slick -->
@@ -109,7 +109,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="ui grid container typo-section-sq bottom-default">
                 <div class="row">
                     <div class="sq-slick article-sq-slick" data-arrows="false" data-center-mode="true"
@@ -117,7 +116,6 @@
                         data-scroll-slides="3" data-tablet-show-slides="2" data-tablet-scroll-slides="2"
                         data-mobile-show-slides="3" data-mobile-scroll-slides="3" data-tablet-center-padding="0px"
                         data-mobile-center-padding="50px">
-
                         <!-- Slide 01-->
                         <div>
                             <div class="caption-content">
@@ -131,36 +129,30 @@
                                 <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
                             </div>
                         </div>
-
                         <!-- Slide 03-->
                         <div>
                             <div class="caption-content">
                                 <img src="{{ asset('assets/front/images/partener_001.jpg') }}" alt="">
                             </div>
                         </div>
-
                         <!-- Slide 04-->
                         <div>
                             <div class="caption-content">
                                 <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
                             </div>
                         </div>
-
                         <!-- Slide 05-->
                         <div>
                             <div class="caption-content">
                                 <img src="{{ asset('assets/front/images/partener_001.jpg') }}" alt="">
                             </div>
                         </div>
-
                         <!-- Slide 06-->
                         <div>
                             <div class="caption-content">
                                 <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div> --}}
@@ -171,7 +163,7 @@
                 <div class="row">
                     <div class="ui twelve wide mobile twelve wide tablet twelve wide computer column">
                         <div class="typo-section-header-sq">
-                            <h2 class="text-align-center-sq">Popular Cars</h2>
+                            <h2 class="text-align-center-sq">Available Vehicles</h2>
                         </div>
                     </div>
                     @foreach ($vehicles as $v )
@@ -190,7 +182,7 @@
                                     <div class="image-wrapper">
                                         <span class="image-inner">
                                             @if($featured_image)
-                                            <img  src="{{ asset('storage/photos/'.$featured_image->image) }}"
+                                            <img  src="{{ asset('storage/uploads/vehicle/'.$featured_image->image) }}"
                                                 alt="" class="">
                                             @endif
                                         </span>

@@ -11,7 +11,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $vehicles = Vehicle::where('status','available')->with('photos')->get();
+       $vehicles = Vehicle::where('status','available')->whereHas('user',function($q){
+            $q->where('verify','yes');
+       })->with('photos')->get();
         return view('front.index.index',compact('vehicles'));
     }
     public function show($slug)

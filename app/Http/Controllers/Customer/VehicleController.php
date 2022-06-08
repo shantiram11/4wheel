@@ -13,6 +13,7 @@ use App\Models\Vehicle;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class VehicleController extends Controller
 {
@@ -54,8 +55,6 @@ class VehicleController extends Controller
                     'u.name as owner'
                 );
             $query->where('v.owner_id',Auth::user()->id);
-
-
             $query->where(function ($q) use ($search) {
                 $q->where('v.company_name', 'like', $search . '%')
                     ->orWhere('v.vehicle_number', 'like', $search . '%')
@@ -114,8 +113,11 @@ class VehicleController extends Controller
      */
     public function store(VehicleRequest $request)
     {
+//        dd($request->all());
+        $company_name = $request->input('company_name');
         $vehicle = Vehicle::create([
             'company_name'              => $request->input('company_name'),
+            'slug'                      => Str::slug($company_name),
             'fuel_type'                 => $request->input('fuel_type'),
             'vehicle_number'            => $request->input('vehicle_number'),
             'brand'                     => $request->input('brand'),
@@ -156,9 +158,7 @@ class VehicleController extends Controller
                 'featured'       =>          Photo::FEATURED,
             ]);
         }
-
-
-        return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
+        return redirect()->route('customerVehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
 
     }
 
@@ -215,7 +215,7 @@ class VehicleController extends Controller
             'owner_id'                  => auth()->user()->id,
             'updated_at'                => now(),
         ]);
-        return redirect()->route('vehicles.show', compact('vehicle'))->with('alert.success', 'vehicle Successfully Updated !!');
+        return redirect()->route('customerVehicles.show', compact('vehicle'))->with('alert.success', 'vehicle Successfully Updated !!');
     }
 
     /**

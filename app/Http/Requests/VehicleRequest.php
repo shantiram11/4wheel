@@ -23,6 +23,7 @@ class VehicleRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'company_name' => ['required', 'string','min:3', 'max:191'],
             'fuel_type' => ['required','in:petrol,diesel,hybrid,electric'],
@@ -32,7 +33,7 @@ class VehicleRequest extends FormRequest
             'rate' => ['required', 'numeric',],
             'description' => ['required', 'string','min:10', 'max:191'],
             'location' => ['required', 'string', 'max:20'],
-            'vehicle_type'  => ['required','in:car,jeep,van,bike'],
+            'vehicle_type'  => ['required','exists:categories,id'],
             'model' => ['required', 'string', 'max:191'],
             'status' => ['nullable'],
             'owner_id' => ['nullable'],

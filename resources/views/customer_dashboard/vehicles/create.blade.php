@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">List Vehicles</h1>
+              <h1 class="m-0">Create Vehicles</h1>
             </div>
             <div class="col-sm-6 text-right">
             <a href="{{route('customerVehicles.index')}}" class=""><button class="btn btn-sm bg-gradient-primary">Back</button></a>

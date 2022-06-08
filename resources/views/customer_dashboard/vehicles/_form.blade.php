@@ -1,5 +1,5 @@
 
-{{--@include('utils._error')--}}
+@include('utils._error')
 {{--@dd("adsfadsf");--}}
             <form>
 
@@ -16,9 +16,9 @@
                     @enderror
                   </div> --}}
                 <div class="form-group">
-                  <label for="company_name">Company Name</label>
+                  <label for="company_name" class="required">Company Name</label>
                   <input type="text"
-                               class="form-control @error('company_name') is-invalid @enderror" type="text" name="company_name" value="{{ old('company_name', $vehicle->company_name) }}">
+                               class="form-control @error('company_name') is-invalid required @enderror" type="text" name="company_name" value="{{ old('company_name', $vehicle->company_name) }}">
                                @error('company_name')
                                <span class="invalid-feedback" role="alert">
                                    {{ $message }}
@@ -84,9 +84,9 @@
                       @enderror
                   </div>
                   <div class="form-group">
-                      <label for="category">Role</label>
+                      <label for="category">Category</label>
                       <select class="form-control @error('category_id') is-invalid @enderror" name="vehicle_type">
-                          <option value="">{{ __('-- Select Role --') }}</option>
+                          <option value="">{{ __('-- Select vehicle category --') }}</option>
                           @foreach ($vehicle_options as $k => $v)
                               <?php
                               if (old('category_id', $vehicle->category_id) == $k) {
@@ -116,7 +116,7 @@
                   <div class="form-group">
                     <label for="description">description </label>
 
-                    <textarea type="text" rows="5" class="form-control @error('description') is-invalid @enderror" type="text" name="description">{{$vehicle->description}}</textarea>
+                    <textarea type="text" rows="5" class="form-control @error('description') is-invalid @enderror" type="text" name="description">{{old('description',$vehicle->description)}}</textarea>
 
                       @error('description')
                                  <span class="invalid-feedback" role="alert">
@@ -176,7 +176,7 @@
                         <div class="row">
                             @foreach ($images as $image)
                                 <div class="image-edit">
-                                    <img class='ks-mw-250 m-4' src="{{ asset('storage/photos/'.$image->image) }}" />
+                                    <img class='ks-mw-250 m-4' src="{{ asset('storage/uploads/vehicle/'.$image->image) }}" />
                                     <i class="far fa-times-circle"  onclick="removeImage(this)" data-subject_id="{{$image->id}}"></i>
                                 </div>
                             @endforeach

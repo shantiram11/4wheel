@@ -124,7 +124,7 @@
                                     Profile Image
                                 </th>
                                 <td>
-                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$featured_image->image) }}" />
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/vehicle/'.$featured_image->image) }}" />
                                 </td>
                             </tr>
                             <tr>
@@ -133,7 +133,7 @@
                                 </th>
                                 @foreach ($images as $image)
                                     <td>
-                                        <img class='img-fluid ks-mw-250' src="{{ asset('storage/photos/'.$image->image) }}" />
+                                        <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/vehicle/'.$image->image) }}" />
                                     </td>
                                 @endforeach
                             </tr>
