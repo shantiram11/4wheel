@@ -8,8 +8,8 @@
             <div class="col-sm-6">
               <h1 class="m-0">Vehicles</h1>
             </div>
-            <div class="col-sm-3">
-            <a href="{{route('customerVehicles.create')}}" class=""><button class="btn btn-block bg-gradient-primary btn-lg">Add Vehicles</button></a>
+            <div class="col-sm-6 text-right">
+            <a href="{{route('customerVehicles.create')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Add Vehicles</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
