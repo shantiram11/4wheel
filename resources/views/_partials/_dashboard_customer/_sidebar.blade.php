@@ -79,10 +79,9 @@
             </li>
             <li class="nav-item">
                 <a href="{{route('customer-profile.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-user-alt"></i>
                     <p>
                         Profile
-                        <span class="right badge badge-danger">Profile</span>
                     </p>
                 </a>
             </li>

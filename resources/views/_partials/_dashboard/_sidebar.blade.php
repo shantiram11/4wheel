@@ -127,28 +127,25 @@
             </li>
             <li class="nav-item">
                 <a href="{{route('profile.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-user-alt"></i>
                     <p>
                         Profile
-                        <span class="right badge badge-danger">Profile</span>
                     </p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('all-bookings.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-calendar"></i>
                     <p>
                         Bookings
-                        <span class="right badge badge-danger">Bookings</span>
                     </p>
                 </a>
             </li>
           <li class="nav-item">
             <a href="{{route('settings.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-cog"></i>
               <p>
-              Settings
-                <span class="right badge badge-danger">Settings</span>
+                  Settings
               </p>
             </a>
           </li>
