@@ -174,7 +174,7 @@
                             <h2 class="text-align-center-sq">Popular Cars</h2>
                         </div>
                     </div>
-@foreach ($vehicles as $v )
+                    @foreach ($vehicles as $v )
                         <?php
                         $featured_image = $v->photos->where('featured','yes')->first();
                         ?>
@@ -189,8 +189,10 @@
                                 <a class="image-sq" href={{route('front.detail',$v->slug)}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
+                                            @if($featured_image)
                                             <img  src="{{ asset('storage/photos/'.$featured_image->image) }}"
                                                 alt="" class="">
+                                            @endif
                                         </span>
                                     </div>
                                 </a>
