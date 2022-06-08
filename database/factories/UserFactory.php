@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'current_image'             => '',
             'identity_front'             => '',
             'identity_back'             => '',
+            'verify'             => 'yes',
         ];
     }
 

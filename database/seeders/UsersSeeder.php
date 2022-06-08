@@ -27,6 +27,7 @@ class UsersSeeder extends Seeder
             'current_image'             => '',
             'identity_front'             => '',
             'identity_back'             => '',
+                'verify'             => 'yes',
             ],
             [
                 'name'                      => 'Shantiram Tiwari',
@@ -38,6 +39,7 @@ class UsersSeeder extends Seeder
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => $role->id,
                 'remember_token'            => Str::random(10),
+                'verify'             => 'yes',
                 ],
             [
                 'name'                      => 'Sanjeev Bhandari',
@@ -49,6 +51,7 @@ class UsersSeeder extends Seeder
                 'password'                  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'role_id'                   => 3,
                 'remember_token'            => Str::random(10),
+                'verify'             => 'yes',
             ],
         ],['email'],[]);
     }

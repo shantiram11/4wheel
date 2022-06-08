@@ -9,6 +9,8 @@ class CustomerDashboardController extends Controller
 {
     public function index()
     {
-        return view('layouts.customer-dashboard');
+
+
+        return view('layouts.customer-dashboard',);
     }
 }

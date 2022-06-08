@@ -69,6 +69,15 @@
             </a>
           </li>
             <li class="nav-item">
+                <a href="{{route('my-vehicle-bookings.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        My Vehicle
+                        <span class="right badge badge-danger">Bookings</span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a href="{{route('customer-profile.index')}}" class="nav-link">
                     <i class="nav-icon fas fa-th"></i>
                     <p>

@@ -34,7 +34,6 @@
                             <th>Vehicle Owner</th>
                             <th>Pickup Location</th>
                             <th>Return Location</th>
-                            <th>Booked By</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -47,7 +46,6 @@
                             <th>Vehicle Owner</th>
                             <th>Pickup Location</th>
                             <th>Return Location</th>
-                            <th>Booked By</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
@@ -56,7 +54,6 @@
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-
             </div>
         </div>
     </div>

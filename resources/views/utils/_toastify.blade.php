@@ -1,6 +1,5 @@
 <!-- to trigger these actions you need to pass `with('toast.success')` or `with('toast.error')` from controller -->
 @if(session('toast.success'))
-    @dd('hit')
     <script>
         toastr.success("{!! session('toast.success') !!}");
     </script>

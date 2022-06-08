@@ -13,14 +13,12 @@ class ReviewController extends Controller
     public function storeReview(Request $request,$slug){
         $request->validate([
             'body'=>'required|min:10|max:199',
-            'rating'=>'nullable|numeric|gt:0|lte:5',
         ]);
 
         $vehicle = Vehicle::where('slug',$slug)->first();
         if(!$vehicle){
             abort(404);
         }
-
         Rating::updateOrCreate(
             [
                 'vehicle_id' => $vehicle->id,
@@ -28,7 +26,6 @@ class ReviewController extends Controller
             ],
             [
                 'body' => $request->body,
-                'rating'         => 4
             ]
         );
         return redirect()->back()->with('toast.success','Review Added Successfully!!');

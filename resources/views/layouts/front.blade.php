@@ -77,6 +77,11 @@ Default Header with a White Background & Dark text.
                                         <span>Sign Up</span>
                                     </a>
                                 </li>
+                                    <li><a href="{{ route('login') }}" class="item modal-ui-triggers"
+                                           data-trigger-for="modal0234">
+                                            <span>login</span>
+                                        </a>
+                                    </li>
                                 @endif
                                 @if (auth()->user())
                                     <li>  @if (Auth::user()->isAdmin())
@@ -100,12 +105,6 @@ Default Header with a White Background & Dark text.
                                             style="display: none;">
                                             @csrf
                                         </form>
-                                    </li>
-                                @else
-                                    <li><a href="{{ route('dashboard.index') }}" class="item modal-ui-triggers"
-                                            data-trigger-for="modal0234">
-                                            <span>Log In</span>
-                                        </a>
                                     </li>
                                 @endif
                             </ul>

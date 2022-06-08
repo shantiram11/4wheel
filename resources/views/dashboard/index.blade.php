@@ -57,9 +57,49 @@
                         </div>
 
                     </div>
-
                 </div>
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h6>Total number vehicles category wise</h6>
+                    </div>
+
+                    <canvas id="barChart"></canvas>
+                </div>
+
             </div>
         </div>
     </div>
+@endsection
+@section('page_level_script')
+    <script>
+        $(function(){
+            var ctx = document.getElementById("barChart").getContext('2d');
+            var barChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: {!! json_encode($categories) !!},
+                    datasets: [{
+                        // label: 'students',
+                        data: {!! json_encode($vehicles_count_arr) !!},
+                        backgroundColor: dynamicColors,
+                        barThickness: 35,
+                        // maxBarThickness: 8,
+                    }]
+                },
+                options: {
+                    plugins:{
+                        legend: {
+                            display: false
+                        },
+                    },
+                }
+            });
+        });
+        function dynamicColors() {
+            var r = Math.floor(Math.random() * 255);
+            var g = Math.floor(Math.random() * 255);
+            var b = Math.floor(Math.random() * 255);
+            return "rgba(" + r + "," + g + "," + b + ", 0.5)";
+        }
+    </script>
 @endsection

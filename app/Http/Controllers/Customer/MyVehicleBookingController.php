@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
-class BookingController extends Controller
+class MyVehicleBookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -51,7 +53,8 @@ class BookingController extends Controller
                     'b.return_location',
                     'u.name as booked_by'
                 );
-            $query->where('b.booked_by', Auth::user()->id);
+
+
             $query->where(function ($q) use ($search) {
                 $q->where('b.booked_by', 'like', $search . '%')
                     ->orWhere('b.return_date', 'like', $search . '%')
@@ -76,7 +79,7 @@ class BookingController extends Controller
                     $nestedData['vehicle_owner'] = $v->vehicle_owner;
                     $nestedData['pickup_location'] = $v->pickup_location;
                     $nestedData['return_location'] = $v->return_location;
-                    $nestedData['action'] = \View::make('customer_dashboard.bookings._action')->with('r', $v)->render();
+                    $nestedData['action'] = \View::make('dashboard.my_vehicle_bookings._action')->with('r', $v)->render();
                     $data[] = $nestedData;
                 }
             }
@@ -88,7 +91,8 @@ class BookingController extends Controller
                 "data" => $data
             ], 200);
         }
-        return view('customer_dashboard.bookings.index');
+
+        return view('customer_dashboard.my_vehicle_bookings.index');
     }
     public function create (){}
 
@@ -96,7 +100,7 @@ class BookingController extends Controller
 
     public function show ($id){
         $booking = Booking::findOrFail($id);
-        return view ('customer_dashboard.bookings.show',compact('booking'));
+        return view ('customer_dashboard.my_vehicle_bookings.show',compact('booking'));
     }
 
     public function edit (){}
@@ -106,5 +110,17 @@ class BookingController extends Controller
     public function destroy (){
 
     }
+    public function userVerify(Request $request, Booking $booking)
+    {
+        $request->validate([
+            'booking_verify' => 'in:yes,no',
+        ]);
+        Booking::where('id', $booking->id)->update([
+            'verify'             => $request->input('booking_verify'),
+        ]);
 
+//        Mail::to($user->email)->send(new \App\Mail\UserVerifyMail($user));
+        return redirect()->route('booking.show', compact('booking'))->with('alert.success', 'Booking Successfully Verified !!');
+
+    }
 }

@@ -20,10 +20,8 @@
 <!-- Dropzone image upload Query -->
  <script src="{{asset('adminlte/plugins/image-upload/image-uploader.min.js')}}"></script>
 
-
 <!-- Bootstrap 4 -->
 <script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
 <!-- DataTables  & Plugins -->
 <script src="{{asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
@@ -37,7 +35,9 @@
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
-
+ <script src="{{asset('adminlte/plugins/chart/chart.min.js')}}"></script>
+ <script src="{{asset('adminlte/plugins/chart/chart.js')}}"></script>
+ <script src="{{asset('adminlte/plugins/chart/chartist.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
  <!-- Custom dashboard Query -->

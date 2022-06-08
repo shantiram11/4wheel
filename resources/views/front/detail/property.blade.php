@@ -139,52 +139,46 @@
                         </div>
                     </div>
 
-                    <h3>Location</h3>
-
-                    <div class="map-wrapper shadow-sq">
-                        <div id="map"></div>
-                    </div>
-
                     <h3>Reviews</h3>
 
-                    <div class="reviews-header">
-                        <div class="rating-big">
-                            <div class="rating-badge">
-                                <span>9.2</span>
-                                <i class="icon icon-heart"></i>
-                            </div>
+{{--                    <div class="reviews-header">--}}
+{{--                        <div class="rating-big">--}}
+{{--                            <div class="rating-badge">--}}
+{{--                                <span>9.2</span>--}}
+{{--                                <i class="icon icon-heart"></i>--}}
+{{--                            </div>--}}
 
-                        </div>
-                        <div class="rating-percentage">
-                            <div class="rating-column">
-                                <p class="rating-label"><strong>Quality</strong></p>
-                                <div class="basic-progressbar">
-                                    <div class="inner" style="width:75%"></div>
-                                </div>
-                            </div>
+{{--                        </div>--}}
+{{--                        <div class="rating-percentage">--}}
+{{--                            <div class="rating-column">--}}
+{{--                                <p class="rating-label"><strong>Quality</strong></p>--}}
+{{--                                <div class="basic-progressbar">--}}
+{{--                                    <div class="inner" style="width:75%"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="rating-column">
-                                <p class="rating-label"><strong>Communication</strong></p>
-                                <div class="basic-progressbar">
-                                    <div class="inner" style="width:55%"></div>
-                                </div>
-                            </div>
+{{--                            <div class="rating-column">--}}
+{{--                                <p class="rating-label"><strong>Communication</strong></p>--}}
+{{--                                <div class="basic-progressbar">--}}
+{{--                                    <div class="inner" style="width:55%"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="rating-column">
-                                <p class="rating-label"><strong>Location</strong></p>
-                                <div class="basic-progressbar">
-                                    <div class="inner" style="width:25%"></div>
-                                </div>
-                            </div>
+{{--                            <div class="rating-column">--}}
+{{--                                <p class="rating-label"><strong>Location</strong></p>--}}
+{{--                                <div class="basic-progressbar">--}}
+{{--                                    <div class="inner" style="width:25%"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
-                            <div class="rating-column">
-                                <p class="rating-label"><strong>Safety</strong></p>
-                                <div class="basic-progressbar">
-                                    <div class="inner" style="width:80%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{{--                            <div class="rating-column">--}}
+{{--                                <p class="rating-label"><strong>Safety</strong></p>--}}
+{{--                                <div class="basic-progressbar">--}}
+{{--                                    <div class="inner" style="width:80%"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="reviews-search">
                         <form action="#" class="">
@@ -198,10 +192,10 @@
                         @foreach($reviews as $review)
                         <div class="reviews-row">
                             <div class="review-meta">
-                                <a class="avatar-sq verified-sq" href="vendor_details.html">
-                                    <img src="{{asset('assets/front/images/avatar/avatar_01.jpg')}}" alt="">
+                                <a class="avatar-sq verified-sq" href="">
+                                    <img src="{{asset('public/uploads/users/'.$review->user->current_image)}}" alt="">
                                 </a>
-                                <a class="name-sq" href="vendor_details.html">Danny Martinez</a>
+                                <a class="name-sq" href="">{{$review->user->name}}  </a>
                             </div>
 
                             <div class="comment-sq">
@@ -213,8 +207,10 @@
                         @endforeach
                         <div class="reviews-row">
                             <div class="review-meta">
-                                <div class="avatar-sq verified-sq my-avatar-sq">
-                                    <img src="{{asset('assets/front/images/avatar/dummy.png')}}" alt="">
+                                <div class="avatar-sq {{(Auth()->user()->verify == 'yes') ? 'verified-sq' : ''}} my-avatar-sq">
+                                    @if(auth()->check())
+                                    <img src="{{asset('public/uploads/users/'.Auth()->user()->current_image)}}" alt="">
+                                        @endif
                                 </div>
                                 @if(auth()->check())
                                 <p class="name-sq">
@@ -231,22 +227,22 @@
                                             {{ implode('', $errors->all(':message')) }}
                                         </div>
                                     @endif
-                                    <fieldset>
-                                        <span class="star-cb-group">
-                                          <input  type="radio" id="rating-5" name="rating" value="5"   {{ old('rating') == 5 ? 'checked' : '' }} /><label for="rating-5">5</label>
-                                          <input  type="radio" id="rating-4" name="rating" value="4"  {{ old('rating') == 4 ? 'checked' : '' }}  /><label for="rating-4">4</label>
-                                          <input  type="radio" id="rating-3" name="rating" value="3"  {{ old('rating') == 3 ? 'checked' : '' }} /><label for="rating-3">3</label>
-                                          <input  type="radio" id="rating-2" name="rating" value="2"  {{ old('rating') == 2 ? 'checked' : '' }} /><label for="rating-2">2</label>
-                                          <input  type="radio" id="rating-1" name="rating" value="1"  {{ old('rating') == 1 ? 'checked' : '' }} /><label for="rating-1">1</label>
-                                          <input  type="radio" id="rating-0" name="rating" value="0"  {{ old('rating') == 0 ? 'checked' : '' }} class="star-cb-clear" /><label for="rating-0">0</label>
-                                        </span>
-                                    </fieldset>
-                                    @error('rating')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                    <textarea class="comment-textarea" name="body"  cols="30" rows="5" placeholder="Comment here"></textarea>
+{{--                                    <fieldset>--}}
+{{--                                        <span class="star-cb-group">--}}
+{{--                                          <input  type="radio" id="rating-5" name="rating" value="5"   {{ old('rating') == 5 ? 'checked' : '' }} /><label for="rating-5">5</label>--}}
+{{--                                          <input  type="radio" id="rating-4" name="rating" value="4"  {{ old('rating') == 4 ? 'checked' : '' }}  /><label for="rating-4">4</label>--}}
+{{--                                          <input  type="radio" id="rating-3" name="rating" value="3"  {{ old('rating') == 3 ? 'checked' : '' }} /><label for="rating-3">3</label>--}}
+{{--                                          <input  type="radio" id="rating-2" name="rating" value="2"  {{ old('rating') == 2 ? 'checked' : '' }} /><label for="rating-2">2</label>--}}
+{{--                                          <input  type="radio" id="rating-1" name="rating" value="1"  {{ old('rating') == 1 ? 'checked' : '' }} /><label for="rating-1">1</label>--}}
+{{--                                          <input  type="radio" id="rating-0" name="rating" value="0"  {{ old('rating') == 0 ? 'checked' : '' }} class="star-cb-clear" /><label for="rating-0">0</label>--}}
+{{--                                        </span>--}}
+{{--                                    </fieldset>--}}
+{{--                                    @error('rating')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+                                    <textarea class="comment-textarea" name="body"  cols="30" rows="5" placeholder="Review here"></textarea>
                                     @error('body')
                                     <span class="invalid-feedback" role="alert">
                                    {{ $message }}
@@ -254,7 +250,7 @@
                                     @enderror
                                 <br>
                                 <br>
-                                <button type="submit" class="button-sq font-weight-extrabold-sq small-sq float-right-sq" href="">Post comment</button>
+                                <button type="submit" class="button-sq font-weight-extrabold-sq small-sq float-right-sq" href="">Post Review</button>
                                 </form>
                             </div>
                         </div>

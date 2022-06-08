@@ -61,8 +61,9 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::post('your-profile/change-password', [\App\Http\Controllers\Customer\ProfileController::class, 'changePassword'])->name('customer-profile.changePassword');
         //profile routes end
         Route::resource('customer-bookings', \App\Http\Controllers\Customer\BookingController::class);
-
+        Route::resource('my-vehicle-bookings', \App\Http\Controllers\Customer\MyVehicleBookingController::class);
         Route::get('your-documents', [\App\Http\Controllers\Customer\ProfileController::class, 'getDocument'])->name('getDocument');
+        Route::put('booking/verify/{booking}', [\App\Http\Controllers\Dashboard\BookingController::class, 'bookingVerify'])->name('booking.verify');
 
         Route::delete('remove-image/{id}', [\App\Http\Controllers\Customer\VehicleController::class, 'removeImage'])->name('removeImage');
     });

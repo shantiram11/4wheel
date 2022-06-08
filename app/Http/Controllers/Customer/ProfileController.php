@@ -30,12 +30,14 @@ class ProfileController extends Controller
     public function Store(Request  $request)
     {
         $request->validate([
-            'name'=> ['required','string','min:3','max:30']
+            'name'=> ['required','string','min:3','max:30'],
+            'current_image' => ['required'],
         ]);
+        if( $request['current_image']){
         $currentImageName = AppHelper::renameImageFileUpload($request['current_image']);
         $request['current_image']->storeAs(
             'public/uploads/users', $currentImageName
-        );
+        );}
         $user = Auth::User();
         $user->name = $request->input('name');
         $user->current_image = $request->input('current_image');
