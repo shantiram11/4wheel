@@ -51,7 +51,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
     });
     /** €customer backend Starts*/
     Route::group(['prefix' => 'customer-dashboard'], function () {
-        Route::get('/', [\App\Http\Controllers\customer\CustomerDashboardController::class, 'index'])->name('customer-dashboard.index');
+        Route::get('/', [\App\Http\Controllers\Customer\CustomerDashboardController::class, 'index'])->name('customer-dashboard.index');
         // Route::get('/', [\App\Http\Controllers\Dashboard\VehicleController::class, 'index'])->name('vehicle.index');
         Route::resource('customerVehicles', \App\Http\Controllers\Customer\VehicleController::class);
         //profile routes start

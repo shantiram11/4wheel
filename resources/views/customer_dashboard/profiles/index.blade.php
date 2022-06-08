@@ -8,11 +8,9 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Profile Details</h1>
                 </div>
-                <div class="col-sm-3">
-                    <a href="{{route('customer-dashboard.index')}}" class=""><button class="btn btn-block bg-gradient-primary">Back</button></a>
-                </div>
-                <div class="col-sm-3">
-                    <a href="{{route('customer-profile.changePassword')}}" class=""><button class="btn btn-block btn btn-secondary">Change Password</button></a>
+                <div class="col-sm-6 text-right">
+                    <a href="{{route('customer-dashboard.index')}}" class=""><button class="btn btn-sm bg-gradient-primary">Back</button></a>
+                    <a href="{{route('customer-profile.changePassword')}}" class=""><button class="btn btn-sm btn btn-secondary">Change Password</button></a>
                 </div>
                 <!-- /.col -->
             </div><!-- /.row -->
@@ -24,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary" style="padding: 20px;">
                         <!-- /.card-header -->
