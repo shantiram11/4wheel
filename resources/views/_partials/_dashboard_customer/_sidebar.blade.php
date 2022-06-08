@@ -61,37 +61,33 @@
           </li>
           <li class="nav-item">
             <a href="{{route('customer-bookings.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+                <i class="nav-icon fas fa-calendar"></i>
               <p>
-                Bookings
-                  <span class="right badge badge-danger">Bookings</span>
+                  Lent Bookings
               </p>
             </a>
           </li>
             <li class="nav-item">
                 <a href="{{route('my-vehicle-bookings.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class=" nav-icon fas fa-align-justify"></i>
                     <p>
-                        My Vehicle
-                        <span class="right badge badge-danger">Bookings</span>
+                        Loaned Bookings
                     </p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('customer-profile.index')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-user-alt"></i>
                     <p>
                         Profile
-                        <span class="right badge badge-danger">Profile</span>
                     </p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{route('getDocument')}}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icons fal fa-address-card"></i>
                     <p>
                         Documents
-                        <span class="right badge badge-danger">Documents</span>
                     </p>
                 </a>
             </li>

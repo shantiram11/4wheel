@@ -64,7 +64,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('my-vehicle-bookings', \App\Http\Controllers\Customer\MyVehicleBookingController::class);
         Route::get('your-documents', [\App\Http\Controllers\Customer\ProfileController::class, 'getDocument'])->name('getDocument');
         Route::put('booking/verify/{booking}', [\App\Http\Controllers\Dashboard\BookingController::class, 'bookingVerify'])->name('booking.verify');
-
         Route::delete('remove-image/{id}', [\App\Http\Controllers\Customer\VehicleController::class, 'removeImage'])->name('removeImage');
     });
     Route::post('/reviews/vehicles/{slug}', [App\Http\Controllers\Front\ReviewController::class, 'storeReview'])->name('storeReview');
