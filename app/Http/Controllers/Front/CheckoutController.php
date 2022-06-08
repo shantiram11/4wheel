@@ -11,13 +11,15 @@ use Illuminate\Support\Facades\Mail;
 class CheckoutController extends Controller
 {
     public function fulfillOrder(Request $request){
+
         /*TODO: Logic here */
         $transactionId = $request->transaction_id;
         $booking = session()->get('booking');
         $booking['transaction_id'] = $transactionId;
        $final_booking = Booking::create($booking);
         $request->session()->forget('booking');
-        $vehicle_id = $request->vehicle_id;
+
+        $vehicle_id = $booking['vehicle_id'];
         Vehicle::where('id',$vehicle_id)->update([
             'status' => 'reserved',
         ]);
