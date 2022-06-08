@@ -118,15 +118,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('roles.create')}}" class="nav-link">
-                            <i class=" fas fa-solid fa-circle-check"></i>
+                        <a href="{{route('roles.create')}}" class="nav-link {{ current_page('roles') ? 'active' : '' }}">
+                            <i class="fal fa-user-tag"></i>
                             <p>Add Roles</p>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="{{route('profile.index')}}" class="nav-link">
+                <a href="{{route('profile.index')}}" class="nav-link {{ current_page('profile') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-user-alt"></i>
                     <p>
                         Profile
@@ -134,7 +134,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('all-bookings.index')}}" class="nav-link {{ current_page('profile') ? 'active' : '' }}">
+                <a href="{{route('all-bookings.index')}}" class="nav-link {{ current_page('all-bookings') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-calendar"></i>
                     <p>
                         Bookings
@@ -142,7 +142,7 @@
                 </a>
             </li>
           <li class="nav-item">
-            <a href="{{route('settings.index')}}" class="nav-link">
+            <a href="{{route('settings.index')}}" class="nav-link {{ current_page('settings') ? 'active' : '' }}">
                 <i class="nav-icon fas fa-cog"></i>
               <p>
                   Settings

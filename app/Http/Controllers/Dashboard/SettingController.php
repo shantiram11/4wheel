@@ -14,9 +14,8 @@ class SettingController extends Controller
         return view('dashboard.settings.index',compact('settings'));
     }
 
-    public function update(Request $request){
+    public function store(Request $request){
         {
-
 //            dd($request->all());
             $request->validate([
                 'admin_email' => 'required|email',
