@@ -17,7 +17,7 @@ class CheckoutController extends Controller
        $final_booking = Booking::create($booking);
         $request->session()->forget('booking');
 
-        Mail::to($booking->vehicle->user->email)->send(new \App\Mail\BookingMail($final_booking));
+//        Mail::to($booking->vehicle->user->email)->send(new \App\Mail\BookingMail($final_booking));
         return redirect()->route('front.index')->with('toast.success', 'Booking recorded');
     }
 

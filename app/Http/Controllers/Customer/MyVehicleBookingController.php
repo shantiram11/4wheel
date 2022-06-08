@@ -20,7 +20,6 @@ class MyVehicleBookingController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-
             $columns = array(
                 0 => 'book_date',
                 1 => 'return_date',
@@ -80,7 +79,7 @@ class MyVehicleBookingController extends Controller
                     $nestedData['pickup_location'] = $v->pickup_location;
                     $nestedData['return_location'] = $v->return_location;
                     $nestedData['booked_by'] = $v->booked_by;
-                    $nestedData['action'] = \View::make('dashboard.my_vehicle_bookings._action')->with('r', $v)->render();
+                    $nestedData['action'] = \View::make('customer_dashboard.my_vehicle_bookings._action')->with('r', $v)->render();
                     $data[] = $nestedData;
                 }
             }
