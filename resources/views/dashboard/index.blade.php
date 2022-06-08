@@ -15,9 +15,9 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="ks-dash-box">
-                                <div class="d-flex justify-content-space-between">
+                                <div class="d-flex justify-content-between">
                                     <div>
-                                        <i class="fas fa-users" style="font-size:100px"></i>
+                                        <i class="fas fa-users text-danger" style="font-size:100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">Users</strong>
@@ -29,9 +29,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="ks-dash-box">
-                                <div class="d-flex justify-content-space-between">
+                                <div class="d-flex justify-content-between">
                                     <div>
-                                        <i class="fas fa-car-side" style="font-size: 100px"></i>
+                                        <i class="fas fa-car-side text-success" style="font-size: 100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">vehicles</strong>
@@ -43,9 +43,9 @@
                         </div>
                         <div class="col-md-4">
                             <div class="ks-dash-box">
-                                <div class="d-flex justify-content-space-between">
+                                <div class="d-flex justify-content-between">
                                     <div>
-                                        <i class="fas fa-calendar-check" style="font-size: 100px"></i>
+                                        <i class="fas fa-calendar-check text-info" style="font-size: 100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">Bookings</strong>
