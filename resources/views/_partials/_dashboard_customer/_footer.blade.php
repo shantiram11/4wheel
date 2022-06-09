@@ -44,6 +44,7 @@
  <script src="{{asset('adminlte/dist/js/dashboard-custom.js')}}"></script>
 
  <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+ <script src="{{ asset('assets/js/common.js') }}"></script>
  <script src="{{ asset('assets/js/sweetalert2.min.js') }}"></script>
 @include('utils._toastify')
 @include('utils._alertify')

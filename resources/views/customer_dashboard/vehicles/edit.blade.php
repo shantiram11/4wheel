@@ -30,7 +30,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="edit_vehicle_form" class="form" action="{{route('customerVehicles.update',$vehicle)}}" method="POST">
+                        <form id="edit_vehicle_form" class="form" action="{{route('customerVehicles.update',$vehicle->id)}}" method="POST">
                             {{ method_field('PUT') }}
                             @include('customer_dashboard.vehicles._form',['show' => false,'buttonText' => 'Update'])
                         </form>

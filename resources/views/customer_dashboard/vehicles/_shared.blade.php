@@ -15,7 +15,7 @@
             success:function(resp){
                 // $form.removeClass("sp-loading");
                 if(redirect){
-                    alertifySuccessAndRedirect(resp.message, "{{route('vehicles.index')}}");
+                    alertifySuccessAndRedirect(resp.message, "{{route('customerVehicles.index')}}");
                 }else{
                     alertifySuccess(resp.message);
                 }

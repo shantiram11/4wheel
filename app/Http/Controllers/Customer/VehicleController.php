@@ -200,9 +200,10 @@ class VehicleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(VehicleRequest $request, Vehicle $vehicle)
+    public function update(VehicleRequest $request, $id)
     {
-        User::where('id', $vehicle->id)->update([
+    $vehicle = Vehicle::findOrFail($id);
+    $vehicle->update([
             'company_name'              => $request->input('company_name'),
             'fuel_type'                 => $request->input('fuel_type'),
             'vehicle_number'            => $request->input('vehicle_number'),
@@ -211,11 +212,11 @@ class VehicleController extends Controller
             'seat_count'                => $request->input('seat_count'),
             'description'               => $request->input('description'),
             'location'                  => $request->input('location'),
-            'status'                    => $request->input('status'),
+            'status'                    => $request->input('status') ?? 'available',
             'owner_id'                  => auth()->user()->id,
             'updated_at'                => now(),
         ]);
-        return redirect()->route('customerVehicles.show', compact('vehicle'))->with('alert.success', 'vehicle Successfully Updated !!');
+        return redirect()->route('customerVehicles.show',$vehicle->id)->with('alert.success', 'vehicle Successfully Updated !!');
     }
 
     /**
