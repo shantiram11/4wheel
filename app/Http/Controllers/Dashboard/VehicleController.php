@@ -239,32 +239,32 @@ class VehicleController extends Controller
     public function travelledLocations(Request $request, $id)
     {
         $date = $request->input('date') ?? date('Y-m-d');
-//        $date = Carbon::today();
-        $date = '2022-04-17';
+        $date = Carbon::today();
+//        $date = '2022-09-06';
         $vehicle = Vehicle::findOrFail($id);
         $locations = Location::where('vehicle_id',$vehicle->id)
                 ->whereDate('created_at', $date)
                 ->select('latitude as lat', 'longitude as lng')
                 ->get()->toArray();
 //        dd($locations);
-        $locations = [
-            [
-                'lat' => 26.663552,
-                'lng'=> 87.273414
-            ],
-            [
-                'lat' => 26.643884,
-                'lng'=> 87.275220
-            ],
-            [
-                'lat' => 26.630995,
-                'lng'=> 87.273503
-            ],
-            [
-                'lat' => 26.607883,
-                'lng'=> 87.275039
-            ]
-        ];
+//        $locations = [
+//            [
+//                'lat' => 26.663552,
+//                'lng'=> 87.273414
+//            ],
+//            [
+//                'lat' => 26.643884,
+//                'lng'=> 87.275220
+//            ],
+//            [
+//                'lat' => 26.630995,
+//                'lng'=> 87.273503
+//            ],
+//            [
+//                'lat' => 26.607883,
+//                'lng'=> 87.275039
+//            ]
+//        ];
         return view('dashboard.vehicles.travelled_locations',compact('locations'));
 //        if()
 //

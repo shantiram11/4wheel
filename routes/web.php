@@ -18,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
-
-
 //Route::group(['middleware' => ['sessionMiddleware']], function () {
 
     /**protected routes**/
