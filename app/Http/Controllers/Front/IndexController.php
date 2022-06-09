@@ -7,6 +7,7 @@ use App\Models\Rating;
 use App\Models\User;
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -15,7 +16,10 @@ class IndexController extends Controller
        $vehicles = Vehicle::where('status','available')->whereHas('user',function($q){
             $q->where('verify','yes');
        })->with('photos')->get();
-        $user_wishlists = User::with('wishlists')->where('id', auth()->user()->id)->first();
+       $user_wishlists = collect([]);
+       if(Auth::user()){
+           $user_wishlists = User::with('wishlists')->where('id', auth()->user()->id)->first();
+       }
         return view('front.index.index',compact('vehicles', 'user_wishlists'));
     }
     public function show($slug)

@@ -164,7 +164,7 @@
                     <div class="ui twelve wide mobile twelve wide tablet twelve wide computer column">
                         <div class="typo-section-header-sq d-flex justify-content-between align-items-center">
                             <h2 class="text-align-center-sq">Available Vehicles</h2>
-                            <button class="btn btn-primary modal-ui-trigger" data-trigger-for="wishlist">Wishlist</button>
+                            @auth<button class="btn btn-primary modal-ui-trigger" data-trigger-for="wishlist">Wishlist</button>@endauth
                         </div>
                     </div>
                     @foreach ($vehicles as $v )
@@ -391,6 +391,7 @@
     </div>
 
     <!-- Wishlist -->
+    @auth
     <div class="ui modal small" data-for="wishlist">
         <i class="icon icon-close close-modal"></i>
 
@@ -432,5 +433,5 @@
 {{--            </div>--}}
 {{--        </div>--}}
     </div>
-
+    @endauth
 @endsection
