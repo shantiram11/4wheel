@@ -7,12 +7,14 @@
     <meta name="author" content="SeventhQueen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/all.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/base.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/header.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/less/theme.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/icon/style.css') }}">
-
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
     <link rel="icon" href="{{ asset('assets/front/images/ico/favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -21,10 +23,11 @@
     <script src="{{ asset('assets/front/library/modernizr-custom.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}">
+
     <title>Homepage</title>
 
 </head>
-
+`
 <body class="no-transition">
     <div id="page-wrapper">
 
@@ -228,7 +231,7 @@ Default Header with a White Background & Dark text.
 
     <!-- Slick -->
     <script src="{{ asset('assets/front/library/slick.js') }}"></script>
-
+    <script src="{{ asset('assets/js/all.min.js') }}"></script>
     <script src="{{ asset('assets/front/library/header.js') }}"></script>
     <script src="{{ asset('assets/front/library/functions.js') }}"></script>
     <script src="{{ asset('assets/js/toastr.min.js') }}"></script>

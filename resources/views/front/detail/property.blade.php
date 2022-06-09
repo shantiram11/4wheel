@@ -81,7 +81,6 @@
                                         <p class="description-sq">
                                             {{$vehicle->description}}
                                               </p>
-
                                     </div>
 
                                     <!-- Right -->
@@ -187,7 +186,7 @@
                         <div class="reviews-row">
                             <div class="review-meta">
                                 <a class="avatar-sq verified-sq" href="">
-                                    <img src="{{asset('public/uploads/users/'.$review->user->current_image)}}" alt="">
+                                    <img src="{{asset('storage/uploads/users/'.$review->user->current_image)}}" alt="">
                                 </a>
                                 <a class="name-sq" href="">{{$review->user->name}}  </a>
                             </div>
@@ -203,7 +202,7 @@
                             <div class="review-meta">
                                 <div class="avatar-sq {{(auth()->check() && auth()->user()->verify == 'yes') ? 'verified-sq' : ''}} my-avatar-sq">
                                     @if(auth()->check())
-                                    <img src="{{asset('public/uploads/users/'.Auth()->user()->current_image)}}" alt="">
+                                    <img src="{{asset('storage/uploads/users/'.Auth()->user()->current_image)}}" alt="">
                                         @endif
                                 </div>
                                 @if(auth()->check())
