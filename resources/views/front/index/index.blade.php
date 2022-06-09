@@ -272,124 +272,6 @@
         </div>
     </div>
 
-    <!-- Log In -->
-    <div class="ui full modal" data-for="modal02">
-        <div class="modal-full-background">
-            <img src="{{ asset('assets/front/images/modal/modal_background_001.jpg') }}" alt="">
-        </div>
-
-        <i class="icon icon-close close-modal"></i>
-
-        <div class="header center">
-            Log In
-        </div>
-
-        <div class="content">
-            <div class="div-c">
-                <div class="divided-column">
-                    <input type="text" placeholder="E-mail Adress">
-                </div>
-                <div class="divided-column">
-                    <input type="text" placeholder="Password">
-                </div>
-            </div>
-
-            <div class="button-sq fullwidth-sq">Sign Up</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel ex semper, in
-                pharetra justo pulvinar. </p>
-        </div>
-
-        <div class="actions">
-            <div class="border-container">
-                <div class="button-sq link-sq modal-ui-trigger" data-trigger-for="modal01">Don’t have an account?
-                </div>
-
-                <div class="button-sq link-sq login-sq modal-ui-trigger" data-trigger-for="modal01">
-                    Sign Up
-                    <i class="icon icon-person-add-1"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Sign Up with mail -->
-    <div class="ui full modal" data-for="modal03">
-        <div class="modal-full-background">
-            <img src="{{ asset('assets/front/images/modal/modal_background_001.jpg') }}" alt="">
-        </div>
-        <i class="icon icon-close close-modal"></i>
-        <div class="header center">
-            Sign Up Now
-        </div>
-        <div class="content">
-            <div class="div-c inline-2">
-                <div class="divided-column">
-                    <input type="text" placeholder="First Name">
-                </div>
-                <div class="divided-column">
-                    <input type="text" placeholder="Last Name">
-                </div>
-            </div>
-            <div class="div-c">
-                <div class="divided-column">
-                    <input type="text" placeholder="E-mail Adress">
-                </div>
-                <div class="divided-column">
-                    <input type="text" placeholder="Password">
-                </div>
-            </div>
-
-            <div class="div-c inline-3 one-label">
-                <label>Birthday</label>
-                <div class="divided-column">
-                    <select name="dropdown" class="dropdown">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                        <option value="5">05</option>
-                        <option value="6">...</option>
-                    </select>
-                </div>
-                <div class="divided-column">
-                    <select name="dropdown" class="dropdown">
-                        <option value="1">Jan</option>
-                        <option value="2">Feb</option>
-                        <option value="3">Mar</option>
-                        <option value="4">Apr</option>
-                        <option value="5">May</option>
-                        <option value="6">...</option>
-                    </select>
-                </div>
-                <div class="divided-column">
-                    <select name="dropdown" class="dropdown">
-                        <option value="1">1985</option>
-                        <option value="2">1986</option>
-                        <option value="3">1987</option>
-                        <option value="4">1988</option>
-                        <option value="5">1989</option>
-                        <option value="6">...</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="button-sq fullwidth-sq">Sign Up</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel ex semper, in
-                pharetra justo pulvinar. </p>
-
-        </div>
-
-        <div class="actions">
-            <div class="border-container">
-                <div class="button-sq link-sq"></div>
-
-                <div class="button-sq link-sq login-sq modal-ui-trigger" data-trigger-for="modal01">
-                    Log In
-                    <i class="icon icon-person-lock-2"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Wishlist -->
     @auth
     <div class="ui modal small" data-for="wishlist">
@@ -398,10 +280,19 @@
         <div class="header center">
             <h4>Wishlist</h4>
         </div>
-        <div class="content">
+        <div class="content ">
             @forelse($user_wishlists->wishlists as $vehicle)
-                <div class="title-row">
-                    <a href="{{route('front.detail',$vehicle->slug)}}"><h6 class="title-sq font-weight-bold text-black-50">{{$vehicle->brand}}</h6></a>
+              <?php  $featured_image = $vehicle->photos->where('featured','yes')->first(); ?>
+                <div class="title-row d-flex justify-content-between align-items-center">
+                    <a href="{{route('front.detail',$vehicle->slug)}}"><h6 class="title-sq  header font-weight-bold text-black-50">{{$vehicle->brand}}</h6></a>
+                    <div>
+                     <span class="image-inner d-inline-flex">
+                         @if($featured_image)
+                             <img  src="{{ asset('storage/uploads/vehicle/'.$featured_image->image) }}"
+                                   alt="" class="">
+                         @endif
+                     </span>
+                    </div>
                 </div>
             @empty
                 <div class="alert alert-danger">
