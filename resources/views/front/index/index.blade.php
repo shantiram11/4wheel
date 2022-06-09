@@ -162,8 +162,9 @@
             <div class="ui grid container">
                 <div class="row">
                     <div class="ui twelve wide mobile twelve wide tablet twelve wide computer column">
-                        <div class="typo-section-header-sq">
+                        <div class="typo-section-header-sq d-flex justify-content-between align-items-center">
                             <h2 class="text-align-center-sq">Available Vehicles</h2>
+                            <button class="btn btn-primary modal-ui-trigger" data-trigger-for="wishlist">Wishlist</button>
                         </div>
                     </div>
                     @foreach ($vehicles as $v )
@@ -175,8 +176,9 @@
                             <div class="property-item-inner">
 
                                 <div class="price-tag-sq">{{$v->rate}} <span>/ Day</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
+                                <a class="add-wishlist" href="" data-trigger-for="wishlist">
+{{--                                    <i class="icon icon-add-wishlist"></i>--}}
+                                    <i class="fas fa-heart"></i>
                                 </a>
                                 <a class="image-sq" href={{route('front.detail',$v->slug)}}>
                                     <div class="image-wrapper">
