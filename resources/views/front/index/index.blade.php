@@ -162,8 +162,9 @@
             <div class="ui grid container">
                 <div class="row">
                     <div class="ui twelve wide mobile twelve wide tablet twelve wide computer column">
-                        <div class="typo-section-header-sq">
+                        <div class="typo-section-header-sq d-flex justify-content-between align-items-center">
                             <h2 class="text-align-center-sq">Available Vehicles</h2>
+                            @auth<button class="btn btn-primary modal-ui-trigger" data-trigger-for="wishlist">Wishlist</button>@endauth
                         </div>
                     </div>
                     @foreach ($vehicles as $v )
@@ -173,11 +174,18 @@
                         <div class="ui twelve wide mobile six wide tablet four wide computer column">
                         <div class="property-item caption-sq shadow-sq small-sq">
                             <div class="property-item-inner">
-
+{{--@dd($GLOBAL_WISHLIST_VEHICLE_ARR);--}}
                                 <div class="price-tag-sq">{{$v->rate}} <span>/ Day</span></div>
-                                <a class="add-wishlist modal-ui-trigger" href="" data-trigger-for="wishlist">
-                                    <i class="icon icon-add-wishlist"></i>
-                                </a>
+                                <form action="{{route('front.user.toggleWishlist', $v->id)}}" class="wishlist-form"  method="POST">
+                                    @csrf
+                                    <button class="add-wishlist {{in_array($v->id,$GLOBAL_WISHLIST_VEHICLE_ARR)?'active':''}}" style="background: none" type="submit">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </button>
+                                </form>
+{{--                                <a class="add-wishlist" href="" data-trigger-for="wishlist">--}}
+{{--                                    <i class="icon icon-add-wishlist"></i>--}}
+{{--                                    <i class="fas fa-heart"></i>--}}
+{{--                                </a>--}}
                                 <a class="image-sq" href={{route('front.detail',$v->slug)}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
@@ -383,36 +391,47 @@
     </div>
 
     <!-- Wishlist -->
+    @auth
     <div class="ui modal small" data-for="wishlist">
         <i class="icon icon-close close-modal"></i>
 
         <div class="header center">
             <h4>Wishlist</h4>
         </div>
-
         <div class="content">
-            <p>Mauris malesuada leo libero, vitae tempor ante sagittis vitae. Suspendisse consectetur facilisis
-                enim.</p>
-            <br>
-            <input type="checkbox" id="c01">
-            <label for="c01">Beautiful Cars</label>
-            <input type="checkbox" id="c02">
-            <label for="c02">For Summer</label>
-            <input type="checkbox" id="c03">
-            <label for="c03">Dream Cars</label>
-        </div>
-
-        <div class="actions">
-            <div class="div-c inline-2">
-                <div class="divided-column">
-                    <div class="button-sq cancel-sq fullwidth-sq">Cancel</div>
+            @forelse($user_wishlists->wishlists as $vehicle)
+                <div class="title-row">
+                    <a href="{{route('front.detail',$vehicle->slug)}}"><h6 class="title-sq font-weight-bold text-black-50">{{$vehicle->brand}}</h6></a>
                 </div>
-
-                <div class="divided-column">
-                    <div class="button-sq fullwidth-sq">OK</div>
+            @empty
+                <div class="alert alert-danger">
+                    <span class="text-center">Empty WishList</span>
                 </div>
-            </div>
+            @endforelse
         </div>
+{{--        <div class="content">--}}
+{{--            <p>Mauris malesuada leo libero, vitae tempor ante sagittis vitae. Suspendisse consectetur facilisis--}}
+{{--                enim.</p>--}}
+{{--            <br>--}}
+{{--            <input type="checkbox" id="c01">--}}
+{{--            <label for="c01">Beautiful Cars</label>--}}
+{{--            <input type="checkbox" id="c02">--}}
+{{--            <label for="c02">For Summer</label>--}}
+{{--            <input type="checkbox" id="c03">--}}
+{{--            <label for="c03">Dream Cars</label>--}}
+{{--        </div>--}}
+
+{{--        <div class="actions">--}}
+{{--            <div class="div-c inline-2">--}}
+{{--                <div class="divided-column">--}}
+{{--                    <div class="button-sq cancel-sq fullwidth-sq">Cancel</div>--}}
+{{--                </div>--}}
+
+{{--                <div class="divided-column">--}}
+{{--                    <div class="button-sq fullwidth-sq">OK</div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
-
+    @endauth
 @endsection
