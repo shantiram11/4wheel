@@ -303,21 +303,16 @@
             </div>
         </div>
     </div>
-
     <!-- Sign Up with mail -->
     <div class="ui full modal" data-for="modal03">
         <div class="modal-full-background">
             <img src="{{ asset('assets/front/images/modal/modal_background_001.jpg') }}" alt="">
         </div>
-
         <i class="icon icon-close close-modal"></i>
-
         <div class="header center">
             Sign Up Now
         </div>
-
         <div class="content">
-
             <div class="div-c inline-2">
                 <div class="divided-column">
                     <input type="text" placeholder="First Name">
@@ -326,7 +321,6 @@
                     <input type="text" placeholder="Last Name">
                 </div>
             </div>
-
             <div class="div-c">
                 <div class="divided-column">
                     <input type="text" placeholder="E-mail Adress">

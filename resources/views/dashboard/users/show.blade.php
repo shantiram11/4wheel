@@ -8,8 +8,8 @@
             <div class="col-sm-6">
               <h1 class="m-0">User</h1>
             </div>
-            <div class="col-sm-3">
-            <a href="{{route('users.index')}}" class=""><button class="btn btn-block bg-gradient-secondary">Back</button></a>
+              <div class="col-sm-6 text-right">
+                  <a href="{{route('users.index')}}" class=""><button class="btn btn-sm bg-gradient-primary btn-lg">Back</button></a>
               </div>
             <!-- /.col -->
           </div><!-- /.row -->
@@ -102,6 +102,34 @@
                             </tr>
                         </tbody>
                       </table>
+                        <table class="table table-hover text-nowrap">
+                            <tbody>
+                            <tr>
+                                <th>
+                                    Identity Front
+                                </th>
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/users/'.$user->identity_front) }}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Identity Back
+                                </th>
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/users/'.$user->identity_back) }}" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                Current Image
+                                </th>
+                                <td>
+                                    <img class='img-fluid ks-mw-250' src="{{ asset('storage/uploads/users/'.$user->current_image) }}" />
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                   </div>

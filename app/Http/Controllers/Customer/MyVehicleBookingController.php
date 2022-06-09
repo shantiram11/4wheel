@@ -110,17 +110,15 @@ class MyVehicleBookingController extends Controller
     public function destroy (){
 
     }
-    public function userVerify(Request $request, Booking $booking)
+    public function bookingVerify(Request $request, Booking $booking)
     {
         $request->validate([
-            'landmark' => 'in:yes,no',
+            'status' => 'in:available,reserved',
         ]);
-        Booking::where('id', $booking->id)->update([
-            'verify'             => $request->input('booking_verify'),
-        ]);
-
+        $vehicle = $booking->vehicle;
+        $vehicle->status = $request->input('status');
+        $vehicle->save();
 //        Mail::to($user->email)->send(new \App\Mail\UserVerifyMail($user));
-        return redirect()->route('my-vehicle-bookings.show', compact('booking'))->with('alert.success', 'Booking Successfully Verified !!');
-
+        return redirect()->route('my-vehicle-bookings.show',$booking->id)->with('alert.success', 'Booking Successfully Completed !!');
     }
 }

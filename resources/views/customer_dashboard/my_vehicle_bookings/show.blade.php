@@ -118,23 +118,26 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        Verify
+                                        Complete Booking
                                     </th>
                                     <td>
-                                        <form action="{{route('booking.verify',$booking)}}" method="POST">
+                                        <form action="{{route('booking.verify',$booking->id)}}" method="POST">
                                             {{ method_field('PUT') }}
                                             @csrf
-                                            <div class="form-group">
-                                                <label for="description">description </label>
-
-                                                <textarea type="text" rows="5" class="form-control @error('description') is-invalid @enderror" type="text" name="description"></textarea>
-
-                                                @error('description')
-                                                <span class="invalid-feedback" role="alert">
-                                     {{ $message }}
-                                 </span>
-                                                @enderror
-                                            </div>
+                                            <select class="form-select m-2 p-1" name="status">
+                                                @foreach (\App\Models\Booking::STATUS as $k => $v)
+                                                    <?php
+                                                    if (old('status', $booking->vehicle->status) == $v) {
+                                                        $selected = 'selected';
+                                                    } else {
+                                                        $selected = '';
+                                                    }
+                                                    ?>
+                                                    <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error ('status')
+                                            @enderror
                                             <button type="submit" class="btn btn-primary">
                                                 submit
                                             </button>

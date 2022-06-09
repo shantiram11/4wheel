@@ -13,7 +13,10 @@ class Booking extends Model
     protected $guarded = ['id'];
     protected $dates = ['created_at', 'updated_at', 'book_date', 'return_date'];
 
-    const VERIFY = ['yes','no'];
+    const STATUS = [
+        'available',
+        'reserved'
+    ];
     /** ==============
      * Relations
      * =============== */

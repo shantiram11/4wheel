@@ -13,74 +13,68 @@
                                 <div class="row">
                                     <!-- Left-->
                                     <div class="ui twelve wide mobile six wide computer column">
-
                                         <!-- Slick aici-->
-
                                         <div class="property-image-wrapper">
                                             <div class="sq-slick carousel-sq" data-center-mode="true" data-center-padding="0" data-show-slides="1" data-scroll-slides="1" data-mobile-center-padding="0" data-tablet-arrows="false" data-mobile-arrows="false" data-fade="true" data-ease="linear" data-speed="500" data-tablet-fade="false" data-tablet-ease="ease" data-tablet-speed="300" data-mobile-fade="false" data-mobile-ease="ease" data-mobile-speed="300">
-
                                                 <!-- Slide 01-->
+                                                <?php
+                                                $images = $vehicle->photos->all();
+                                                ?>
+                                                @foreach($images as $image)
                                                 <div>
                                                     <div class="caption-content"></div>
                                                     <div class="image-wrapper">
                                                         <div class="image-inner">
-                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/cars/property_item_cars_03.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 01">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <!-- Slide 02-->
-                                                <div>
-                                                    <div class="caption-content"></div>
-
-                                                    <div class="image-wrapper">
-                                                        <div class="image-inner">
-                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_01.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 02">
+                                                            <img class="image-sq slick-img" src="{{ asset('storage/uploads/vehicle/'.$image->image) }}" alt="" data-gallery="gallery" data-caption="Car 01">
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endforeach
+{{--                                                <!-- Slide 02-->--}}
+{{--                                                <div>--}}
+{{--                                                    <div class="caption-content"></div>--}}
 
-                                                <!-- Slide 03-->
-                                                <div>
-                                                    <div class="caption-content"></div>
+{{--                                                    <div class="image-wrapper">--}}
+{{--                                                        <div class="image-inner">--}}
+{{--                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_01.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 02">--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
-                                                    <div class="image-wrapper">
-                                                        <div class="image-inner">
-                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_02.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 03">
-                                                        </div>
-                                                    </div>
-                                                </div>
+{{--                                                <!-- Slide 03-->--}}
+{{--                                                <div>--}}
+{{--                                                    <div class="caption-content"></div>--}}
 
-                                                <!-- Slide 04-->
-                                                <div>
-                                                    <div class="caption-content"></div>
+{{--                                                    <div class="image-wrapper">--}}
+{{--                                                        <div class="image-inner">--}}
+{{--                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_02.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 03">--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
-                                                    <div class="image-wrapper">
-                                                        <div class="image-inner">
-                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_03.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 04">
-                                                        </div>
-                                                    </div>
-                                                </div>
+{{--                                                <!-- Slide 04-->--}}
+{{--                                                <div>--}}
+{{--                                                    <div class="caption-content"></div>--}}
+
+{{--                                                    <div class="image-wrapper">--}}
+{{--                                                        <div class="image-inner">--}}
+{{--                                                            <img class="image-sq slick-img" src="{{asset('assets/front/images/property/property_big_03.jpg')}}" alt="" data-gallery="gallery" data-caption="Car 04">--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                         <h1 class="title-sq">{{$vehicle->brand}}</h1>
 
                                         <div class="icons-row">
                                             <div class="icons-column">
-                                                <div class="rating-sq">
-                                                    <i class="icon icon-heart"></i>
-                                                    8.9
-                                                </div>
+                                                <i class="fas fa-gas-pump-slash"></i> {{$vehicle->fuel_type}}
                                             </div>
                                             <div class="icons-column">
-                                                <i class="icon icon-ac"></i> A/C
+                                                <i class="fas fa-location"></i>{{$vehicle->location}}
                                             </div>
                                             <div class="icons-column">
-                                                <i class="icon icon-gearbox"></i> A
-                                            </div>
-                                            <div class="icons-column">
-                                                <i class="icon icon-user-circle"></i> x 4
+                                                <i class="icon icon-user-circle"></i> x {{$vehicle->seat_count}}
                                             </div>
                                         </div>
 

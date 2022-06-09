@@ -47,7 +47,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::get('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'getChangePassword'])->name('profile.changePassword');
         Route::post('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'changePassword'])->name('profile.changePassword');
         //profile routes end
-
     });
     /** €customer backend Starts*/
     Route::group(['prefix' => 'customer-dashboard'], function () {
@@ -63,7 +62,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
         Route::resource('customer-bookings', \App\Http\Controllers\Customer\BookingController::class);
         Route::resource('my-vehicle-bookings', \App\Http\Controllers\Customer\MyVehicleBookingController::class);
         Route::get('your-documents', [\App\Http\Controllers\Customer\ProfileController::class, 'getDocument'])->name('getDocument');
-        Route::put('booking/verify/{booking}', [\App\Http\Controllers\Dashboard\BookingController::class, 'bookingVerify'])->name('booking.verify');
+        Route::put('booking/verify/{booking}', [\App\Http\Controllers\Customer\MyVehicleBookingController::class, 'bookingVerify'])->name('booking.verify');
         Route::delete('remove-image/{id}', [\App\Http\Controllers\Customer\VehicleController::class, 'removeImage'])->name('removeImage');
     });
     Route::post('/reviews/vehicles/{slug}', [App\Http\Controllers\Front\ReviewController::class, 'storeReview'])->name('storeReview');
@@ -74,7 +73,6 @@ Route::group(['middleware' => ['auth','verified']], function () {
     Route::post('payment/pre-payment-validation', [\App\Http\Controllers\Front\CheckoutController::class, 'prePaymentValidation'])->name('checkout.prePaymentValidation');
     Route::post('payment/stripe', [\App\Http\Controllers\Front\PaymentController::class, 'getStripePaymentIntent'])->name('stripe.payment');
     Route::post('booking', [\App\Http\Controllers\Front\BookingController::class, 'store'])->name('front.booking.store');
-
 });
 
 
