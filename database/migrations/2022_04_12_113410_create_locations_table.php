@@ -15,8 +15,8 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->float('longitude',10,8);
-            $table->float('latitude',10,8);
+            $table->float('longitude',20,18);
+            $table->float('latitude',20,18);
             $table->unsignedBigInteger('vehicle_id')->nullable();
             $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('set null');
             $table->timestamps();

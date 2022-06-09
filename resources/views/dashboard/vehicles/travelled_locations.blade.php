@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">vehicle</h1>
+                    <h1 class="m-0">My Vehicle</h1>
                 </div>
                 <div class="col-sm-3">
                     <a href="{{route('vehicles.index')}}" class=""><button class="btn btn-block bg-gradient-secondary">Back</button></a>
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">Travelled Locations</h3>
+                        <div class="card-header"><h3>Travelled Route</h3>
 
                         </div>
                         <!-- /.card-header -->

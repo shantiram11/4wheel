@@ -68,10 +68,10 @@
 
                                         <div class="icons-row">
                                             <div class="icons-column">
-                                                <i class="fas fa-gas-pump-slash"></i> {{$vehicle->fuel_type}}
+                                                <i class="fas fa-gas-pump-slash"></i>Fuel: {{$vehicle->fuel_type}}
                                             </div>
                                             <div class="icons-column">
-                                                <i class="fas fa-location"></i>{{$vehicle->location}}
+                                                <i class="fas fa-location"></i> Location: {{$vehicle->location}}
                                             </div>
                                             <div class="icons-column">
                                                 <i class="icon icon-user-circle"></i> x {{$vehicle->seat_count}}

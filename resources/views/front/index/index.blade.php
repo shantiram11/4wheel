@@ -96,67 +96,6 @@
 
             </div>
 
-            {{-- <div class="ui grid container">
-                <div class="row">
-                    <div class="ui column">
-                        <div class="typo-section-sq top-default bottom-default">
-                            <h2 class="heading-inline text-align-center-sq">
-                                <i class="icon icon-slim-arrow-left sq-prev-button"></i>
-                                <span>Our vendors</span>
-                                <i class="icon icon-slim-arrow-right sq-next-button"></i>
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ui grid container typo-section-sq bottom-default">
-                <div class="row">
-                    <div class="sq-slick article-sq-slick" data-arrows="false" data-center-mode="true"
-                        data-center-padding="0px" data-desktop-center-padding="0px" data-show-slides="5"
-                        data-scroll-slides="3" data-tablet-show-slides="2" data-tablet-scroll-slides="2"
-                        data-mobile-show-slides="3" data-mobile-scroll-slides="3" data-tablet-center-padding="0px"
-                        data-mobile-center-padding="50px">
-                        <!-- Slide 01-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_001.jpg') }}" alt="">
-                            </div>
-                        </div>
-
-                        <!-- Slide 02-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <!-- Slide 03-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_001.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <!-- Slide 04-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <!-- Slide 05-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_001.jpg') }}" alt="">
-                            </div>
-                        </div>
-                        <!-- Slide 06-->
-                        <div>
-                            <div class="caption-content">
-                                <img src="{{ asset('assets/front/images/partener_002.jpg') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
         </div>
         <div class="typo-section-sq bottom-default">
             <div class="ui grid container">
@@ -216,7 +155,6 @@
                                         </div>
                                     </div> --}}
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -288,8 +226,8 @@
                     <div>
                      <span class="image-inner d-inline-flex">
                          @if($featured_image)
-                             <img  src="{{ asset('storage/uploads/vehicle/'.$featured_image->image) }}"
-                                   alt="" class="">
+                           <a href="{{route('front.detail',$vehicle->slug)}}">  <img style="max-width: 200px;" src="{{ asset('storage/uploads/vehicle/'.$featured_image->image) }}"
+                                   alt="" class=""></a>
                          @endif
                      </span>
                     </div>

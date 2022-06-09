@@ -95,7 +95,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{route('categories.create')}}" class="nav-link">
-                            <i class="fas fa-truck-pickup nav-icon"></i>
+                            <i class="fas fa-route-highway nav-icon"></i>
                             <p>Add Category</p>
                         </a>
                     </li>
@@ -149,6 +149,14 @@
               </p>
             </a>
           </li>
+            <li class="nav-item">
+                <a href="{{route('travelledLocations','2')}}" class="nav-link {{ current_page('travelledLocations') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-route"></i>
+                    <p>
+                        Travelled Routes
+                    </p>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
