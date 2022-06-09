@@ -53,7 +53,7 @@ class MyVehicleBookingController extends Controller
                     'u.name as booked_by'
                 );
 
-
+            $query->where('v.owner_id', Auth::user()->id);
             $query->where(function ($q) use ($search) {
                 $q->where('b.booked_by', 'like', $search . '%')
                     ->orWhere('b.return_date', 'like', $search . '%')
@@ -113,7 +113,7 @@ class MyVehicleBookingController extends Controller
     public function userVerify(Request $request, Booking $booking)
     {
         $request->validate([
-            'booking_verify' => 'in:yes,no',
+            'landmark' => 'in:yes,no',
         ]);
         Booking::where('id', $booking->id)->update([
             'verify'             => $request->input('booking_verify'),

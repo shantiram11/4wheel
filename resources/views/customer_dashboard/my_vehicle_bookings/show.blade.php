@@ -124,18 +124,17 @@
                                         <form action="{{route('booking.verify',$booking)}}" method="POST">
                                             {{ method_field('PUT') }}
                                             @csrf
-                                            <select class="form-select m-2 p-1" name="booking_verify">
-                                                @foreach (\App\Models\Booking::VERIFY as $k => $v)
-                                                    <?php
-                                                    if (old('booking_verify', $booking->verify) == $v) {
-                                                        $selected = 'selected';
-                                                    } else {
-                                                        $selected = '';
-                                                    }
-                                                    ?>
-                                                    <option value="{{ $v }}" {{ $selected }}>{{ ucwords($v) }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="form-group">
+                                                <label for="description">description </label>
+
+                                                <textarea type="text" rows="5" class="form-control @error('description') is-invalid @enderror" type="text" name="description"></textarea>
+
+                                                @error('description')
+                                                <span class="invalid-feedback" role="alert">
+                                     {{ $message }}
+                                 </span>
+                                                @enderror
+                                            </div>
                                             <button type="submit" class="btn btn-primary">
                                                 submit
                                             </button>
