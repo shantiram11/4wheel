@@ -38,6 +38,10 @@ class Vehicle extends Model
     /**
      * Relations
      */
+    public function booking(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Booking::class,'vehicle_id');
+    }
     public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class);
