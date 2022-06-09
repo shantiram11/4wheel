@@ -37,6 +37,8 @@ class VehicleRequest extends FormRequest
             'model' => ['required', 'string', 'max:191'],
             'status' => ['nullable'],
             'owner_id' => ['nullable'],
+            'featured_image'   => ['required_without:featured_image_hidden_value', 'nullable', 'image','mimes:jpg,jpeg,png,gif','max:2048'],
+
         ];
     }
 }

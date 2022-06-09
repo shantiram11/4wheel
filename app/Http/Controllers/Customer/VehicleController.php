@@ -72,6 +72,7 @@ class VehicleController extends Controller
             $data = array();
             if (isset($records)) {
                 foreach ($records as $k => $v) {
+                    $nestedData['id'] = $v->id;
                     $nestedData['company_name'] = $v->company_name;
                     $nestedData['vehicle_number'] = $v->vehicle_number;
                     $nestedData['description'] = $v->description;
@@ -102,7 +103,8 @@ class VehicleController extends Controller
         $vehicle = new Vehicle();
         $vehicle_options = Category::pluck('name', 'id');
         $fuel_options = Vehicle::FUEL_OPTIONS;
-        return view('customer_dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options'));
+        $image = new Photo();
+        return view('customer_dashboard.vehicles.create', compact('vehicle','vehicle_options','fuel_options','image'));
     }
 
     /**
@@ -114,51 +116,54 @@ class VehicleController extends Controller
     public function store(VehicleRequest $request)
     {
 //        dd($request->all());
-        $company_name = $request->input('company_name');
-        $vehicle = Vehicle::create([
-            'company_name'              => $request->input('company_name'),
-            'slug'                      => Str::slug($company_name),
-            'fuel_type'                 => $request->input('fuel_type'),
-            'vehicle_number'            => $request->input('vehicle_number'),
-            'brand'                     => $request->input('brand'),
-            'category_id'              => $request->input('vehicle_type'),
-            'model'                     => $request->input('model'),
-            'rate'                      => $request->input('rate'),
-            'seat_count'                => $request->input('seat_count'),
-            'description'               => $request->input('description'),
-            'location'                  => $request->input('location'),
-            'owner_id'                  => auth()->user()->id,
-        ]);
+        $vehicle = null;
+        DB::transaction(function() use($request , &$vehicle){
+            $company_name = $request->input('company_name');
+            $vehicle = Vehicle::create([
+                'company_name'              => $request->input('company_name'),
+                'slug'                      => Str::slug($company_name),
+                'fuel_type'                 => $request->input('fuel_type'),
+                'vehicle_number'            => $request->input('vehicle_number'),
+                'brand'                     => $request->input('brand'),
+                'category_id'              => $request->input('vehicle_type'),
+                'model'                     => $request->input('model'),
+                'rate'                      => $request->input('rate'),
+                'seat_count'                => $request->input('seat_count'),
+                'description'               => $request->input('description'),
+                'location'                  => $request->input('location'),
+                'owner_id'                  => auth()->user()->id,
+            ]);
 //        dd($request->file('vehicle_photo'));
-        $product_photos = $request->file('vehicle_photo');
-        if($product_photos){
-            foreach($product_photos as $image) {
-                $imageName = AppHelper::renameImageFileUpload($image);
-                $image->storeAs(
+            $product_photos = $request->file('vehicle_photo');
+            if($product_photos){
+                foreach($product_photos as $image) {
+                    $imageName = AppHelper::renameImageFileUpload($image);
+                    $image->storeAs(
+                        'public/uploads/vehicle', $imageName
+                    );
+                    Photo::create([
+                        'image'          =>          $imageName,
+                        'vehicle_id'     =>          $vehicle->id,
+                        'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
+                        'featured'       =>          Photo::NOT_FEATURED,
+                    ]);
+                }
+            }
+            $featured_image = $request->file('featured_image');
+            if($featured_image){
+                $imageName = AppHelper::renameImageFileUpload($featured_image);
+                $featured_image->storeAs(
                     'public/uploads/vehicle', $imageName
                 );
                 Photo::create([
                     'image'          =>          $imageName,
                     'vehicle_id'     =>          $vehicle->id,
                     'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
-                    'featured'       =>          Photo::NOT_FEATURED,
+                    'featured'       =>          Photo::FEATURED,
                 ]);
             }
-        }
-        $featured_image = $request->file('featured_image');
-        if($featured_image){
-            $imageName = AppHelper::renameImageFileUpload($featured_image);
-            $featured_image->storeAs(
-                'public/uploads/vehicle', $imageName
-            );
-            Photo::create([
-                'image'          =>          $imageName,
-                'vehicle_id'     =>          $vehicle->id,
-                'store_type'     =>          Photo::STORE_TYPE_TEMPORARY,
-                'featured'       =>          Photo::FEATURED,
-            ]);
-        }
-        return redirect()->route('customerVehicles.show', compact('vehicle'))->with('alert.success', 'User Successfully Created !!');
+        });
+        return redirect()->route('customerVehicles.show',$vehicle->id)->with('alert.success', 'User Successfully Created !!');
 
     }
 
@@ -190,7 +195,8 @@ class VehicleController extends Controller
         $users = User::pluck('name', 'id');
         $vehicle_options = Category::pluck('name', 'id');
         $fuel_options = Vehicle::FUEL_OPTIONS;
-        return view('customer_dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_options','fuel_options'));
+        $image = $vehicle->photos->where('featured', 'yes')->first();
+        return view('customer_dashboard.vehicles.edit', compact('vehicle', 'users','vehicle_options','fuel_options','image'));
     }
 
     /**

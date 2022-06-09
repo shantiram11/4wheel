@@ -146,11 +146,10 @@
 {{--                  </div>--}}
                   <div class="form-group">
                       <!--begin::Col-->
-                      <?php $image = $vehicle->photos->where('featured','yes')->first(); ?>
                           <label class="required fs-6 fw-bold mb-2" for="file">
-                              Profile Image
+                              Featured Image
                           </label>
-                          <input type="hidden" name="image_hidden_value" class="image_hidden_value">
+                          <input type="hidden" name="featured_image_hidden_value" class="featured_image_hidden_value" value="{{$image->image}}">
 
                           <input type="file" name="featured_image" onchange="loadPreview(this);"
                                  class="form-control form-control-solid @error('image') is-invalid @enderror" id="image"

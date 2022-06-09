@@ -82,6 +82,7 @@
                         error: function(xhr, ajaxOptions, thrownError) {
                         }
                     },
+
                     "columns": [
                         { "data": "company_name",},
                         { "data": "vehicle_number" },
