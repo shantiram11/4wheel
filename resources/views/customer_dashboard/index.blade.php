@@ -17,7 +17,7 @@
                             <div class="ks-dash-box">
                                 <div class="d-flex justify-content-space-between" style="justify-content: space-between;">
                                     <div>
-                                        <i class="fas fa-users" style="font-size:100px"></i>
+                                        <i class="fas fa-users text-success" style="font-size:100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">Bookings</strong>
@@ -30,7 +30,7 @@
                             <div class="ks-dash-box">
                                 <div class="d-flex justify-content-space-between">
                                     <div>
-                                        <i class="fas fa-car-side" style="font-size: 100px"></i>
+                                        <i class="fas fa-car-side text-danger" style="font-size: 100px"></i>
                                     </div>
                                     <div class="right-col">
                                         <strong class="stat-title">vehicles</strong>
@@ -41,6 +41,21 @@
                             </div>
                         </div>
 
+                        <div class="col-md-4">
+                            <div class="ks-dash-box">
+                                <div class="d-flex justify-content-space-between">
+                                    <div>
+                                        <i class="fas fa-car-side text-danger" style="font-size: 100px"></i>
+                                    </div>
+                                    <div class="right-col">
+                                        <strong class="stat-title">Total Earnings</strong>
+                                        @dd($total_earning)
+                                        <p class="stat-count">{{$total_earning}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
 
