@@ -26,7 +26,6 @@ class BookingController extends Controller
     public function create(Booking $booking)
     {
         $booking = new Booking();
-
         return view('front.detail.property', compact('booking'));
     }
 

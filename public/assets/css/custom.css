@@ -16,3 +16,6 @@ body {
 .nav-sidebar .nav-treeview>.nav-item>.nav-link>.nav-icon{
     width: 14px;
 }
+.add-wishlist.active svg path{
+    fill: red !important;
+}
