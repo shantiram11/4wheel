@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
@@ -106,6 +108,19 @@ class BookingController extends Controller
 
     public function destroy (){
 
+    }
+
+    public function returnVehicle(Booking $booking){
+//        dd($booking);
+        if($booking->return_date < Carbon::now()){
+            DB::transaction(function() use ($booking){
+               $booking->vehicle->status = Vehicle::STATUS[0];
+               $booking->vehicle->save();
+            });
+
+            return redirect()->back()->with('toast.success', 'Vehicle returned successfully');
+        }
+        return redirect()->back()->with('toast.error', 'Return date must me greater than today\'s date');
     }
 
 }

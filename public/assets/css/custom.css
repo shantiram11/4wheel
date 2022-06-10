@@ -19,3 +19,8 @@ body {
 .add-wishlist.active svg path{
     fill: red !important;
 }
+.header-section.ths .hamburger .hamburger-box .hamburger-inner:before,
+.header-section.ths .hamburger .hamburger-box .hamburger-inner:after,
+.header-section.ths .hamburger .hamburger-box .hamburger-inner{
+    background: #2B2626 !important;
+}

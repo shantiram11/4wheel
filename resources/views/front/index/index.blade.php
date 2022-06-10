@@ -8,67 +8,11 @@
             <div class="hero-search-full-page low-sq next-sq">
                 <!-- Hero Search Vertical Default -->
                 <div class="h-search-v narrow-sq animate-sq shadow-sq">
-{{--                    <form action="listing_page.html" class="hero-search-form">--}}
-
-{{--                        <div class="search-item">--}}
-{{--                            <i class="icon icon-pickup-location"></i>--}}
-{{--                            <div class="fltp">--}}
-{{--                                <input type="text" value="" required>--}}
-{{--                                <label class="placeholder" data-big-placeholder="Pickup location"--}}
-{{--                                    data-little-placeholder="Pickup location"></label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="search-item">--}}
-{{--                            <i class="icon icon-return-location"></i>--}}
-{{--                            <div class="fltp">--}}
-{{--                                <input type="text" value="" required>--}}
-{{--                                <label class="placeholder" data-big-placeholder="Return location"--}}
-{{--                                    data-little-placeholder="Return location"></label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="search-item">--}}
-{{--                            <div class="checkbox-wrapper">--}}
-{{--                                <input type="checkbox" id="checkbox11">--}}
-{{--                                <label for="checkbox11">Return car to pickup location</label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="search-item">--}}
-{{--                            <i class="icon icon-pickup-date"></i>--}}
-{{--                            <div class="fltp calendar-sq" id="rangestart">--}}
-{{--                                <input type="text" class="filter" value="" required placeholder="enter date">--}}
-{{--                                <label class="placeholder" data-big-placeholder="Pickup date"--}}
-{{--                                    data-little-placeholder="Pickup date"></label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="search-item">--}}
-{{--                            <i class="icon icon-return-date"></i>--}}
-{{--                            <div class="fltp calendar-sq" id="rangeend">--}}
-{{--                                <input type="text" class="filter" value="" required placeholder="enter date">--}}
-{{--                                <label class="placeholder" data-big-placeholder="Return date"--}}
-{{--                                    data-little-placeholder="Return date"></label>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-{{--                        <div class="search-item">--}}
-
-{{--                            <button class="button-sq">--}}
-{{--                                <i class="icon icon-search"></i>--}}
-{{--                                <span>Find a car</span>--}}
-{{--                            </button>--}}
-
-{{--                        </div>--}}
-
-{{--                    </form>--}}
                 </div>
-
                 <!-- Hero Big - Slick -->
                 <div class="sq-slick hero-big slide-up-sq left-sq" data-mobile-arrows="false" data-tablet-arrows="false"
                     data-mobile-dots="true" data-fade="true" data-speed="500" data-ease="linear">
                     <!-- .slide-up .fade .top .bottom -->
-
                     <!--Slide 01-->
                     <div class="">
                         <div class="caption-content">
@@ -83,17 +27,13 @@
                                 <span>read more</span>
                             </a>
                         </div>
-
                         <div class="video-wrapper">
-                            {{-- <img src="{{ asset('assets/front/images/website.jpg') }}" alt=""> --}}
                             <iframe
                                 src="https://www.youtube.com/embed/BDCU5OFXZ2c?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&start=15&mute=1"
                                 allowfullscreen></iframe>
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
         </div>
@@ -113,7 +53,6 @@
                         <div class="ui twelve wide mobile six wide tablet four wide computer column">
                         <div class="property-item caption-sq shadow-sq small-sq">
                             <div class="property-item-inner">
-{{--@dd($GLOBAL_WISHLIST_VEHICLE_ARR);--}}
                                 <div class="price-tag-sq">{{$v->rate}} <span>/ Day</span></div>
                                 <form action="{{route('front.user.toggleWishlist', $v->id)}}" class="wishlist-form"  method="POST">
                                     @csrf
@@ -121,10 +60,6 @@
                                         <i class="fa fa-heart" aria-hidden="true"></i>
                                     </button>
                                 </form>
-{{--                                <a class="add-wishlist" href="" data-trigger-for="wishlist">--}}
-{{--                                    <i class="icon icon-add-wishlist"></i>--}}
-{{--                                    <i class="fas fa-heart"></i>--}}
-{{--                                </a>--}}
                                 <a class="image-sq" href={{route('front.detail',$v->slug)}}>
                                     <div class="image-wrapper">
                                         <span class="image-inner">
@@ -139,21 +74,6 @@
                                     <div class="title-row">
                                         <a href={{route('front.detail',$v->slug)}} class="title-sq">{{$v->brand}}</a>
                                     </div>
-
-                                    {{-- <div class="icons-row">
-                                        <div class="icons-column">
-                                            <i class="icon icon-heart"></i> 8.7
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-ac"></i> A/C
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-gearbox"></i> A
-                                        </div>
-                                        <div class="icons-column">
-                                            <i class="icon icon-user-circle"></i> x 4
-                                        </div>
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -178,26 +98,6 @@
         <div class="header center">
             Sign Up Now
         </div>
-
-{{--        <div class="content">--}}
-{{--            <a href="" class="button-sq fullwidth-sq modal-ui-trigger" data-trigger-for="modal03">--}}
-{{--                <i class="icon icon-email-2"></i>--}}
-{{--                <span>Sign Up with Email</span>--}}
-{{--            </a>--}}
-
-{{--            <a href="" class="button-sq fullwidth-sq facebook-button">--}}
-{{--                <i class="icon icon-logo-facebook2"></i>--}}
-{{--                <span>Sign Up with Facebook</span>--}}
-{{--            </a>--}}
-
-{{--            <a href="" class="button-sq fullwidth-sq google-button">--}}
-{{--                <img src="{{ asset('assets/front/images/icon-google-plus.svg') }}" alt="">--}}
-{{--                <span>Sign Up with Google</span>--}}
-{{--            </a>--}}
-{{--            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur faucibus magna vel ex semper, in--}}
-{{--                pharetra justo pulvinar. </p>--}}
-{{--        </div>--}}
-
         <div class="actions">
             <div class="border-container">
                 <div class="button-sq link-sq modal-ui-trigger" data-trigger-for="modal02">Already a member?</div>

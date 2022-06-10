@@ -39,7 +39,6 @@ Default Header with a White Background & Dark text.
 -->
 
         <!--DEFAULT HEADER-->
-
         <header
             class="header-section ths header-shadow header-sticky header-slide-up header-transparent is-transparent equal-tablet-header-items equal-mobile-header-items">
             <div class="header-content">
@@ -48,10 +47,7 @@ Default Header with a White Background & Dark text.
                     <div class="header-item header-left">
 
                     </div>
-
                     <div class="header-item header-center flex-grow-true">
-
-
                     </div>
 
                     <div class="header-item header-right flex-align-right">
@@ -122,9 +118,7 @@ Default Header with a White Background & Dark text.
             </div>
         </header>
 
-
         @yield('content')
-
 
         <!--FOOTER-->
         <div id="footer">
