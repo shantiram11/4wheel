@@ -43,6 +43,9 @@ use Illuminate\Support\Facades\Route;
             Route::post('profile', [\App\Http\Controllers\Dashboard\ProfileController::class, 'store'])->name('profile.store');
             Route::get('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'getChangePassword'])->name('profile.changePassword');
             Route::post('profile/change-password', [\App\Http\Controllers\Dashboard\ProfileController::class, 'changePassword'])->name('profile.changePassword');
+
+
+            Route::get('vehicle/return/{booking}', [\App\Http\Controllers\Customer\BookingController::class, 'returnVehicle'])->name('booking.returnVehicle');
             //profile routes end
         });
         /** €customer backend Starts*/

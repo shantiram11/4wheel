@@ -1,7 +1,5 @@
 @extends('layouts.customer-dashboard')
 @section('content')
-
-
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -125,5 +123,10 @@
             </div>
         </div>
     </section>
+    @if($booking->vehicle->status === \App\Models\Vehicle::STATUS[1])
+    <div class="col-sm-12 text-right">
+        <a href="{{route('booking.returnVehicle',$booking->id)}}" class=""><button class="btn btn-sm bg-gradient-secondary">Return Vehicle</button></a>
+    </div>
+    @endif
 @endsection
 
