@@ -163,7 +163,7 @@ class VehicleController extends Controller
                 ]);
             }
         });
-        return redirect()->route('customerVehicles.show',$vehicle->id)->with('alert.success', 'User Successfully Created !!');
+        return redirect()->route('customerVehicles.show',$vehicle->id)->with('alert.success', 'Vehicle Successfully Created !!');
 
     }
 

@@ -11,7 +11,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">vehicle</h1>
+              <h1 class="m-0">Vehicle</h1>
             </div>
             <div class="col-sm-6 text-right">
             <a href="{{route('customerVehicles.index')}}" class=""><button class="btn btn-sm bg-gradient-secondary">Back</button></a>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-12">
                   <div class="card">
-                    <div class="card-header">vehicle Details</h3>
+                    <div class="card-header">Vehicle Details</h3>
 
                       <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">

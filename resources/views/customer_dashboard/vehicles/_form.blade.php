@@ -26,7 +26,7 @@
                                @enderror
                 </div>
                   <div class="form-group">
-                      <label for="rate">Rate Per Hour </label>
+                      <label for="rate">Rate Per Day </label>
                       <input type="text"
                              class="form-control @error('rate') is-invalid @enderror" type="text" name="rate" value="{{ old('rate', $vehicle->rate) }}">
                       @error('rate')
